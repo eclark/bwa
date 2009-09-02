@@ -1,3 +1,27 @@
+Beta Release 0.5.1 (2 September, 2009)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Notable changes in the short read alignment component:
+
+ * Fixed a bug in samse: do not write mate coordinates.
+
+Notable changes in dBWT-SW:
+
+ * Randomly choose one alignment if the read is a repetitive.
+
+ * Fixed a flaw when a read is mapped across two adjacent reference
+   sequences. However, wrong alignment reports may still occur rarely in
+   this case.
+
+ * Changed the default band width to 50. The speed is slower due to this
+   change.
+
+ * Improved the mapping quality a little given long query sequences.
+
+(0.5.1: 2 September 2009, r1209)
+
+
+
 Beta Release 0.5.0 (20 August, 2009)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

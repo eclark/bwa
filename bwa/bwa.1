@@ -1,4 +1,4 @@
-.TH bwa 1 "20 August 2009" "bwa-0.5.0" "Bioinformatics tools"
+.TH bwa 1 "2 September 2009" "bwa-0.5.1" "Bioinformatics tools"
 .SH NAME
 .PP
 bwa - Burrows-Wheeler Alignment Tool
@@ -234,11 +234,11 @@ a*max{T,c*log(l)}. [5.5]
 Z-best heuristics. Higher -z increases accuracy at the cost of speed. [1]
 .TP
 .B -s INT
-Maximum SA interval size for initiating an HSP. Higher -s increases
+Maximum SA interval size for initiating a seed. Higher -s increases
 accuracy at the cost of speed. [3]
 .TP
 .B -N INT
-Minimum number of HSPs supporting the resultant alignment to skip
+Minimum number of seeds supporting the resultant alignment to skip
 reverse alignment. [5]
 .RE
 
@@ -319,7 +319,7 @@ XT	Type: Unique/Repeat/N/Mate-sw
 _
 XS	Suboptimal alignment score
 XF	Support from forward/reverse alignment
-XE	Number of supporting HSPs
+XE	Number of supporting seeds
 .TE
 
 .PP
@@ -410,9 +410,8 @@ Command
 is designed for long-read alignment. The algorithm behind, dBWT-SW, is
 similar to BWT-SW, but does not guarantee to find all local hits due to
 the heuristic acceleration. It tends to be faster and more accurate if
-the resultant alignment is supported by more high-scoring segments pairs
-(HSPs), and therefore dBWT-SW usually performs better on long queries
-than on short ones.
+the resultant alignment is supported by more seeds, and therefore
+dBWT-SW usually performs better on long queries than on short ones.
 
 On 350-1000bp reads, dBWT-SW is several to tens of times faster than the
 existing programs. Its accuracy is comparable to SSAHA2, more accurate
