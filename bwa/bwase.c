@@ -138,10 +138,10 @@ static uint16_t *refine_gapped_core(bwtint_t l_pac, const ubyte_t *pacseq, int l
 }
 
 char *bwa_cal_md1(int n_cigar, uint16_t *cigar, int len, bwtint_t pos, ubyte_t *seq,
-				  bwtint_t l_pac, ubyte_t *pacseq, kstring_t *str)
+				  bwtint_t l_pac, ubyte_t *pacseq, kstring_t *str, int *_nm)
 {
 	bwtint_t x, y;
-	int z, u, c;
+	int z, u, c, nm = 0;
 	str->l = 0; // reset
 	x = pos; y = 0;
 	if (cigar) {
@@ -154,19 +154,20 @@ char *bwa_cal_md1(int n_cigar, uint16_t *cigar, int len, bwtint_t pos, ubyte_t *
 					if (c > 3 || seq[y+z] > 3 || c != seq[y+z]) {
 						ksprintf(str, "%d", u);
 						kputc("ACGTN"[c], str);
+						++nm;
 						u = 0;
 					} else ++u;
 				}
 				x += l; y += l;
 			} else if (cigar[k]>>14 == FROM_I || cigar[k]>>14 == 3) {
-				y += l;
+				y += l; nm += l;
 			} else if (cigar[k]>>14 == FROM_D) {
 				ksprintf(str, "%d", u);
 				kputc('^', str);
 				for (z = 0; z < l && x+z < l_pac; ++z)
 					kputc("ACGT"[pacseq[(x+z)>>2] >> ((~(x+z)&3)<<1) & 3], str);
 				u = 0;
-				x += l;
+				x += l; nm += l;
 			}
 		}
 	} else { // no gaps
@@ -175,11 +176,13 @@ char *bwa_cal_md1(int n_cigar, uint16_t *cigar, int len, bwtint_t pos, ubyte_t *
 			if (c > 3 || seq[y+z] > 3 || c != seq[y+z]) {
 				ksprintf(str, "%d", u);
 				kputc("ACGTN"[c], str);
+				++nm;
 				u = 0;
 			} else ++u;
 		}
 	}
 	ksprintf(str, "%d", u);
+	*_nm = nm;
 	return strdup(str->s);
 }
 
@@ -226,7 +229,7 @@ void bwa_refine_gapped(const bntseq_t *bns, int n_seqs, bwa_seq_t *seqs, ubyte_t
 		bwa_seq_t *s = seqs + i;
 		if (s->type != BWA_TYPE_NO_MATCH)
 			s->md = bwa_cal_md1(s->n_cigar, s->cigar, s->len, s->pos, s->strand? s->rseq : s->seq,
-								bns->l_pac, ntbns? ntpac : pacseq, str);
+								bns->l_pac, ntbns? ntpac : pacseq, str, &s->nm);
 	}
 	free(str->s); free(str);
 
@@ -318,7 +321,7 @@ void bwa_print_sam1(const bntseq_t *bns, bwa_seq_t *p, const bwa_seq_t *mate, in
 			XT = "NURM"[p->type];
 			if (nn > 10) XT = 'N';
 			// print tags
-			printf("\tXT:A:%c\t%s:i:%d", XT, (mode & BWA_MODE_COMPREAD)? "NM" : "CM", p->n_mm + p->n_gapo);
+			printf("\tXT:A:%c\t%s:i:%d", XT, (mode & BWA_MODE_COMPREAD)? "NM" : "CM", p->nm);
 			if (nn) printf("\tXN:i:%d", nn);
 			if (mate) printf("\tSM:i:%d\tAM:i:%d", p->seQ, am);
 			if (p->type != BWA_TYPE_MATESW) { // X0 and X1 are not available for this type of alignment
@@ -355,6 +358,13 @@ bntseq_t *bwa_open_nt(const char *prefix)
 	return ntbns;
 }
 
+void bwa_print_sam_SQ(const bntseq_t *bns)
+{
+	int i;
+	for (i = 0; i < bns->n_seqs; ++i)
+		printf("@SQ\tSN:%s\tLN:%d\n", bns->anns[i].name, bns->anns[i].len);
+}
+
 void bwa_sai2sam_se_core(const char *prefix, const char *fn_sa, const char *fn_fa)
 {
 	int i, n_seqs, tot_seqs = 0, m_aln;
@@ -378,6 +388,7 @@ void bwa_sai2sam_se_core(const char *prefix, const char *fn_sa, const char *fn_f
 	fread(&opt, sizeof(gap_opt_t), 1, fp_sa);
 	if (!(opt.mode & BWA_MODE_COMPREAD)) // in color space; initialize ntpac
 		ntbns = bwa_open_nt(prefix);
+	bwa_print_sam_SQ(bns);
 	while ((seqs = bwa_read_seq(ks, 0x40000, &n_seqs, opt.mode & BWA_MODE_COMPREAD)) != 0) {
 		tot_seqs += n_seqs;
 		t = clock();

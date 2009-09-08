@@ -117,7 +117,7 @@ static void bwa_cal_sa_reg_gap(int tid, bwt_t *const bwt[2], int n_seqs, bwa_seq
 		bwt_cal_width(bwt[0], p->len, seq[0], w[0]);
 		bwt_cal_width(bwt[1], p->len, seq[1], w[1]);
 		if (opt->fnr > 0.0) local_opt.max_diff = bwa_cal_maxdiff(p->len, BWA_AVG_ERR, opt->fnr);
-		if (opt->seed_len >= p->len) local_opt.seed_len = 0x7fffffff;
+		local_opt.seed_len = opt->seed_len < p->len? opt->seed_len : 0x7fffffff;
 		if (p->len > opt->seed_len) {
 			bwt_cal_width(bwt[0], opt->seed_len, seq[0] + (p->len - opt->seed_len), seed_w[0]);
 			bwt_cal_width(bwt[1], opt->seed_len, seq[1] + (p->len - opt->seed_len), seed_w[1]);

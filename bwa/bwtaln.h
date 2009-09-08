@@ -52,7 +52,8 @@ typedef struct {
 	uint16_t *cigar;
 	// for multi-threading only
 	int tid;
-	// MD tag
+	// NM and MD tags
+	int nm;
 	char *md;
 } bwa_seq_t;
 
