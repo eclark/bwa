@@ -29,6 +29,7 @@ gap_opt_t *gap_init_opt()
 	o->fnr = 0.04;
 	o->n_threads = 1;
 	o->max_top2 = 30;
+	o->trim_qual = 0;
 	return o;
 }
 
@@ -170,7 +171,7 @@ void bwa_aln_core(const char *prefix, const char *fn_fa, const gap_opt_t *opt)
 
 	// core loop
 	fwrite(opt, sizeof(gap_opt_t), 1, stdout);
-	while ((seqs = bwa_read_seq(ks, 0x40000, &n_seqs, opt->mode & BWA_MODE_COMPREAD)) != 0) {
+	while ((seqs = bwa_read_seq(ks, 0x40000, &n_seqs, opt->mode & BWA_MODE_COMPREAD, opt->trim_qual)) != 0) {
 		tot_seqs += n_seqs;
 		t = clock();
 
@@ -226,7 +227,7 @@ int bwa_aln(int argc, char *argv[])
 	gap_opt_t *opt;
 
 	opt = gap_init_opt();
-	while ((c = getopt(argc, argv, "n:o:e:i:d:l:k:cLR:m:t:NM:O:E:")) >= 0) {
+	while ((c = getopt(argc, argv, "n:o:e:i:d:l:k:cLR:m:t:NM:O:E:q:")) >= 0) {
 		switch (c) {
 		case 'n':
 			if (strstr(optarg, ".")) opt->fnr = atof(optarg), opt->max_diff = -1;
@@ -245,6 +246,7 @@ int bwa_aln(int argc, char *argv[])
 		case 't': opt->n_threads = atoi(optarg); break;
 		case 'L': opt->mode |= BWA_MODE_LOGGAP; break;
 		case 'R': opt->max_top2 = atoi(optarg); break;
+		case 'q': opt->trim_qual = atoi(optarg); break;
 		case 'c': opt->mode &= ~BWA_MODE_COMPREAD; break;
 		case 'N': opt->mode |= BWA_MODE_NONSTOP; opt->max_top2 = 0x7fffffff; break;
 		default: return 1;
@@ -272,6 +274,7 @@ int bwa_aln(int argc, char *argv[])
 		fprintf(stderr, "         -O INT    gap open penalty [%d]\n", opt->s_gapo);
 		fprintf(stderr, "         -E INT    gap extension penalty [%d]\n", opt->s_gape);
 		fprintf(stderr, "         -R INT    stop searching when there are >INT equally best hits [%d]\n", opt->max_top2);
+		fprintf(stderr, "         -q INT    quality threshold for read trimming down to %dbp [%d]\n", opt->trim_qual, BWA_MIN_RDLEN);
 		fprintf(stderr, "         -c        input sequences are in the color space\n");
 		fprintf(stderr, "         -L        log-scaled gap penalty for long deletions\n");
 		fprintf(stderr, "         -N        non-iterative mode: search for all n-difference hits (slooow)\n");

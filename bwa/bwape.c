@@ -550,12 +550,12 @@ void bwa_sai2sam_pe_core(const char *prefix, char *const fn_sa[2], char *const f
 		ntbns = bwa_open_nt(prefix);
 	}
 	bwa_print_sam_SQ(bns);
-	while ((seqs[0] = bwa_read_seq(ks[0], 0x40000, &n_seqs, opt.mode & BWA_MODE_COMPREAD)) != 0) {
+	while ((seqs[0] = bwa_read_seq(ks[0], 0x40000, &n_seqs, opt.mode & BWA_MODE_COMPREAD, opt.trim_qual)) != 0) {
 		int cnt_chg;
 		isize_info_t ii;
 		ubyte_t *pacseq;
 
-		seqs[1] = bwa_read_seq(ks[1], 0x40000, &n_seqs, opt.mode & BWA_MODE_COMPREAD);
+		seqs[1] = bwa_read_seq(ks[1], 0x40000, &n_seqs, opt.mode & BWA_MODE_COMPREAD, opt.trim_qual);
 		tot_seqs += n_seqs;
 		t = clock();
 

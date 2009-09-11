@@ -186,6 +186,42 @@ char *bwa_cal_md1(int n_cigar, uint16_t *cigar, int len, bwtint_t pos, ubyte_t *
 	return strdup(str->s);
 }
 
+void bwa_correct_trimmed(bwa_seq_t *s)
+{
+	if (s->len == s->full_len) return;
+	if (s->strand == 0) { // forward
+		if (s->cigar && s->cigar[s->n_cigar-1]>>14 == 3) { // the last is S
+			s->cigar[s->n_cigar-1] += s->full_len - s->len;
+		} else {
+			if (s->cigar == 0) {
+				s->n_cigar = 2;
+				s->cigar = calloc(s->n_cigar, 2);
+				s->cigar[0] = 0<<14 | s->len;
+			} else {
+				++s->n_cigar;
+				s->cigar = realloc(s->cigar, s->n_cigar * 2);
+			}
+			s->cigar[s->n_cigar-1] = 3<<14 | (s->full_len - s->len);
+		}
+	} else { // reverse
+		if (s->cigar && s->cigar[0]>>14 == 3) { // the first is S
+			s->cigar[0] += s->full_len - s->len;
+		} else {
+			if (s->cigar == 0) {
+				s->n_cigar = 2;
+				s->cigar = calloc(s->n_cigar, 2);
+				s->cigar[1] = 0<<14 | s->len;
+			} else {
+				++s->n_cigar;
+				s->cigar = realloc(s->cigar, s->n_cigar * 2);
+				memmove(s->cigar + 1, s->cigar, (s->n_cigar-1) * 2);
+			}
+			s->cigar[0] = 3<<14 | (s->full_len - s->len);
+		}
+	}
+	s->len = s->full_len;
+}
+
 void bwa_refine_gapped(const bntseq_t *bns, int n_seqs, bwa_seq_t *seqs, ubyte_t *_pacseq, bntseq_t *ntbns)
 {
 	ubyte_t *pacseq, *ntpac = 0;
@@ -227,11 +263,17 @@ void bwa_refine_gapped(const bntseq_t *bns, int n_seqs, bwa_seq_t *seqs, ubyte_t
 	str = (kstring_t*)calloc(1, sizeof(kstring_t));
 	for (i = 0; i != n_seqs; ++i) {
 		bwa_seq_t *s = seqs + i;
-		if (s->type != BWA_TYPE_NO_MATCH)
+		if (s->type != BWA_TYPE_NO_MATCH) {
+			int nm;
 			s->md = bwa_cal_md1(s->n_cigar, s->cigar, s->len, s->pos, s->strand? s->rseq : s->seq,
-								bns->l_pac, ntbns? ntpac : pacseq, str, &s->nm);
+								bns->l_pac, ntbns? ntpac : pacseq, str, &nm);
+			s->nm = nm;
+		}
 	}
 	free(str->s); free(str);
+
+	// correct for trimmed reads
+	for (i = 0; i < n_seqs; ++i) bwa_correct_trimmed(seqs + i);
 
 	if (!_pacseq) free(pacseq);
 	free(ntpac);
@@ -263,7 +305,6 @@ void bwa_print_sam1(const bntseq_t *bns, bwa_seq_t *p, const bwa_seq_t *mate, in
 	if (p->type != BWA_TYPE_NO_MATCH || (mate && mate->type != BWA_TYPE_NO_MATCH)) {
 		int seqid, nn, am = 0, flag = p->extra_flag;
 		char XT;
-		ubyte_t *s;
 
 		if (p->type == BWA_TYPE_NO_MATCH) {
 			p->pos = mate->pos;
@@ -271,8 +312,6 @@ void bwa_print_sam1(const bntseq_t *bns, bwa_seq_t *p, const bwa_seq_t *mate, in
 			flag |= SAM_FSU;
 			j = 1;
 		} else j = pos_end(p) - p->pos; // j is the length of the reference in the alignment
-
-		s = p->strand? p->rseq : p->seq;
 
 		// get seqid
 		nn = bns_coor_pac2real(bns, p->pos, j, &seqid);
@@ -309,7 +348,9 @@ void bwa_print_sam1(const bntseq_t *bns, bwa_seq_t *p, const bwa_seq_t *mate, in
 		else printf("\t*\t0\t0\t");
 
 		// print sequence and quality
-		for (j = 0; j != p->len; ++j) putchar("ACGTN"[(int)s[j]]);
+		if (p->strand == 0)
+			for (j = 0; j != p->full_len; ++j) putchar("ACGTN"[(int)p->seq[j]]);
+		else for (j = 0; j != p->full_len; ++j) putchar("ACGTN"[(int)p->seq[p->full_len-1-j]]);
 		putchar('\t');
 		if (p->qual) {
 			if (p->strand) seq_reverse(p->len, p->qual, 0); // reverse quality
@@ -389,7 +430,7 @@ void bwa_sai2sam_se_core(const char *prefix, const char *fn_sa, const char *fn_f
 	if (!(opt.mode & BWA_MODE_COMPREAD)) // in color space; initialize ntpac
 		ntbns = bwa_open_nt(prefix);
 	bwa_print_sam_SQ(bns);
-	while ((seqs = bwa_read_seq(ks, 0x40000, &n_seqs, opt.mode & BWA_MODE_COMPREAD)) != 0) {
+	while ((seqs = bwa_read_seq(ks, 0x40000, &n_seqs, opt.mode & BWA_MODE_COMPREAD, opt.trim_qual)) != 0) {
 		tot_seqs += n_seqs;
 		t = clock();
 
@@ -468,7 +509,7 @@ void bwa_print_all_hits(const char *prefix, const char *fn_sa, const char *fn_fa
 
 	m_aln = 0;
 	fread(&opt, sizeof(gap_opt_t), 1, fp_sa);
-	while ((seqs = bwa_read_seq(ks, 0x40000, &n_seqs, opt.mode & BWA_MODE_COMPREAD)) != 0) {
+	while ((seqs = bwa_read_seq(ks, 0x40000, &n_seqs, opt.mode & BWA_MODE_COMPREAD, opt.trim_qual)) != 0) {
 		tot_seqs += n_seqs;
 		for (i = 0; i < n_seqs; ++i) {
 			bwa_seq_t *p = seqs + i;

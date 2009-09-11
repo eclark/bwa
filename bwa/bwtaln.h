@@ -20,6 +20,7 @@
 #define SAM_FSC 256 // secondary alignment
 
 #define BWA_AVG_ERR 0.02
+#define BWA_MIN_RDLEN 35 // for read trimming
 
 #ifndef bns_pac
 #define bns_pac(pac, k) ((pac)[(k)>>2] >> ((~(k)&3)<<1) & 3)
@@ -53,7 +54,7 @@ typedef struct {
 	// for multi-threading only
 	int tid;
 	// NM and MD tags
-	int nm;
+	uint32_t full_len:20, nm:12;
 	char *md;
 } bwa_seq_t;
 
@@ -71,6 +72,7 @@ typedef struct {
 	int max_seed_diff, seed_len;
 	int n_threads;
 	int max_top2;
+	int trim_qual;
 } gap_opt_t;
 
 #define BWA_PET_STD   1
@@ -95,7 +97,7 @@ extern "C" {
 	bwa_seqio_t *bwa_seq_open(const char *fn);
 	void bwa_seq_close(bwa_seqio_t *bs);
 	void seq_reverse(int len, ubyte_t *seq, int is_comp);
-	bwa_seq_t *bwa_read_seq(bwa_seqio_t *seq, int n_needed, int *n, int is_comp);
+	bwa_seq_t *bwa_read_seq(bwa_seqio_t *seq, int n_needed, int *n, int is_comp, int trim_qual);
 	void bwa_free_read_seq(int n_seqs, bwa_seq_t *seqs);
 
 	int bwa_cal_maxdiff(int l, double err, double thres);
