@@ -274,7 +274,7 @@ int bwa_aln(int argc, char *argv[])
 		fprintf(stderr, "         -O INT    gap open penalty [%d]\n", opt->s_gapo);
 		fprintf(stderr, "         -E INT    gap extension penalty [%d]\n", opt->s_gape);
 		fprintf(stderr, "         -R INT    stop searching when there are >INT equally best hits [%d]\n", opt->max_top2);
-		fprintf(stderr, "         -q INT    quality threshold for read trimming down to %dbp [%d]\n", opt->trim_qual, BWA_MIN_RDLEN);
+		fprintf(stderr, "         -q INT    quality threshold for read trimming down to %dbp [%d]\n", BWA_MIN_RDLEN, opt->trim_qual);
 		fprintf(stderr, "         -c        input sequences are in the color space\n");
 		fprintf(stderr, "         -L        log-scaled gap penalty for long deletions\n");
 		fprintf(stderr, "         -N        non-iterative mode: search for all n-difference hits (slooow)\n");
