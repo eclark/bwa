@@ -1,3 +1,27 @@
+Beta Release 0.5.2 (13 September, 2009)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Notable changes in bwa-short:
+
+ * Optionally trim reads before alignment. See the manual page on `aln
+   -q' for detailed description.
+
+ * Fixed a bug in calculating the NM tag for a gapped alignment.
+
+ * Fixed a bug given a mixture of reads with some longer than the seed
+   length and some shorter.
+
+ * Print SAM header.
+
+Notable changes in dBWT-SW:
+
+ * Changed the default value of -T to 30. As a result, the accuracy is a
+   little higher for short reads at the cost of speed.
+
+(0.5.2: 13 September 2009, r1223)
+
+
+
 Beta Release 0.5.1 (2 September, 2009)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

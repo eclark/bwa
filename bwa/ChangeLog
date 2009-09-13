@@ -1,4 +1,73 @@
 ------------------------------------------------------------------------
+r1222 | lh3 | 2009-09-11 14:11:39 +0100 (Fri, 11 Sep 2009) | 3 lines
+Changed paths:
+   M /branches/prog/bwa/bwtaln.c
+   M /branches/prog/bwa/main.c
+
+ * bwa-0.5.1-5 (r1222)
+ * fixed a typo. No real change
+
+------------------------------------------------------------------------
+r1221 | lh3 | 2009-09-11 14:09:44 +0100 (Fri, 11 Sep 2009) | 3 lines
+Changed paths:
+   M /branches/prog/bwa/bwa.1
+   M /branches/prog/bwa/bwape.c
+   M /branches/prog/bwa/bwase.c
+   M /branches/prog/bwa/bwaseqio.c
+   M /branches/prog/bwa/bwtaln.c
+   M /branches/prog/bwa/bwtaln.h
+   M /branches/prog/bwa/main.c
+
+ * bwa-0.5.1-4 (r1221)
+ * trim reads before alignment
+
+------------------------------------------------------------------------
+r1216 | lh3 | 2009-09-08 22:50:15 +0100 (Tue, 08 Sep 2009) | 4 lines
+Changed paths:
+   M /branches/prog/bwa/bwape.c
+   M /branches/prog/bwa/bwase.c
+   M /branches/prog/bwa/bwtaln.h
+   M /branches/prog/bwa/main.c
+
+ * bwa-0.5.1-3 (r1216)
+ * fixed a bug about NM tags for gapped alignment
+ * print SAM header
+
+------------------------------------------------------------------------
+r1215 | lh3 | 2009-09-08 22:14:42 +0100 (Tue, 08 Sep 2009) | 3 lines
+Changed paths:
+   M /branches/prog/bwa/bwtaln.c
+   M /branches/prog/bwa/main.c
+
+ * bwa-0.5.1-2 (r1215)
+ * fixed a bug when read lengths vary (by John Marshall)
+
+------------------------------------------------------------------------
+r1213 | lh3 | 2009-09-06 23:58:15 +0100 (Sun, 06 Sep 2009) | 3 lines
+Changed paths:
+   M /branches/prog/bwa/bwtsw2_aux.c
+   M /branches/prog/bwa/main.c
+
+ * bwa-0.5.1-1 (r1213)
+ * change default -T to 30
+
+------------------------------------------------------------------------
+r1209 | lh3 | 2009-09-02 11:06:02 +0100 (Wed, 02 Sep 2009) | 2 lines
+Changed paths:
+   M /branches/prog/bwa/NEWS
+   M /branches/prog/bwa/bwa.1
+   M /branches/prog/bwa/main.c
+
+Release bwa-0.5.1
+
+------------------------------------------------------------------------
+r1208 | lh3 | 2009-09-02 10:56:33 +0100 (Wed, 02 Sep 2009) | 2 lines
+Changed paths:
+   M /branches/prog/bwa/ChangeLog
+
+ * ChangeLog
+
+------------------------------------------------------------------------
 r1206 | lh3 | 2009-08-30 23:27:30 +0100 (Sun, 30 Aug 2009) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2_aux.c

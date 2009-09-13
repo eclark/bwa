@@ -1,4 +1,4 @@
-.TH bwa 1 "2 September 2009" "bwa-0.5.1" "Bioinformatics tools"
+.TH bwa 1 "13 September 2009" "bwa-0.5.2" "Bioinformatics tools"
 .SH NAME
 .PP
 bwa - Burrows-Wheeler Alignment Tool
@@ -81,7 +81,8 @@ usually slower than IS.
 .B aln
 bwa aln [-n maxDiff] [-o maxGapO] [-e maxGapE] [-d nDelTail] [-i
 nIndelEnd] [-k maxSeedDiff] [-l seedLen] [-t nThrds] [-cRN] [-M misMsc]
-[-O gapOsc] [-E gapEsc] <in.db.fasta> <in.query.fq> > <out.sai>
+[-O gapOsc] [-E gapEsc] [-q trimQual] <in.db.fasta> <in.query.fq> >
+<out.sai>
 
 Find the SA coordinates of the input reads. Maximum
 .I maxSeedDiff
@@ -148,6 +149,11 @@ the color space.
 Disable iterative search. All hits with no more than
 .I maxDiff
 differences will be found. This mode is much slower than the default.
+.TP
+.B -q INT
+Parameter for read trimming. BWA trims a read down to
+argmax_x{\\sum_{i=x+1}^l(INT-q_i)} if q_l<INT where l is the original
+read length. [0]
 .RE
 
 .TP
@@ -426,7 +432,8 @@ SSAHA2 especially when the sequencing error rate is above 2%. This is
 the trade-off of the 30X speed up in comparison to SSAHA2's -454 mode.
 
 .SH SEE ALSO
-samtools <http://samtools.sourceforge.net>
+BWA website <http://bio-bwa.sourceforge.net>, Samtools website
+<http://samtools.sourceforge.net>
 
 .SH AUTHOR
 Heng Li at the Sanger Institute wrote the key source codes and
