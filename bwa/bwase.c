@@ -350,7 +350,7 @@ void bwa_print_sam1(const bntseq_t *bns, bwa_seq_t *p, const bwa_seq_t *mate, in
 		// print sequence and quality
 		if (p->strand == 0)
 			for (j = 0; j != p->full_len; ++j) putchar("ACGTN"[(int)p->seq[j]]);
-		else for (j = 0; j != p->full_len; ++j) putchar("ACGTN"[(int)p->seq[p->full_len-1-j]]);
+		else for (j = 0; j != p->full_len; ++j) putchar("TGCAN"[p->seq[p->full_len - 1 - j]]);
 		putchar('\t');
 		if (p->qual) {
 			if (p->strand) seq_reverse(p->len, p->qual, 0); // reverse quality
