@@ -16,7 +16,7 @@ int bwa_bwtsw2(int argc, char *argv[])
 
 	opt = bsw2_init_opt();
 	srand48(11);
-	while ((c = getopt(argc, argv, "q:r:a:b:t:T:w:d:z:m:y:s:c:N:")) >= 0) {
+	while ((c = getopt(argc, argv, "q:r:a:b:t:T:w:d:z:m:y:s:c:N:H")) >= 0) {
 		switch (c) {
 		case 'q': opt->q = atoi(optarg); break;
 		case 'r': opt->r = atoi(optarg); break;
@@ -31,6 +31,7 @@ int bwa_bwtsw2(int argc, char *argv[])
 		case 'm': opt->mask_level = atof(optarg); break;
 		case 'c': opt->coef = atof(optarg); break;
 		case 'N': opt->t_seeds = atoi(optarg); break;
+		case 'H': opt->hard_clip = 1; break;
 		}
 	}
 	opt->qr = opt->q + opt->r;
@@ -55,6 +56,7 @@ int bwa_bwtsw2(int argc, char *argv[])
 		fprintf(stderr, "         -z INT   Z-best [%d]\n", opt->z);
 		fprintf(stderr, "         -N INT   # seeds to trigger reverse alignment [%d]\n", opt->t_seeds);
 		fprintf(stderr, "         -c FLOAT coefficient of length-threshold adjustment [%.1f]\n", opt->coef);
+		fprintf(stderr, "         -H       in SAM output, use hard clipping rather than soft\n");
 		fprintf(stderr, "\n");
 
 		{

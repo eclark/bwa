@@ -140,9 +140,9 @@ static int pairing(bwa_seq_t *p[2], pe_data_t *d, const pe_opt_t *opt, int s_mm,
 	} while (0)
 
 #define __pairing_aux2(q, w) do {										\
+		const bwt_aln1_t *r = d->aln[(w)&1].a + ((uint32_t)(w)>>1);		\
 		(q)->extra_flag |= SAM_FPP;										\
-		if ((q)->pos != (w)>>32) {										\
-			const bwt_aln1_t *r = d->aln[(w)&1].a + ((uint32_t)(w)>>1);	\
+		if ((q)->pos != (w)>>32 || (q)->strand != r->a) {				\
 			(q)->n_mm = r->n_mm; (q)->n_gapo = r->n_gapo; (q)->n_gape = r->n_gape; (q)->strand = r->a; \
 			(q)->score = r->score; (q)->mapQ = mapQ_p;					\
 			(q)->pos = (w)>>32;											\
@@ -229,7 +229,7 @@ typedef struct {
 	kvec_t(bwt_aln1_t) aln;
 } aln_buf_t;
 
-int bwa_cal_pac_pos_pe(const char *prefix, int n_seqs, bwa_seq_t *seqs[2], FILE *fp_sa[2], isize_info_t *ii,
+int bwa_cal_pac_pos_pe(const char *prefix, bwt_t *const _bwt[2], int n_seqs, bwa_seq_t *seqs[2], FILE *fp_sa[2], isize_info_t *ii,
 					   const pe_opt_t *opt, const gap_opt_t *gopt, const isize_info_t *last_ii)
 {
 	int i, j, cnt_chg = 0;
@@ -242,11 +242,12 @@ int bwa_cal_pac_pos_pe(const char *prefix, int n_seqs, bwa_seq_t *seqs[2], FILE 
 	buf[0] = (aln_buf_t*)calloc(n_seqs, sizeof(aln_buf_t));
 	buf[1] = (aln_buf_t*)calloc(n_seqs, sizeof(aln_buf_t));
 
-	// load forward SA
-	strcpy(str, prefix); strcat(str, ".bwt");  bwt[0] = bwt_restore_bwt(str);
-	strcpy(str, prefix); strcat(str, ".sa"); bwt_restore_sa(str, bwt[0]);
-	strcpy(str, prefix); strcat(str, ".rbwt"); bwt[1] = bwt_restore_bwt(str);
-	strcpy(str, prefix); strcat(str, ".rsa"); bwt_restore_sa(str, bwt[1]);
+	if (_bwt[0] == 0) { // load forward SA
+		strcpy(str, prefix); strcat(str, ".bwt");  bwt[0] = bwt_restore_bwt(str);
+		strcpy(str, prefix); strcat(str, ".sa"); bwt_restore_sa(str, bwt[0]);
+		strcpy(str, prefix); strcat(str, ".rbwt"); bwt[1] = bwt_restore_bwt(str);
+		strcpy(str, prefix); strcat(str, ".rsa"); bwt_restore_sa(str, bwt[1]);
+	} else bwt[0] = _bwt[0], bwt[1] = _bwt[1];
 
 	// SE
 	for (i = 0; i != n_seqs; ++i) {
@@ -334,7 +335,9 @@ int bwa_cal_pac_pos_pe(const char *prefix, int n_seqs, bwa_seq_t *seqs[2], FILE 
 		kv_destroy(buf[1][i].aln);
 	}
 	free(buf[0]); free(buf[1]);
-	bwt_destroy(bwt[0]); bwt_destroy(bwt[1]);
+	if (_bwt[0] == 0) {
+		bwt_destroy(bwt[0]); bwt_destroy(bwt[1]);
+	}
 	kv_destroy(d->arr);
 	kv_destroy(d->pos[0]); kv_destroy(d->pos[1]);
 	kv_destroy(d->aln[0]); kv_destroy(d->aln[1]);
@@ -426,16 +429,18 @@ uint16_t *bwa_sw_core(bwtint_t l_pac, const ubyte_t *pacseq, int len, const ubyt
 	return cigar;
 }
 
-ubyte_t *bwa_paired_sw(const bntseq_t *bns, int n_seqs, bwa_seq_t *seqs[2], const pe_opt_t *popt, const isize_info_t *ii)
+ubyte_t *bwa_paired_sw(const bntseq_t *bns, const ubyte_t *_pacseq, int n_seqs, bwa_seq_t *seqs[2], const pe_opt_t *popt, const isize_info_t *ii)
 {
 	ubyte_t *pacseq;
 	int i;
 	uint64_t x, n;
 
 	// load reference sequence
-	pacseq = (ubyte_t*)calloc(bns->l_pac/4+1, 1);
-	rewind(bns->fp_pac);
-	fread(pacseq, 1, bns->l_pac/4+1, bns->fp_pac);
+	if (_pacseq == 0) {
+		pacseq = (ubyte_t*)calloc(bns->l_pac/4+1, 1);
+		rewind(bns->fp_pac);
+		fread(pacseq, 1, bns->l_pac/4+1, bns->fp_pac);
+	} else pacseq = (ubyte_t*)_pacseq;
 	if (!popt->is_sw || ii->avg < 0.0) return pacseq;
 
 	// perform mate alignment
@@ -530,8 +535,12 @@ void bwa_sai2sam_pe_core(const char *prefix, char *const fn_sa[2], char *const f
 	gap_opt_t opt;
 	khint_t iter;
 	isize_info_t last_ii; // this is for the last batch of reads
+	char str[1024];
+	bwt_t *bwt[2];
+	uint8_t *pac;
 
 	// initialization
+	pac = 0; bwt[0] = bwt[1] = 0;
 	for (i = 1; i != 256; ++i) g_log_n[i] = (int)(4.343 * log(i) + 0.5);
 	bns = bns_restore(prefix);
 	srand48(bns->seed);
@@ -542,13 +551,24 @@ void bwa_sai2sam_pe_core(const char *prefix, char *const fn_sa[2], char *const f
 	g_hash = kh_init(64);
 	last_ii.avg = -1.0;
 
-	// core loop
 	fread(&opt, sizeof(gap_opt_t), 1, fp_sa[0]);
 	fread(&opt, sizeof(gap_opt_t), 1, fp_sa[1]);
 	if (!(opt.mode & BWA_MODE_COMPREAD)) {
 		popt->type = BWA_PET_SOLID;
 		ntbns = bwa_open_nt(prefix);
+	} else { // for Illumina alignment only
+		if (popt->is_preload) {
+			strcpy(str, prefix); strcat(str, ".bwt");  bwt[0] = bwt_restore_bwt(str);
+			strcpy(str, prefix); strcat(str, ".sa"); bwt_restore_sa(str, bwt[0]);
+			strcpy(str, prefix); strcat(str, ".rbwt"); bwt[1] = bwt_restore_bwt(str);
+			strcpy(str, prefix); strcat(str, ".rsa"); bwt_restore_sa(str, bwt[1]);
+			pac = (ubyte_t*)calloc(bns->l_pac/4+1, 1);
+			rewind(bns->fp_pac);
+			fread(pac, 1, bns->l_pac/4+1, bns->fp_pac);
+		}
 	}
+
+	// core loop
 	bwa_print_sam_SQ(bns);
 	while ((seqs[0] = bwa_read_seq(ks[0], 0x40000, &n_seqs, opt.mode & BWA_MODE_COMPREAD, opt.trim_qual)) != 0) {
 		int cnt_chg;
@@ -560,19 +580,19 @@ void bwa_sai2sam_pe_core(const char *prefix, char *const fn_sa[2], char *const f
 		t = clock();
 
 		fprintf(stderr, "[bwa_sai2sam_pe_core] convert to sequence coordinate... \n");
-		cnt_chg = bwa_cal_pac_pos_pe(prefix, n_seqs, seqs, fp_sa, &ii, popt, &opt, &last_ii);
+		cnt_chg = bwa_cal_pac_pos_pe(prefix, bwt, n_seqs, seqs, fp_sa, &ii, popt, &opt, &last_ii);
 		fprintf(stderr, "[bwa_sai2sam_pe_core] time elapses: %.2f sec\n", (float)(clock() - t) / CLOCKS_PER_SEC); t = clock();
 		fprintf(stderr, "[bwa_sai2sam_pe_core] change of coordinates in %d alignments.\n", cnt_chg);
 
 		fprintf(stderr, "[bwa_sai2sam_pe_core] align unmapped mate...\n");
-		pacseq = bwa_paired_sw(bns, n_seqs, seqs, popt, &ii);
+		pacseq = bwa_paired_sw(bns, pac, n_seqs, seqs, popt, &ii);
 		fprintf(stderr, "[bwa_sai2sam_pe_core] time elapses: %.2f sec\n", (float)(clock() - t) / CLOCKS_PER_SEC); t = clock();
 
 		fprintf(stderr, "[bwa_sai2sam_pe_core] refine gapped alignments... ");
 		for (j = 0; j < 2; ++j)
 			bwa_refine_gapped(bns, n_seqs, seqs[j], pacseq, ntbns);
 		fprintf(stderr, "%.2f sec\n", (float)(clock() - t) / CLOCKS_PER_SEC); t = clock();
-		free(pacseq);
+		if (pac == 0) free(pacseq);
 
 		fprintf(stderr, "[bwa_sai2sam_pe_core] print alignments... ");
 		for (i = 0; i < n_seqs; ++i) {
@@ -597,6 +617,9 @@ void bwa_sai2sam_pe_core(const char *prefix, char *const fn_sa[2], char *const f
 	for (iter = kh_begin(g_hash); iter != kh_end(g_hash); ++iter)
 		if (kh_exist(g_hash, iter)) free(kh_val(g_hash, iter).a);
 	kh_destroy(64, g_hash);
+	if (pac) {
+		free(pac); bwt_destroy(bwt[0]); bwt_destroy(bwt[1]);
+	}
 }
 
 int bwa_sai2sam_pe(int argc, char *argv[])
@@ -604,11 +627,12 @@ int bwa_sai2sam_pe(int argc, char *argv[])
 	int c;
 	pe_opt_t *popt;
 	popt = bwa_init_pe_opt();
-	while ((c = getopt(argc, argv, "a:o:s")) >= 0) {
+	while ((c = getopt(argc, argv, "a:o:sP")) >= 0) {
 		switch (c) {
 		case 'a': popt->max_isize = atoi(optarg); break;
 		case 'o': popt->max_occ = atoi(optarg); break;
 		case 's': popt->is_sw = 0; break;
+		case 'P': popt->is_preload = 1; break;
 		default: return 1;
 		}
 	}
@@ -618,6 +642,7 @@ int bwa_sai2sam_pe(int argc, char *argv[])
 		fprintf(stderr, "Usage:   bwa sampe [options] <prefix> <in1.sai> <in2.sai> <in1.fq> <in2.fq>\n\n");
 		fprintf(stderr, "Options: -a INT   maximum insert size [%d]\n", popt->max_isize);
 		fprintf(stderr, "         -o INT   maximum occurrences for one end [%d]\n", popt->max_occ);
+		fprintf(stderr, "         -P       preload index into memory (for Illumina only)\n");
 		fprintf(stderr, "         -s       disable Smith-Waterman for the unmapped mate\n\n");
 		fprintf(stderr, "Notes: 1. For SOLiD read, <in1.fq> corresponds R3 reads and <in2.fq> to F3.\n");
 		fprintf(stderr, "       2. For reads shorter than 30bp, applying a smaller -o is recommended to\n");

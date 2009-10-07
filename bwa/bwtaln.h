@@ -81,7 +81,7 @@ typedef struct {
 typedef struct {
 	int max_isize;
 	int max_occ;
-	int type, is_sw;
+	int type, is_sw, is_preload;
 } pe_opt_t;
 
 struct __bwa_seqio_t;

@@ -47,7 +47,7 @@ bsw2opt_t *bsw2_init_opt()
 	bsw2opt_t *o = (bsw2opt_t*)calloc(1, sizeof(bsw2opt_t));
 	o->a = 1; o->b = 3; o->q = 5; o->r = 2; o->t = 30;
 	o->bw = 50;
-	o->z = 1; o->is = 3; o->t_seeds = 5;
+	o->z = 1; o->is = 3; o->t_seeds = 5; o->hard_clip = 0;
 	o->mask_level = 0.50f; o->yita = 5.5f; o->coef = 5.5f;
 	o->qr = o->q + o->r; o->n_threads = 1; o->chunk_size = 10000000;
 	return o;
@@ -392,6 +392,7 @@ static void print_hits(const bntseq_t *bns, const bsw2opt_t *opt, bsw2seq1_t *ks
 		bsw2hit_t *p = b->hits + i;
 		int32_t seqid = -1, coor = -1;
 		int j, qual, nn = 0;
+		int beg, end;
 		if (p->l == 0) {
 			b->n_cigar[i] = fix_cigar(ks->name, bns, p, b->n_cigar[i], b->cigar[i]);
 			nn = bns_coor_pac2real(bns, p->k, p->len, &seqid);
@@ -411,16 +412,21 @@ static void print_hits(const bntseq_t *bns, const bsw2opt_t *opt, bsw2seq1_t *ks
 			}
 			ksprintf(&str, "\t%d\t", qual);
 			for (k = 0; k < b->n_cigar[i]; ++k)
-				ksprintf(&str, "%d%c", b->cigar[i][k]>>4, "MIDNSHP"[b->cigar[i][k]&0xf]);
+				ksprintf(&str, "%d%c", b->cigar[i][k]>>4, (opt->hard_clip? "MIDNHHP" : "MIDNSHP")[b->cigar[i][k]&0xf]);
 		} else ksprintf(&str, "\t0\t*");
 		ksprintf(&str, "\t*\t0\t0\t");
-		for (j = 0; j < ks->l; ++j) {
+		beg = 0; end = ks->l;
+		if (opt->hard_clip) {
+			if ((b->cigar[i][0]&0xf) == 4) beg += b->cigar[i][0]>>4;
+			if ((b->cigar[i][b->n_cigar[i]-1]&0xf) == 4) end -= b->cigar[i][b->n_cigar[i]-1]>>4;
+		}
+		for (j = beg; j < end; ++j) {
 			if (p->flag&0x10) kputc(nt_comp_table[(int)ks->seq[ks->l - 1 - j]], &str);
 			else kputc(ks->seq[j], &str);
 		}
 		if (ks->qual) {
 			kputc('\t', &str);
-			for (j = 0; j < ks->l; ++j) {
+			for (j = beg; j < end; ++j) {
 				if (p->flag&0x10) kputc(ks->qual[ks->l - 1 - j], &str);
 				else kputc(ks->qual[j], &str);
 			}

@@ -25,7 +25,7 @@ gap_opt_t *gap_init_opt()
 	o->max_diff = -1; o->max_gapo = 1; o->max_gape = 6;
 	o->indel_end_skip = 5; o->max_del_occ = 10; o->max_entries = 2000000;
 	o->mode = BWA_MODE_GAPE | BWA_MODE_COMPREAD;
-	o->seed_len = 0x7fffffff; o->max_seed_diff = 2;
+	o->seed_len = 32; o->max_seed_diff = 2;
 	o->fnr = 0.04;
 	o->n_threads = 1;
 	o->max_top2 = 30;
