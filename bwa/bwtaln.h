@@ -43,6 +43,7 @@ typedef struct {
 	uint32_t len:20, strand:1, type:2, dummy:1, extra_flag:8;
 	uint32_t n_mm:8, n_gapo:8, n_gape:8, mapQ:8;
 	int score;
+	int clip_len;
 	// alignments in SA coordinates
 	int n_aln;
 	bwt_aln1_t *aln;

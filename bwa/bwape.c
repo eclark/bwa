@@ -354,7 +354,7 @@ uint16_t *bwa_sw_core(bwtint_t l_pac, const ubyte_t *pacseq, int len, const ubyt
 	uint16_t *cigar = 0;
 	ubyte_t *ref_seq;
 	bwtint_t k, x, y, l;
-	int path_len;
+	int path_len, ret;
 	AlnParam ap = aln_param_bwa;
 	path_t *path, *p;
 
@@ -371,7 +371,11 @@ uint16_t *bwa_sw_core(bwtint_t l_pac, const ubyte_t *pacseq, int len, const ubyt
 	path = (path_t*)calloc(l+len, sizeof(path_t));
 
 	// do alignment
-	aln_local_core(ref_seq, l, (ubyte_t*)seq, len, &ap, path, &path_len, 1, 0);
+	ret = aln_local_core(ref_seq, l, (ubyte_t*)seq, len, &ap, path, &path_len, 1, 0);
+	if (ret < 0) {
+		free(path); free(cigar); *n_cigar = 0;
+		return 0;
+	}
 	cigar = aln_path2cigar(path, path_len, n_cigar);
 
 	// check whether the alignment is good enough

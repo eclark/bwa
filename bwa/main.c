@@ -3,7 +3,7 @@
 #include "main.h"
 
 #ifndef PACKAGE_VERSION
-#define PACKAGE_VERSION "0.5.3-3 (r1243)"
+#define PACKAGE_VERSION "0.5.3-4 (r1244)"
 #endif
 
 static int usage()
@@ -49,6 +49,7 @@ int main(int argc, char *argv[])
 	else if (strcmp(argv[1], "stdsw") == 0) return bwa_stdsw(argc-1, argv+1);
 	else if (strcmp(argv[1], "bwtsw2") == 0) return bwa_bwtsw2(argc-1, argv+1);
 	else if (strcmp(argv[1], "dbwtsw") == 0) return bwa_bwtsw2(argc-1, argv+1);
+	else if (strcmp(argv[1], "bwasw") == 0) return bwa_bwtsw2(argc-1, argv+1);
 	else {
 		fprintf(stderr, "[main] unrecognized command '%s'\n", argv[1]);
 		return 1;

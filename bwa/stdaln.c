@@ -733,9 +733,10 @@ int aln_local_core(unsigned char *seq1, int len1, unsigned char *seq2, int len2,
 			if (score_g == score_r || score_f == score_g) break;
 			if (i > j) break;
 		}
-		if (score_r > score_g && score_f > score_g)
-			fprintf(stderr, "[aln_local_core] Cannot find reasonable band width. Continue anyway.\n");
-		score_f = score_g;
+		if (score_r > score_g && score_f > score_g) {
+			fprintf(stderr, "[aln_local_core] Potential bug: (%d,%d) > %d\n", score_f, score_r, score_g);
+			score_f = score_r = -1;
+		} else score_f = score_g;
 
 		/* convert coordinate */
 		for (p = path + *path_len - 1; p >= path; --p) {

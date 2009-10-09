@@ -59,7 +59,7 @@ int bwa_trim_read(int trim_qual, bwa_seq_t *p)
 			max = s; max_l = l;
 		}
 	}
-	p->len = max_l + 1;
+	p->clip_len = p->len = max_l + 1;
 	return p->full_len - p->len;
 }
 

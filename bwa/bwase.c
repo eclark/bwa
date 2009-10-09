@@ -160,7 +160,8 @@ char *bwa_cal_md1(int n_cigar, uint16_t *cigar, int len, bwtint_t pos, ubyte_t *
 				}
 				x += l; y += l;
 			} else if (cigar[k]>>14 == FROM_I || cigar[k]>>14 == 3) {
-				y += l; nm += l;
+				y += l;
+				if (cigar[k]>>14 == FROM_I) nm += l;
 			} else if (cigar[k]>>14 == FROM_D) {
 				ksprintf(str, "%d", u);
 				kputc('^', str);
@@ -357,6 +358,7 @@ void bwa_print_sam1(const bntseq_t *bns, bwa_seq_t *p, const bwa_seq_t *mate, in
 			printf("%s", p->qual);
 		} else printf("*");
 
+		printf("\tXC:i:%d", p->clip_len);
 		if (p->type != BWA_TYPE_NO_MATCH) {
 			// calculate XT tag
 			XT = "NURM"[p->type];
@@ -384,6 +386,7 @@ void bwa_print_sam1(const bntseq_t *bns, bwa_seq_t *p, const bwa_seq_t *mate, in
 			if (p->strand) seq_reverse(p->len, p->qual, 0); // reverse quality
 			printf("%s", p->qual);
 		} else printf("*");
+		printf("\tXC:i:%d", p->clip_len);
 		putchar('\n');
 	}
 }
