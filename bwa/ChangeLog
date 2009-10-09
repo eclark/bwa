@@ -1,4 +1,20 @@
 ------------------------------------------------------------------------
+r1244 | lh3 | 2009-10-09 10:53:52 +0100 (Fri, 09 Oct 2009) | 5 lines
+Changed paths:
+   M /branches/prog/bwa/ChangeLog
+   M /branches/prog/bwa/bwape.c
+   M /branches/prog/bwa/bwase.c
+   M /branches/prog/bwa/bwaseqio.c
+   M /branches/prog/bwa/bwtaln.h
+   M /branches/prog/bwa/main.c
+   M /branches/prog/bwa/stdaln.c
+
+ * bwa-0.5.3-4 (r1244)
+ * output the clipped length in XC:i: tag
+ * skip mate alignment when stdaln is buggy
+ * fixed a bug in NM:i: tag
+
+------------------------------------------------------------------------
 r1243 | lh3 | 2009-10-07 13:15:04 +0100 (Wed, 07 Oct 2009) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwape.c

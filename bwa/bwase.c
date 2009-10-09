@@ -358,7 +358,7 @@ void bwa_print_sam1(const bntseq_t *bns, bwa_seq_t *p, const bwa_seq_t *mate, in
 			printf("%s", p->qual);
 		} else printf("*");
 
-		printf("\tXC:i:%d", p->clip_len);
+		if (p->clip_len < p->full_len) printf("\tXC:i:%d", p->clip_len);
 		if (p->type != BWA_TYPE_NO_MATCH) {
 			// calculate XT tag
 			XT = "NURM"[p->type];
@@ -386,7 +386,7 @@ void bwa_print_sam1(const bntseq_t *bns, bwa_seq_t *p, const bwa_seq_t *mate, in
 			if (p->strand) seq_reverse(p->len, p->qual, 0); // reverse quality
 			printf("%s", p->qual);
 		} else printf("*");
-		printf("\tXC:i:%d", p->clip_len);
+		if (p->clip_len < p->full_len) printf("\tXC:i:%d", p->clip_len);
 		putchar('\n');
 	}
 }

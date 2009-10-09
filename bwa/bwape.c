@@ -646,7 +646,7 @@ int bwa_sai2sam_pe(int argc, char *argv[])
 		fprintf(stderr, "Usage:   bwa sampe [options] <prefix> <in1.sai> <in2.sai> <in1.fq> <in2.fq>\n\n");
 		fprintf(stderr, "Options: -a INT   maximum insert size [%d]\n", popt->max_isize);
 		fprintf(stderr, "         -o INT   maximum occurrences for one end [%d]\n", popt->max_occ);
-		fprintf(stderr, "         -P       preload index into memory (for Illumina only)\n");
+		fprintf(stderr, "         -P       preload index into memory (for base-space reads only)\n");
 		fprintf(stderr, "         -s       disable Smith-Waterman for the unmapped mate\n\n");
 		fprintf(stderr, "Notes: 1. For SOLiD read, <in1.fq> corresponds R3 reads and <in2.fq> to F3.\n");
 		fprintf(stderr, "       2. For reads shorter than 30bp, applying a smaller -o is recommended to\n");

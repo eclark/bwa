@@ -1,4 +1,4 @@
-.TH bwa 1 "13 September 2009" "bwa-0.5.2" "Bioinformatics tools"
+.TH bwa 1 "9 October 2009" "bwa-0.5.4" "Bioinformatics tools"
 .SH NAME
 .PP
 bwa - Burrows-Wheeler Alignment Tool
@@ -23,10 +23,10 @@ Burrows-Wheeler Transform (BWT). The first algorithm is designed for
 short queries up to ~200bp with low error rate (<3%). It does gapped
 global alignment w.r.t. queries, supports paired-end reads, and is one
 of the fastest short read alignment algorithms to date while also
-visiting suboptimal hits. The second algorithm, dBWT-SW, is designed for
+visiting suboptimal hits. The second algorithm, BWA-SW, is designed for
 long reads with more errors. It performs heuristic Smith-Waterman-like
 alignment to find high-scoring local hits (and thus chimera). On
-low-error short queries, dBWT-SW is slower and less accurate than the
+low-error short queries, BWA-SW is slower and less accurate than the
 first algorithm, but on long queries, it is better.
 .PP
 For both algorithms, the database file in the FASTA format must be
@@ -178,7 +178,7 @@ hits. [-1]
 
 .TP
 .B sampe
-bwa sampe [-a maxInsSize] [-o maxOcc] <in.db.fasta> <in1.sai> <in2.sai>
+bwa sampe [-a maxInsSize] [-o maxOcc] [-P] <in.db.fasta> <in1.sai> <in2.sai>
 <in1.fq> <in2.fq> > <out.sam>
 
 Generate alignments in the SAM format given paired-end reads. Repetitive
@@ -196,6 +196,11 @@ enough good alignment to infer the distribution of insert sizes. [500]
 Maximum occurrences of a read for pairing. A read with more occurrneces
 will be treated as a single-end read. Reducing this parameter helps
 faster pairing. [100000]
+.TP
+.B -P
+Load the entire FM-index into memory to reduce disk operations
+(base-space reads only). With this option, at least 1.25N bytes of
+memory are required, where N is the length of the genome.
 .RE
 
 .TP
@@ -413,20 +418,20 @@ usually much faster.
 .PP
 Command
 .B `dbwtsw'
-is designed for long-read alignment. The algorithm behind, dBWT-SW, is
+is designed for long-read alignment. The algorithm behind, BWA-SW, is
 similar to BWT-SW, but does not guarantee to find all local hits due to
 the heuristic acceleration. It tends to be faster and more accurate if
 the resultant alignment is supported by more seeds, and therefore
-dBWT-SW usually performs better on long queries than on short ones.
+BWA-SW usually performs better on long queries than on short ones.
 
-On 350-1000bp reads, dBWT-SW is several to tens of times faster than the
+On 350-1000bp reads, BWA-SW is several to tens of times faster than the
 existing programs. Its accuracy is comparable to SSAHA2, more accurate
-than BLAT. Like BLAT, dBWT-SW also finds chimera which may pose a
+than BLAT. Like BLAT, BWA-SW also finds chimera which may pose a
 challenge to SSAHA2. On 10-100kbp queries where chimera detection is
-important, dBWT-SW is over 10X faster than BLAT while being more
+important, BWA-SW is over 10X faster than BLAT while being more
 sensitive.
 
-DBWT-SW can also be used to align ~100bp reads, but it is slower than
+BWA-SW can also be used to align ~100bp reads, but it is slower than
 the short-read algorithm. Its sensitivity and accuracy is lower than
 SSAHA2 especially when the sequencing error rate is above 2%. This is
 the trade-off of the 30X speed up in comparison to SSAHA2's -454 mode.
@@ -458,11 +463,11 @@ Burrows-Wheeler transform. Bioinformatics, 25, 1754-60.
 
 .SH HISTORY
 BWA is largely influenced by BWT-SW. It uses source codes from BWT-SW
-and mimics its binary file formats; dBWT-SW resembles BWT-SW in several
+and mimics its binary file formats; BWA-SW resembles BWT-SW in several
 ways. The initial idea about BWT-based alignment also came from the
 group who developed BWT-SW. At the same time, BWA is different enough
 from BWT-SW. The short-read alignment algorithm bears no similarity to
-Smith-Waterman algorithm any more. While dBWT-SW learns from BWT-SW, it
+Smith-Waterman algorithm any more. While BWA-SW learns from BWT-SW, it
 introduces heuristics that can hardly be applied to the original
 algorithm. In all, BWA does not guarantee to find all local hits as what
 BWT-SW is designed to do, but it is much faster than BWT-SW on both
@@ -478,5 +483,5 @@ BWT-based short read aligner, bowtie, was first released in August
 2008. At the time of writing this manual, at least three more BWT-based
 short-read aligners are being implemented.
 
-The dBWT-SW algorithm is a new component of BWA. It was conceived in
+The BWA-SW algorithm is a new component of BWA. It was conceived in
 November 2008 and implemented ten months later.

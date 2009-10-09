@@ -76,7 +76,7 @@ bwa_seq_t *bwa_read_seq(bwa_seqio_t *bs, int n_needed, int *n, int is_comp, int 
 		p = &seqs[n_seqs++];
 		p->tid = -1; // no assigned to a thread
 		p->qual = 0;
-		p->full_len = p->len = l;
+		p->full_len = p->clip_len = p->len = l;
 		n_tot += p->full_len;
 		p->seq = (ubyte_t*)calloc(p->len, 1);
 		for (i = 0; i != p->full_len; ++i)
