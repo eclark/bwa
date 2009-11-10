@@ -169,6 +169,7 @@ void bwa_cs2nt_core(bwa_seq_t *p, bwtint_t l_pac, ubyte_t *pac)
 	new_nt_read = cs2nt_nt_qual(len, nt_read, cs_read, tarray);
 
 	// update p
+	--p->full_len;
 	p->len = len - 1;
 	for (i = 0; i < p->len; ++i) {
 		if ((new_nt_read[i]&0x3f) == 63) {
