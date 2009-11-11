@@ -1,5 +1,56 @@
 ------------------------------------------------------------------------
-r1244 | lh3 | 2009-10-09 10:53:52 +0100 (Fri, 09 Oct 2009) | 5 lines
+r1273 | lh3 | 2009-11-10 22:08:16 -0500 (Tue, 10 Nov 2009) | 2 lines
+Changed paths:
+   M /branches/prog/bwa/NEWS
+   M /branches/prog/bwa/bwa.1
+   M /branches/prog/bwa/main.c
+   A /branches/prog/bwa/qualfa2fq.pl
+
+Release bwa-0.5.5 (r1273)
+
+------------------------------------------------------------------------
+r1272 | lh3 | 2009-11-10 22:02:50 -0500 (Tue, 10 Nov 2009) | 3 lines
+Changed paths:
+   M /branches/prog/bwa/bwape.c
+   M /branches/prog/bwa/main.c
+
+ * bwa-0.5.4-3 (r1272)
+ * fixed another typo which may lead to incorrect single-end mapping quality
+
+------------------------------------------------------------------------
+r1271 | lh3 | 2009-11-10 21:59:47 -0500 (Tue, 10 Nov 2009) | 4 lines
+Changed paths:
+   M /branches/prog/bwa/bwtaln.c
+   M /branches/prog/bwa/main.c
+
+ * bwa-0.5.4-2 (r1271)
+ * fixed a serious typo/bug which does not hurt if we allow one gap open
+   and work with <200bp reads, but causes segfault for long reads.
+
+------------------------------------------------------------------------
+r1270 | lh3 | 2009-11-09 23:12:42 -0500 (Mon, 09 Nov 2009) | 3 lines
+Changed paths:
+   M /branches/prog/bwa/cs2nt.c
+   M /branches/prog/bwa/main.c
+
+ * bwa-0.5.4-1 (r1270)
+ * fixed a bug in color alignment
+
+------------------------------------------------------------------------
+r1245 | lh3 | 2009-10-09 07:42:52 -0400 (Fri, 09 Oct 2009) | 2 lines
+Changed paths:
+   M /branches/prog/bwa/ChangeLog
+   M /branches/prog/bwa/NEWS
+   M /branches/prog/bwa/bwa.1
+   M /branches/prog/bwa/bwape.c
+   M /branches/prog/bwa/bwase.c
+   M /branches/prog/bwa/bwaseqio.c
+   M /branches/prog/bwa/main.c
+
+Release bwa-0.5.4
+
+------------------------------------------------------------------------
+r1244 | lh3 | 2009-10-09 05:53:52 -0400 (Fri, 09 Oct 2009) | 5 lines
 Changed paths:
    M /branches/prog/bwa/ChangeLog
    M /branches/prog/bwa/bwape.c
@@ -15,7 +66,7 @@ Changed paths:
  * fixed a bug in NM:i: tag
 
 ------------------------------------------------------------------------
-r1243 | lh3 | 2009-10-07 13:15:04 +0100 (Wed, 07 Oct 2009) | 3 lines
+r1243 | lh3 | 2009-10-07 08:15:04 -0400 (Wed, 07 Oct 2009) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwape.c
    M /branches/prog/bwa/main.c
@@ -24,7 +75,7 @@ Changed paths:
  * sampe: fixed a bug when a read sequence is identical its reverse complement.
 
 ------------------------------------------------------------------------
-r1242 | lh3 | 2009-10-07 12:49:13 +0100 (Wed, 07 Oct 2009) | 4 lines
+r1242 | lh3 | 2009-10-07 07:49:13 -0400 (Wed, 07 Oct 2009) | 4 lines
 Changed paths:
    M /branches/prog/bwa/bntseq.c
    M /branches/prog/bwa/bwape.c
@@ -37,21 +88,21 @@ Changed paths:
  * aln: change the default seed length to 32bp
 
 ------------------------------------------------------------------------
-r1238 | lh3 | 2009-09-26 23:38:15 +0100 (Sat, 26 Sep 2009) | 2 lines
+r1238 | lh3 | 2009-09-26 18:38:15 -0400 (Sat, 26 Sep 2009) | 2 lines
 Changed paths:
    M /branches/prog/bwa/khash.h
 
 Improve portability of khash.h
 
 ------------------------------------------------------------------------
-r1228 | lh3 | 2009-09-15 14:20:22 +0100 (Tue, 15 Sep 2009) | 2 lines
+r1228 | lh3 | 2009-09-15 09:20:22 -0400 (Tue, 15 Sep 2009) | 2 lines
 Changed paths:
    M /branches/prog/bwa/main.c
 
 fixed a typo
 
 ------------------------------------------------------------------------
-r1227 | lh3 | 2009-09-15 14:19:35 +0100 (Tue, 15 Sep 2009) | 3 lines
+r1227 | lh3 | 2009-09-15 09:19:35 -0400 (Tue, 15 Sep 2009) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2.h
    M /branches/prog/bwa/bwtsw2_aux.c
@@ -62,7 +113,7 @@ Changed paths:
  * in dBWT-SW, optionall use hard clipping instead of soft clipping
 
 ------------------------------------------------------------------------
-r1225 | lh3 | 2009-09-15 13:32:30 +0100 (Tue, 15 Sep 2009) | 2 lines
+r1225 | lh3 | 2009-09-15 08:32:30 -0400 (Tue, 15 Sep 2009) | 2 lines
 Changed paths:
    M /branches/prog/bwa/NEWS
    M /branches/prog/bwa/bwase.c
@@ -71,7 +122,7 @@ Changed paths:
 Release bwa-0.5.3 (r1225)
 
 ------------------------------------------------------------------------
-r1223 | lh3 | 2009-09-13 12:30:41 +0100 (Sun, 13 Sep 2009) | 2 lines
+r1223 | lh3 | 2009-09-13 07:30:41 -0400 (Sun, 13 Sep 2009) | 2 lines
 Changed paths:
    M /branches/prog/bwa/ChangeLog
    M /branches/prog/bwa/NEWS
@@ -81,7 +132,7 @@ Changed paths:
 Release bwa-0.5.2
 
 ------------------------------------------------------------------------
-r1222 | lh3 | 2009-09-11 14:11:39 +0100 (Fri, 11 Sep 2009) | 3 lines
+r1222 | lh3 | 2009-09-11 09:11:39 -0400 (Fri, 11 Sep 2009) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwtaln.c
    M /branches/prog/bwa/main.c
@@ -90,7 +141,7 @@ Changed paths:
  * fixed a typo. No real change
 
 ------------------------------------------------------------------------
-r1221 | lh3 | 2009-09-11 14:09:44 +0100 (Fri, 11 Sep 2009) | 3 lines
+r1221 | lh3 | 2009-09-11 09:09:44 -0400 (Fri, 11 Sep 2009) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwa.1
    M /branches/prog/bwa/bwape.c
@@ -104,7 +155,7 @@ Changed paths:
  * trim reads before alignment
 
 ------------------------------------------------------------------------
-r1216 | lh3 | 2009-09-08 22:50:15 +0100 (Tue, 08 Sep 2009) | 4 lines
+r1216 | lh3 | 2009-09-08 17:50:15 -0400 (Tue, 08 Sep 2009) | 4 lines
 Changed paths:
    M /branches/prog/bwa/bwape.c
    M /branches/prog/bwa/bwase.c
@@ -116,7 +167,7 @@ Changed paths:
  * print SAM header
 
 ------------------------------------------------------------------------
-r1215 | lh3 | 2009-09-08 22:14:42 +0100 (Tue, 08 Sep 2009) | 3 lines
+r1215 | lh3 | 2009-09-08 17:14:42 -0400 (Tue, 08 Sep 2009) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwtaln.c
    M /branches/prog/bwa/main.c
@@ -125,7 +176,7 @@ Changed paths:
  * fixed a bug when read lengths vary (by John Marshall)
 
 ------------------------------------------------------------------------
-r1213 | lh3 | 2009-09-06 23:58:15 +0100 (Sun, 06 Sep 2009) | 3 lines
+r1213 | lh3 | 2009-09-06 18:58:15 -0400 (Sun, 06 Sep 2009) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2_aux.c
    M /branches/prog/bwa/main.c
@@ -134,7 +185,7 @@ Changed paths:
  * change default -T to 30
 
 ------------------------------------------------------------------------
-r1209 | lh3 | 2009-09-02 11:06:02 +0100 (Wed, 02 Sep 2009) | 2 lines
+r1209 | lh3 | 2009-09-02 06:06:02 -0400 (Wed, 02 Sep 2009) | 2 lines
 Changed paths:
    M /branches/prog/bwa/NEWS
    M /branches/prog/bwa/bwa.1
@@ -143,14 +194,14 @@ Changed paths:
 Release bwa-0.5.1
 
 ------------------------------------------------------------------------
-r1208 | lh3 | 2009-09-02 10:56:33 +0100 (Wed, 02 Sep 2009) | 2 lines
+r1208 | lh3 | 2009-09-02 05:56:33 -0400 (Wed, 02 Sep 2009) | 2 lines
 Changed paths:
    M /branches/prog/bwa/ChangeLog
 
  * ChangeLog
 
 ------------------------------------------------------------------------
-r1206 | lh3 | 2009-08-30 23:27:30 +0100 (Sun, 30 Aug 2009) | 3 lines
+r1206 | lh3 | 2009-08-30 18:27:30 -0400 (Sun, 30 Aug 2009) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2_aux.c
    M /branches/prog/bwa/main.c
@@ -159,7 +210,7 @@ Changed paths:
  * fixed two bugs caused by previous modification
 
 ------------------------------------------------------------------------
-r1205 | lh3 | 2009-08-30 22:28:36 +0100 (Sun, 30 Aug 2009) | 4 lines
+r1205 | lh3 | 2009-08-30 17:28:36 -0400 (Sun, 30 Aug 2009) | 4 lines
 Changed paths:
    M /branches/prog/bwa/ChangeLog
    M /branches/prog/bwa/bwtsw2_aux.c
@@ -170,7 +221,7 @@ Changed paths:
    sequences, although some very rare cases may fail bwa.
 
 ------------------------------------------------------------------------
-r1204 | lh3 | 2009-08-30 11:06:16 +0100 (Sun, 30 Aug 2009) | 3 lines
+r1204 | lh3 | 2009-08-30 06:06:16 -0400 (Sun, 30 Aug 2009) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2_aux.c
    M /branches/prog/bwa/bwtsw2_core.c
@@ -180,7 +231,7 @@ Changed paths:
  * choose one repetitive hit to extend
 
 ------------------------------------------------------------------------
-r1203 | lh3 | 2009-08-29 23:11:51 +0100 (Sat, 29 Aug 2009) | 4 lines
+r1203 | lh3 | 2009-08-29 18:11:51 -0400 (Sat, 29 Aug 2009) | 4 lines
 Changed paths:
    M /branches/prog/bwa/bwase.c
    M /branches/prog/bwa/bwtsw2_aux.c
@@ -191,7 +242,7 @@ Changed paths:
  * fixed a bug in samse
 
 ------------------------------------------------------------------------
-r1202 | lh3 | 2009-08-29 00:48:41 +0100 (Sat, 29 Aug 2009) | 4 lines
+r1202 | lh3 | 2009-08-28 19:48:41 -0400 (Fri, 28 Aug 2009) | 4 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2_aux.c
    M /branches/prog/bwa/main.c
@@ -201,7 +252,7 @@ Changed paths:
  * improve mapping quality a bit
 
 ------------------------------------------------------------------------
-r1200 | lh3 | 2009-08-20 11:21:24 +0100 (Thu, 20 Aug 2009) | 2 lines
+r1200 | lh3 | 2009-08-20 06:21:24 -0400 (Thu, 20 Aug 2009) | 2 lines
 Changed paths:
    M /branches/prog/bwa/NEWS
    M /branches/prog/bwa/main.c
@@ -209,7 +260,7 @@ Changed paths:
 Release bwa-0.5.0 (r1200)
 
 ------------------------------------------------------------------------
-r1199 | lh3 | 2009-08-20 09:49:15 +0100 (Thu, 20 Aug 2009) | 2 lines
+r1199 | lh3 | 2009-08-20 04:49:15 -0400 (Thu, 20 Aug 2009) | 2 lines
 Changed paths:
    M /branches/prog/bwa/ChangeLog
    M /branches/prog/bwa/bwa.1
@@ -217,7 +268,7 @@ Changed paths:
 Updated ChangeLog and the manual
 
 ------------------------------------------------------------------------
-r1198 | lh3 | 2009-08-19 16:09:15 +0100 (Wed, 19 Aug 2009) | 3 lines
+r1198 | lh3 | 2009-08-19 11:09:15 -0400 (Wed, 19 Aug 2009) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2_aux.c
    M /branches/prog/bwa/bwtsw2_core.c
@@ -227,7 +278,7 @@ Changed paths:
  * simplify duphits removal. The accuracy is changed a tiny bit, sometimes better, sometimes worse.
 
 ------------------------------------------------------------------------
-r1197 | lh3 | 2009-08-19 13:15:05 +0100 (Wed, 19 Aug 2009) | 3 lines
+r1197 | lh3 | 2009-08-19 08:15:05 -0400 (Wed, 19 Aug 2009) | 3 lines
 Changed paths:
    M /branches/prog/bwa/Makefile
    M /branches/prog/bwa/bwtsw2_aux.c
@@ -238,7 +289,7 @@ Changed paths:
  * further heuristic acceleration for long queries
 
 ------------------------------------------------------------------------
-r1196 | lh3 | 2009-08-18 11:54:03 +0100 (Tue, 18 Aug 2009) | 4 lines
+r1196 | lh3 | 2009-08-18 06:54:03 -0400 (Tue, 18 Aug 2009) | 4 lines
 Changed paths:
    M /branches/prog/bwa/bwa.1
    M /branches/prog/bwa/bwtsw2_aux.c
@@ -249,7 +300,7 @@ Changed paths:
  * output base quality if the input is fastq
 
 ------------------------------------------------------------------------
-r1195 | lh3 | 2009-08-18 11:23:00 +0100 (Tue, 18 Aug 2009) | 4 lines
+r1195 | lh3 | 2009-08-18 06:23:00 -0400 (Tue, 18 Aug 2009) | 4 lines
 Changed paths:
    M /branches/prog/bwa/bwase.c
    M /branches/prog/bwa/bwtsw2_main.c
@@ -261,14 +312,14 @@ Changed paths:
  * in dbwtsw adjust -T and -c according to -a
 
 ------------------------------------------------------------------------
-r1192 | lh3 | 2009-08-13 10:37:28 +0100 (Thu, 13 Aug 2009) | 2 lines
+r1192 | lh3 | 2009-08-13 05:37:28 -0400 (Thu, 13 Aug 2009) | 2 lines
 Changed paths:
    M /branches/prog/bwa/bwa.1
 
 update manual
 
 ------------------------------------------------------------------------
-r1191 | lh3 | 2009-08-13 00:40:51 +0100 (Thu, 13 Aug 2009) | 2 lines
+r1191 | lh3 | 2009-08-12 19:40:51 -0400 (Wed, 12 Aug 2009) | 2 lines
 Changed paths:
    M /branches/prog/bwa/bwa.1
    M /branches/prog/bwa/bwtsw2_main.c
@@ -276,7 +327,7 @@ Changed paths:
 update documentation
 
 ------------------------------------------------------------------------
-r1190 | lh3 | 2009-08-12 13:56:10 +0100 (Wed, 12 Aug 2009) | 3 lines
+r1190 | lh3 | 2009-08-12 08:56:10 -0400 (Wed, 12 Aug 2009) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2_main.c
    M /branches/prog/bwa/main.c
@@ -285,7 +336,7 @@ Changed paths:
  * only help messages are changed
 
 ------------------------------------------------------------------------
-r1189 | lh3 | 2009-08-11 14:28:55 +0100 (Tue, 11 Aug 2009) | 4 lines
+r1189 | lh3 | 2009-08-11 09:28:55 -0400 (Tue, 11 Aug 2009) | 4 lines
 Changed paths:
    M /branches/prog/bwa/bwase.c
    M /branches/prog/bwa/bwtsw2.h
@@ -298,14 +349,14 @@ Changed paths:
  * improved the calculation of mapping quality
 
 ------------------------------------------------------------------------
-r1181 | lh3 | 2009-08-03 17:09:41 +0100 (Mon, 03 Aug 2009) | 2 lines
+r1181 | lh3 | 2009-08-03 12:09:41 -0400 (Mon, 03 Aug 2009) | 2 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2_aux.c
 
 fflush()
 
 ------------------------------------------------------------------------
-r1180 | lh3 | 2009-08-03 17:08:46 +0100 (Mon, 03 Aug 2009) | 4 lines
+r1180 | lh3 | 2009-08-03 12:08:46 -0400 (Mon, 03 Aug 2009) | 4 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2_aux.c
    M /branches/prog/bwa/main.c
@@ -315,7 +366,7 @@ Changed paths:
  * multi-threading sometimes does not work...
 
 ------------------------------------------------------------------------
-r1179 | lh3 | 2009-08-03 16:04:39 +0100 (Mon, 03 Aug 2009) | 3 lines
+r1179 | lh3 | 2009-08-03 11:04:39 -0400 (Mon, 03 Aug 2009) | 3 lines
 Changed paths:
    M /branches/prog/bwa/Makefile
    M /branches/prog/bwa/bwtsw2.h
@@ -327,7 +378,7 @@ Changed paths:
  * preliminary mutli-threading support in dbwtsw
 
 ------------------------------------------------------------------------
-r1178 | lh3 | 2009-08-03 14:14:54 +0100 (Mon, 03 Aug 2009) | 3 lines
+r1178 | lh3 | 2009-08-03 09:14:54 -0400 (Mon, 03 Aug 2009) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2_aux.c
    M /branches/prog/bwa/bwtsw2_main.c
@@ -337,7 +388,7 @@ Changed paths:
  * fixed a bug in printing repetitive hits
 
 ------------------------------------------------------------------------
-r1177 | lh3 | 2009-08-03 10:03:42 +0100 (Mon, 03 Aug 2009) | 3 lines
+r1177 | lh3 | 2009-08-03 05:03:42 -0400 (Mon, 03 Aug 2009) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2_core.c
    M /branches/prog/bwa/main.c
@@ -346,7 +397,7 @@ Changed paths:
  * bwtsw2: fixed a hidden memory leak
 
 ------------------------------------------------------------------------
-r1176 | lh3 | 2009-07-31 15:58:24 +0100 (Fri, 31 Jul 2009) | 3 lines
+r1176 | lh3 | 2009-07-31 10:58:24 -0400 (Fri, 31 Jul 2009) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2_aux.c
    M /branches/prog/bwa/bwtsw2_main.c
@@ -356,7 +407,7 @@ Changed paths:
  * change the way mapping quality is calculated
 
 ------------------------------------------------------------------------
-r1175 | lh3 | 2009-07-31 14:15:54 +0100 (Fri, 31 Jul 2009) | 4 lines
+r1175 | lh3 | 2009-07-31 09:15:54 -0400 (Fri, 31 Jul 2009) | 4 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2.h
    M /branches/prog/bwa/bwtsw2_aux.c
@@ -369,7 +420,7 @@ Changed paths:
  * automatically adjust ->t and ->is_rev based on input
 
 ------------------------------------------------------------------------
-r1174 | lh3 | 2009-07-30 13:50:25 +0100 (Thu, 30 Jul 2009) | 3 lines
+r1174 | lh3 | 2009-07-30 08:50:25 -0400 (Thu, 30 Jul 2009) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2_aux.c
    M /branches/prog/bwa/main.c
@@ -378,7 +429,7 @@ Changed paths:
  * fixed a bug in printing the hits
 
 ------------------------------------------------------------------------
-r1173 | lh3 | 2009-07-29 23:32:43 +0100 (Wed, 29 Jul 2009) | 4 lines
+r1173 | lh3 | 2009-07-29 18:32:43 -0400 (Wed, 29 Jul 2009) | 4 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2.h
    M /branches/prog/bwa/bwtsw2_aux.c
@@ -390,7 +441,7 @@ Changed paths:
  * increase opt->t to 37
 
 ------------------------------------------------------------------------
-r1172 | lh3 | 2009-07-29 22:22:39 +0100 (Wed, 29 Jul 2009) | 3 lines
+r1172 | lh3 | 2009-07-29 17:22:39 -0400 (Wed, 29 Jul 2009) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2_aux.c
    M /branches/prog/bwa/bwtsw2_main.c
@@ -400,7 +451,7 @@ Changed paths:
  * report if the hit is found in both directions
 
 ------------------------------------------------------------------------
-r1171 | lh3 | 2009-07-29 22:12:02 +0100 (Wed, 29 Jul 2009) | 3 lines
+r1171 | lh3 | 2009-07-29 17:12:02 -0400 (Wed, 29 Jul 2009) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2.h
    M /branches/prog/bwa/bwtsw2_aux.c
@@ -411,7 +462,7 @@ Changed paths:
  * dbwtsw: map to both forward and reverse BWT to reduce false alignment
 
 ------------------------------------------------------------------------
-r1170 | lh3 | 2009-07-29 20:25:14 +0100 (Wed, 29 Jul 2009) | 2 lines
+r1170 | lh3 | 2009-07-29 15:25:14 -0400 (Wed, 29 Jul 2009) | 2 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2_core.c
    M /branches/prog/bwa/main.c
@@ -419,7 +470,7 @@ Changed paths:
 save hits before cut_tail()
 
 ------------------------------------------------------------------------
-r1169 | lh3 | 2009-07-29 13:06:01 +0100 (Wed, 29 Jul 2009) | 3 lines
+r1169 | lh3 | 2009-07-29 08:06:01 -0400 (Wed, 29 Jul 2009) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2.h
    M /branches/prog/bwa/bwtsw2_aux.c
@@ -432,7 +483,7 @@ Changed paths:
  * use a global memory pool to reduce the CPU time spent on malloc/free().
 
 ------------------------------------------------------------------------
-r1168 | lh3 | 2009-07-29 11:13:29 +0100 (Wed, 29 Jul 2009) | 5 lines
+r1168 | lh3 | 2009-07-29 06:13:29 -0400 (Wed, 29 Jul 2009) | 5 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2.h
    M /branches/prog/bwa/bwtsw2_aux.c
@@ -446,7 +497,7 @@ Changed paths:
  * change default parameters
 
 ------------------------------------------------------------------------
-r1167 | lh3 | 2009-07-29 00:06:17 +0100 (Wed, 29 Jul 2009) | 3 lines
+r1167 | lh3 | 2009-07-28 19:06:17 -0400 (Tue, 28 Jul 2009) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2_core.c
    M /branches/prog/bwa/main.c
@@ -455,7 +506,7 @@ Changed paths:
  * dbwtsw: fixed THE memory leak.
 
 ------------------------------------------------------------------------
-r1166 | lh3 | 2009-07-28 21:31:41 +0100 (Tue, 28 Jul 2009) | 5 lines
+r1166 | lh3 | 2009-07-28 16:31:41 -0400 (Tue, 28 Jul 2009) | 5 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2_aux.c
    M /branches/prog/bwa/bwtsw2_core.c
@@ -469,7 +520,7 @@ Changed paths:
  * changed the default parameters
 
 ------------------------------------------------------------------------
-r1165 | lh3 | 2009-07-28 15:15:40 +0100 (Tue, 28 Jul 2009) | 4 lines
+r1165 | lh3 | 2009-07-28 10:15:40 -0400 (Tue, 28 Jul 2009) | 4 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2_aux.c
    M /branches/prog/bwa/bwtsw2_core.c
@@ -481,7 +532,7 @@ Changed paths:
  * this version may be buggy as I have not tested it.
 
 ------------------------------------------------------------------------
-r1164 | lh3 | 2009-07-28 14:04:14 +0100 (Tue, 28 Jul 2009) | 11 lines
+r1164 | lh3 | 2009-07-28 09:04:14 -0400 (Tue, 28 Jul 2009) | 11 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2.h
    M /branches/prog/bwa/bwtsw2_aux.c
@@ -502,14 +553,14 @@ Changed paths:
 
 
 ------------------------------------------------------------------------
-r1163 | lh3 | 2009-07-27 22:41:10 +0100 (Mon, 27 Jul 2009) | 2 lines
+r1163 | lh3 | 2009-07-27 17:41:10 -0400 (Mon, 27 Jul 2009) | 2 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2_aux.c
 
 change a default parameter
 
 ------------------------------------------------------------------------
-r1162 | lh3 | 2009-07-27 22:04:35 +0100 (Mon, 27 Jul 2009) | 3 lines
+r1162 | lh3 | 2009-07-27 17:04:35 -0400 (Mon, 27 Jul 2009) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2.h
    M /branches/prog/bwa/bwtsw2_aux.c
@@ -521,7 +572,7 @@ Changed paths:
  * dbwtsw: switch between small and large Z-best
 
 ------------------------------------------------------------------------
-r1161 | lh3 | 2009-07-27 17:17:41 +0100 (Mon, 27 Jul 2009) | 4 lines
+r1161 | lh3 | 2009-07-27 12:17:41 -0400 (Mon, 27 Jul 2009) | 4 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2_aux.c
    M /branches/prog/bwa/bwtsw2_core.c
@@ -532,7 +583,7 @@ Changed paths:
  * heuristically speed up alignments for polyA reads
 
 ------------------------------------------------------------------------
-r1160 | lh3 | 2009-07-27 12:50:57 +0100 (Mon, 27 Jul 2009) | 6 lines
+r1160 | lh3 | 2009-07-27 07:50:57 -0400 (Mon, 27 Jul 2009) | 6 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2.h
    M /branches/prog/bwa/bwtsw2_aux.c
@@ -546,7 +597,7 @@ Changed paths:
 
 
 ------------------------------------------------------------------------
-r1159 | lh3 | 2009-07-27 09:37:02 +0100 (Mon, 27 Jul 2009) | 4 lines
+r1159 | lh3 | 2009-07-27 04:37:02 -0400 (Mon, 27 Jul 2009) | 4 lines
 Changed paths:
    M /branches/prog/bwa/bwase.c
    M /branches/prog/bwa/bwtsw2_aux.c
@@ -558,14 +609,14 @@ Changed paths:
  * add "BAM_FMU" if both ends are unmapped
 
 ------------------------------------------------------------------------
-r1158 | lh3 | 2009-07-24 14:36:52 +0100 (Fri, 24 Jul 2009) | 2 lines
+r1158 | lh3 | 2009-07-24 09:36:52 -0400 (Fri, 24 Jul 2009) | 2 lines
 Changed paths:
    M /branches/prog/bwa/main.c
 
 nothing, really
 
 ------------------------------------------------------------------------
-r1157 | lh3 | 2009-07-24 14:05:44 +0100 (Fri, 24 Jul 2009) | 3 lines
+r1157 | lh3 | 2009-07-24 09:05:44 -0400 (Fri, 24 Jul 2009) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2_aux.c
    M /branches/prog/bwa/bwtsw2_core.c
@@ -575,7 +626,7 @@ Changed paths:
  * bwtsw2: generate SAM output
 
 ------------------------------------------------------------------------
-r1156 | lh3 | 2009-07-24 10:42:47 +0100 (Fri, 24 Jul 2009) | 6 lines
+r1156 | lh3 | 2009-07-24 05:42:47 -0400 (Fri, 24 Jul 2009) | 6 lines
 Changed paths:
    M /branches/prog/bwa/bwape.c
    M /branches/prog/bwa/main.c
@@ -587,7 +638,7 @@ Changed paths:
 
 
 ------------------------------------------------------------------------
-r1155 | lh3 | 2009-07-24 10:28:40 +0100 (Fri, 24 Jul 2009) | 8 lines
+r1155 | lh3 | 2009-07-24 05:28:40 -0400 (Fri, 24 Jul 2009) | 8 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2_aux.c
    M /branches/prog/bwa/bwtsw2_core.c
@@ -602,7 +653,7 @@ Changed paths:
 
 
 ------------------------------------------------------------------------
-r1154 | lh3 | 2009-07-23 22:40:20 +0100 (Thu, 23 Jul 2009) | 3 lines
+r1154 | lh3 | 2009-07-23 17:40:20 -0400 (Thu, 23 Jul 2009) | 3 lines
 Changed paths:
    M /branches/prog/bwa/stdaln.c
    M /branches/prog/bwa/stdaln.h
@@ -611,14 +662,14 @@ Changed paths:
  * aln_local_core() has a bug... AN EVER EXISTING BUG!!!!!!!!!!!
 
 ------------------------------------------------------------------------
-r1153 | lh3 | 2009-07-23 22:06:09 +0100 (Thu, 23 Jul 2009) | 2 lines
+r1153 | lh3 | 2009-07-23 17:06:09 -0400 (Thu, 23 Jul 2009) | 2 lines
 Changed paths:
    M /branches/prog/bwa/stdaln.c
 
 removed debugging code...
 
 ------------------------------------------------------------------------
-r1152 | lh3 | 2009-07-23 22:01:00 +0100 (Thu, 23 Jul 2009) | 3 lines
+r1152 | lh3 | 2009-07-23 17:01:00 -0400 (Thu, 23 Jul 2009) | 3 lines
 Changed paths:
    M /branches/prog/bwa/stdaln.c
 
@@ -626,14 +677,14 @@ Changed paths:
  * fixed a bug
 
 ------------------------------------------------------------------------
-r1151 | lh3 | 2009-07-23 19:46:35 +0100 (Thu, 23 Jul 2009) | 2 lines
+r1151 | lh3 | 2009-07-23 14:46:35 -0400 (Thu, 23 Jul 2009) | 2 lines
 Changed paths:
    M /branches/prog/bwa/stdaln.c
 
 temporary changes. Will apply some radical changes to this file...
 
 ------------------------------------------------------------------------
-r1150 | lh3 | 2009-07-23 15:09:56 +0100 (Thu, 23 Jul 2009) | 2 lines
+r1150 | lh3 | 2009-07-23 10:09:56 -0400 (Thu, 23 Jul 2009) | 2 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2_aux.c
    M /branches/prog/bwa/bwtsw2_main.c
@@ -642,7 +693,7 @@ Changed paths:
 fixed a long-existing bug in Smith-Waterman alignment
 
 ------------------------------------------------------------------------
-r1149 | lh3 | 2009-07-23 13:50:52 +0100 (Thu, 23 Jul 2009) | 3 lines
+r1149 | lh3 | 2009-07-23 08:50:52 -0400 (Thu, 23 Jul 2009) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2.h
    M /branches/prog/bwa/bwtsw2_aux.c
@@ -656,14 +707,14 @@ Changed paths:
  * unexplained inconsistency still occurs, but the results largely look reasonable.
 
 ------------------------------------------------------------------------
-r1148 | lh3 | 2009-07-23 13:07:29 +0100 (Thu, 23 Jul 2009) | 2 lines
+r1148 | lh3 | 2009-07-23 08:07:29 -0400 (Thu, 23 Jul 2009) | 2 lines
 Changed paths:
    M /branches/prog/bwa/stdaln.c
 
 half DP
 
 ------------------------------------------------------------------------
-r1147 | lh3 | 2009-07-22 13:03:06 +0100 (Wed, 22 Jul 2009) | 2 lines
+r1147 | lh3 | 2009-07-22 08:03:06 -0400 (Wed, 22 Jul 2009) | 2 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2.h
    M /branches/prog/bwa/bwtsw2_aux.c
@@ -673,7 +724,7 @@ Changed paths:
 a bit code clean up
 
 ------------------------------------------------------------------------
-r1145 | lh3 | 2009-07-21 20:52:05 +0100 (Tue, 21 Jul 2009) | 4 lines
+r1145 | lh3 | 2009-07-21 15:52:05 -0400 (Tue, 21 Jul 2009) | 4 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2_aux.c
    M /branches/prog/bwa/bwtsw2_core.c
@@ -684,7 +735,7 @@ Changed paths:
  * removed some debugging codes
 
 ------------------------------------------------------------------------
-r1144 | lh3 | 2009-07-21 15:17:29 +0100 (Tue, 21 Jul 2009) | 4 lines
+r1144 | lh3 | 2009-07-21 10:17:29 -0400 (Tue, 21 Jul 2009) | 4 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2.h
    M /branches/prog/bwa/bwtsw2_aux.c
@@ -697,7 +748,7 @@ Changed paths:
  * faster speed
 
 ------------------------------------------------------------------------
-r1143 | lh3 | 2009-07-20 21:38:18 +0100 (Mon, 20 Jul 2009) | 3 lines
+r1143 | lh3 | 2009-07-20 16:38:18 -0400 (Mon, 20 Jul 2009) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2.h
    M /branches/prog/bwa/bwtsw2_aux.c
@@ -709,7 +760,7 @@ bwtsw2 (dBWT-SW) is working apparently...
 
 
 ------------------------------------------------------------------------
-r1139 | lh3 | 2009-07-15 10:52:18 +0100 (Wed, 15 Jul 2009) | 4 lines
+r1139 | lh3 | 2009-07-15 05:52:18 -0400 (Wed, 15 Jul 2009) | 4 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2_core.c
    M /branches/prog/bwa/main.c
@@ -719,7 +770,7 @@ Changed paths:
    miss true hits
 
 ------------------------------------------------------------------------
-r1138 | lh3 | 2009-07-15 10:18:42 +0100 (Wed, 15 Jul 2009) | 3 lines
+r1138 | lh3 | 2009-07-15 05:18:42 -0400 (Wed, 15 Jul 2009) | 3 lines
 Changed paths:
    M /branches/prog/bwa/Makefile
    A /branches/prog/bwa/bwt_lite.c
@@ -735,7 +786,7 @@ Changed paths:
  * added back bwtsw2
 
 ------------------------------------------------------------------------
-r1075 | lh3 | 2009-05-19 10:14:50 +0100 (Tue, 19 May 2009) | 2 lines
+r1075 | lh3 | 2009-05-19 05:14:50 -0400 (Tue, 19 May 2009) | 2 lines
 Changed paths:
    M /branches/prog/bwa/NEWS
    M /branches/prog/bwa/bwase.c
@@ -744,7 +795,7 @@ Changed paths:
 Release bwa-0.4.9
 
 ------------------------------------------------------------------------
-r1073 | lh3 | 2009-05-18 22:13:19 +0100 (Mon, 18 May 2009) | 2 lines
+r1073 | lh3 | 2009-05-18 17:13:19 -0400 (Mon, 18 May 2009) | 2 lines
 Changed paths:
    M /branches/prog/bwa/NEWS
    M /branches/prog/bwa/bwa.1
@@ -753,7 +804,7 @@ Changed paths:
 Release bwa-0.4.8
 
 ------------------------------------------------------------------------
-r1069 | lh3 | 2009-05-14 14:54:54 +0100 (Thu, 14 May 2009) | 3 lines
+r1069 | lh3 | 2009-05-14 09:54:54 -0400 (Thu, 14 May 2009) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwtaln.c
    M /branches/prog/bwa/main.c
@@ -762,7 +813,7 @@ Changed paths:
  * change the default of "aln -R" to 30
 
 ------------------------------------------------------------------------
-r1068 | lh3 | 2009-05-14 14:27:55 +0100 (Thu, 14 May 2009) | 3 lines
+r1068 | lh3 | 2009-05-14 09:27:55 -0400 (Thu, 14 May 2009) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwape.c
    M /branches/prog/bwa/bwase.c
@@ -775,7 +826,7 @@ Changed paths:
  * search for suboptimal hits if the top hit is not so repetitive
 
 ------------------------------------------------------------------------
-r1066 | lh3 | 2009-05-12 20:31:31 +0100 (Tue, 12 May 2009) | 2 lines
+r1066 | lh3 | 2009-05-12 15:31:31 -0400 (Tue, 12 May 2009) | 2 lines
 Changed paths:
    M /branches/prog/bwa/ChangeLog
    M /branches/prog/bwa/NEWS
@@ -785,7 +836,7 @@ Changed paths:
 Release bwa-0.4.7
 
 ------------------------------------------------------------------------
-r1065 | lh3 | 2009-05-12 20:20:40 +0100 (Tue, 12 May 2009) | 3 lines
+r1065 | lh3 | 2009-05-12 15:20:40 -0400 (Tue, 12 May 2009) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwape.c
    M /branches/prog/bwa/bwase.c
@@ -795,7 +846,7 @@ Changed paths:
  * fixed compiling errors on some Linux machines
 
 ------------------------------------------------------------------------
-r1064 | lh3 | 2009-05-12 12:30:46 +0100 (Tue, 12 May 2009) | 3 lines
+r1064 | lh3 | 2009-05-12 07:30:46 -0400 (Tue, 12 May 2009) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwtaln.c
    M /branches/prog/bwa/main.c
@@ -804,7 +855,7 @@ Changed paths:
  * avoid compilation error on some systems.
 
 ------------------------------------------------------------------------
-r1035 | lh3 | 2009-05-09 10:41:33 +0100 (Sat, 09 May 2009) | 4 lines
+r1035 | lh3 | 2009-05-09 05:41:33 -0400 (Sat, 09 May 2009) | 4 lines
 Changed paths:
    M /branches/prog/bwa/bwape.c
    M /branches/prog/bwa/bwase.c
@@ -815,7 +866,7 @@ Changed paths:
  * made insert size estimation more robust
 
 ------------------------------------------------------------------------
-r1008 | lh3 | 2009-04-29 10:41:58 +0100 (Wed, 29 Apr 2009) | 4 lines
+r1008 | lh3 | 2009-04-29 05:41:58 -0400 (Wed, 29 Apr 2009) | 4 lines
 Changed paths:
    M /branches/prog/bwa/bwase.c
    M /branches/prog/bwa/main.c
@@ -825,7 +876,7 @@ Changed paths:
  * made XN tags more accurate
 
 ------------------------------------------------------------------------
-r1005 | lh3 | 2009-04-27 12:37:23 +0100 (Mon, 27 Apr 2009) | 4 lines
+r1005 | lh3 | 2009-04-27 07:37:23 -0400 (Mon, 27 Apr 2009) | 4 lines
 Changed paths:
    M /branches/prog/bwa/bwape.c
    M /branches/prog/bwa/main.c
@@ -838,7 +889,7 @@ Changed paths:
  * stdsw: support double-strand and protein alignment
 
 ------------------------------------------------------------------------
-r1003 | lh3 | 2009-04-26 17:48:19 +0100 (Sun, 26 Apr 2009) | 4 lines
+r1003 | lh3 | 2009-04-26 12:48:19 -0400 (Sun, 26 Apr 2009) | 4 lines
 Changed paths:
    M /branches/prog/bwa/main.c
    M /branches/prog/bwa/simple_dp.c
@@ -850,7 +901,7 @@ Changed paths:
  * allow to add a threshold on SW alignment. Hope this does not incur new bugs...
 
 ------------------------------------------------------------------------
-r1002 | lh3 | 2009-04-22 08:56:15 +0100 (Wed, 22 Apr 2009) | 3 lines
+r1002 | lh3 | 2009-04-22 03:56:15 -0400 (Wed, 22 Apr 2009) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwa.1
    M /branches/prog/bwa/bwape.c
@@ -862,7 +913,7 @@ Changed paths:
  * output SM and AM tag
 
 ------------------------------------------------------------------------
-r914 | lh3 | 2009-03-09 21:53:50 +0000 (Mon, 09 Mar 2009) | 2 lines
+r914 | lh3 | 2009-03-09 17:53:50 -0400 (Mon, 09 Mar 2009) | 2 lines
 Changed paths:
    M /branches/prog/bwa/ChangeLog
    M /branches/prog/bwa/NEWS
@@ -871,7 +922,7 @@ Changed paths:
 Release bwa-0.4.6
 
 ------------------------------------------------------------------------
-r913 | lh3 | 2009-03-09 21:23:24 +0000 (Mon, 09 Mar 2009) | 4 lines
+r913 | lh3 | 2009-03-09 17:23:24 -0400 (Mon, 09 Mar 2009) | 4 lines
 Changed paths:
    M /branches/prog/bwa/bwa.1
    M /branches/prog/bwa/bwape.c
@@ -882,7 +933,7 @@ Changed paths:
  * updated documentations
 
 ------------------------------------------------------------------------
-r912 | lh3 | 2009-03-09 20:57:05 +0000 (Mon, 09 Mar 2009) | 2 lines
+r912 | lh3 | 2009-03-09 16:57:05 -0400 (Mon, 09 Mar 2009) | 2 lines
 Changed paths:
    M /branches/prog/bwa/ChangeLog
    M /branches/prog/bwa/kstring.c
@@ -891,7 +942,7 @@ Changed paths:
 fixed a bug in kstring
 
 ------------------------------------------------------------------------
-r881 | lh3 | 2009-03-02 20:36:06 +0000 (Mon, 02 Mar 2009) | 3 lines
+r881 | lh3 | 2009-03-02 15:36:06 -0500 (Mon, 02 Mar 2009) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwtmisc.c
    M /branches/prog/bwa/main.c
@@ -900,14 +951,14 @@ Changed paths:
  * fixed a bug in pac2cspac
 
 ------------------------------------------------------------------------
-r880 | lh3 | 2009-03-01 21:34:08 +0000 (Sun, 01 Mar 2009) | 2 lines
+r880 | lh3 | 2009-03-01 16:34:08 -0500 (Sun, 01 Mar 2009) | 2 lines
 Changed paths:
    M /branches/prog/bwa/Makefile
 
 disable debugging
 
 ------------------------------------------------------------------------
-r879 | lh3 | 2009-03-01 21:28:04 +0000 (Sun, 01 Mar 2009) | 3 lines
+r879 | lh3 | 2009-03-01 16:28:04 -0500 (Sun, 01 Mar 2009) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwase.c
    M /branches/prog/bwa/cs2nt.c
@@ -917,7 +968,7 @@ Changed paths:
  * fixed problems with coordinates for color gapped alignment
 
 ------------------------------------------------------------------------
-r878 | lh3 | 2009-03-01 18:43:09 +0000 (Sun, 01 Mar 2009) | 3 lines
+r878 | lh3 | 2009-03-01 13:43:09 -0500 (Sun, 01 Mar 2009) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwase.c
    M /branches/prog/bwa/cs2nt.c
@@ -927,7 +978,7 @@ Changed paths:
  * added support for gapped color alignment
 
 ------------------------------------------------------------------------
-r877 | lh3 | 2009-03-01 15:27:52 +0000 (Sun, 01 Mar 2009) | 2 lines
+r877 | lh3 | 2009-03-01 10:27:52 -0500 (Sun, 01 Mar 2009) | 2 lines
 Changed paths:
    M /branches/prog/bwa/Makefile
    M /branches/prog/bwa/bwape.c
@@ -939,7 +990,7 @@ Changed paths:
  * convert cs read to nt read (for ungapped alignment only)
 
 ------------------------------------------------------------------------
-r860 | lh3 | 2009-02-27 13:58:39 +0000 (Fri, 27 Feb 2009) | 2 lines
+r860 | lh3 | 2009-02-27 08:58:39 -0500 (Fri, 27 Feb 2009) | 2 lines
 Changed paths:
    M /branches/prog/bwa/Makefile
    M /branches/prog/bwa/bwase.c
@@ -948,7 +999,7 @@ Changed paths:
 prepare to implement cs->nt conversion (have not yet...)
 
 ------------------------------------------------------------------------
-r859 | lh3 | 2009-02-27 12:00:03 +0000 (Fri, 27 Feb 2009) | 3 lines
+r859 | lh3 | 2009-02-27 07:00:03 -0500 (Fri, 27 Feb 2009) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bntseq.c
    M /branches/prog/bwa/bntseq.h
@@ -961,7 +1012,7 @@ Changed paths:
  * generate color index from nucleotide fasta reference
 
 ------------------------------------------------------------------------
-r857 | lh3 | 2009-02-26 15:22:58 +0000 (Thu, 26 Feb 2009) | 4 lines
+r857 | lh3 | 2009-02-26 10:22:58 -0500 (Thu, 26 Feb 2009) | 4 lines
 Changed paths:
    M /branches/prog/bwa/bwape.c
    M /branches/prog/bwa/main.c
@@ -971,7 +1022,7 @@ Changed paths:
    but the mate is unique.
 
 ------------------------------------------------------------------------
-r856 | lh3 | 2009-02-26 15:02:29 +0000 (Thu, 26 Feb 2009) | 3 lines
+r856 | lh3 | 2009-02-26 10:02:29 -0500 (Thu, 26 Feb 2009) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwape.c
    M /branches/prog/bwa/bwtaln.h
@@ -981,7 +1032,7 @@ Changed paths:
  * make bwa work for SOLiD reads
 
 ------------------------------------------------------------------------
-r828 | lh3 | 2009-02-18 22:36:41 +0000 (Wed, 18 Feb 2009) | 2 lines
+r828 | lh3 | 2009-02-18 17:36:41 -0500 (Wed, 18 Feb 2009) | 2 lines
 Changed paths:
    M /branches/prog/bwa/ChangeLog
    M /branches/prog/bwa/NEWS
@@ -991,7 +1042,7 @@ Changed paths:
 Release bwa-0.4.5
 
 ------------------------------------------------------------------------
-r827 | lh3 | 2009-02-18 21:48:48 +0000 (Wed, 18 Feb 2009) | 3 lines
+r827 | lh3 | 2009-02-18 16:48:48 -0500 (Wed, 18 Feb 2009) | 3 lines
 Changed paths:
    M /branches/prog/bwa/main.c
    M /branches/prog/bwa/stdaln.c
@@ -1001,7 +1052,7 @@ Changed paths:
  * fixed a bug in SW alignment when no residue matches
 
 ------------------------------------------------------------------------
-r824 | lh3 | 2009-02-17 10:33:07 +0000 (Tue, 17 Feb 2009) | 3 lines
+r824 | lh3 | 2009-02-17 05:33:07 -0500 (Tue, 17 Feb 2009) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwape.c
    M /branches/prog/bwa/main.c
@@ -1010,7 +1061,7 @@ Changed paths:
  * fixed that bounary bug
 
 ------------------------------------------------------------------------
-r823 | lh3 | 2009-02-17 09:54:18 +0000 (Tue, 17 Feb 2009) | 2 lines
+r823 | lh3 | 2009-02-17 04:54:18 -0500 (Tue, 17 Feb 2009) | 2 lines
 Changed paths:
    M /branches/prog/bwa/ChangeLog
    M /branches/prog/bwa/bwape.c
@@ -1018,14 +1069,14 @@ Changed paths:
 just change some logging information
 
 ------------------------------------------------------------------------
-r822 | lh3 | 2009-02-17 09:20:39 +0000 (Tue, 17 Feb 2009) | 2 lines
+r822 | lh3 | 2009-02-17 04:20:39 -0500 (Tue, 17 Feb 2009) | 2 lines
 Changed paths:
    M /branches/prog/bwa/bwa.1
 
 update manual
 
 ------------------------------------------------------------------------
-r821 | lh3 | 2009-02-17 09:11:14 +0000 (Tue, 17 Feb 2009) | 3 lines
+r821 | lh3 | 2009-02-17 04:11:14 -0500 (Tue, 17 Feb 2009) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwape.c
    M /branches/prog/bwa/bwase.c
@@ -1035,7 +1086,7 @@ Changed paths:
  * fixed a bug on boundary check in pair_sw
 
 ------------------------------------------------------------------------
-r820 | lh3 | 2009-02-16 22:43:37 +0000 (Mon, 16 Feb 2009) | 3 lines
+r820 | lh3 | 2009-02-16 17:43:37 -0500 (Mon, 16 Feb 2009) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwtaln.c
    M /branches/prog/bwa/main.c
@@ -1044,7 +1095,7 @@ Changed paths:
  * allow to change mismatch penalty
 
 ------------------------------------------------------------------------
-r819 | lh3 | 2009-02-16 22:40:28 +0000 (Mon, 16 Feb 2009) | 4 lines
+r819 | lh3 | 2009-02-16 17:40:28 -0500 (Mon, 16 Feb 2009) | 4 lines
 Changed paths:
    M /branches/prog/bwa/bwtaln.c
    M /branches/prog/bwa/main.c
@@ -1054,14 +1105,14 @@ Changed paths:
  * allow to change default gapo and gape penalty at the command line
 
 ------------------------------------------------------------------------
-r818 | lh3 | 2009-02-16 14:30:51 +0000 (Mon, 16 Feb 2009) | 2 lines
+r818 | lh3 | 2009-02-16 09:30:51 -0500 (Mon, 16 Feb 2009) | 2 lines
 Changed paths:
    M /branches/prog/bwa/bwa.1
 
 update benchmark
 
 ------------------------------------------------------------------------
-r817 | lh3 | 2009-02-16 13:44:40 +0000 (Mon, 16 Feb 2009) | 4 lines
+r817 | lh3 | 2009-02-16 08:44:40 -0500 (Mon, 16 Feb 2009) | 4 lines
 Changed paths:
    M /branches/prog/bwa/bwape.c
    M /branches/prog/bwa/bwtaln.c
@@ -1073,7 +1124,7 @@ Changed paths:
  * use insert size in pairing. This may potentially improve accuracy (untested!)
 
 ------------------------------------------------------------------------
-r814 | lh3 | 2009-02-15 16:10:23 +0000 (Sun, 15 Feb 2009) | 2 lines
+r814 | lh3 | 2009-02-15 11:10:23 -0500 (Sun, 15 Feb 2009) | 2 lines
 Changed paths:
    M /branches/prog/bwa/ChangeLog
    M /branches/prog/bwa/NEWS
@@ -1082,7 +1133,7 @@ Changed paths:
 Release bwa-0.4.4
 
 ------------------------------------------------------------------------
-r813 | lh3 | 2009-02-15 15:22:50 +0000 (Sun, 15 Feb 2009) | 3 lines
+r813 | lh3 | 2009-02-15 10:22:50 -0500 (Sun, 15 Feb 2009) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwa.1
    M /branches/prog/bwa/bwase.c
@@ -1092,7 +1143,7 @@ Changed paths:
  * impose boundary check in refine_gapped
 
 ------------------------------------------------------------------------
-r811 | lh3 | 2009-02-14 14:46:13 +0000 (Sat, 14 Feb 2009) | 3 lines
+r811 | lh3 | 2009-02-14 09:46:13 -0500 (Sat, 14 Feb 2009) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwase.c
    M /branches/prog/bwa/main.c
@@ -1101,14 +1152,14 @@ Changed paths:
  * change MD tag to match the latest SAM specification
 
 ------------------------------------------------------------------------
-r810 | lh3 | 2009-02-13 09:46:04 +0000 (Fri, 13 Feb 2009) | 2 lines
+r810 | lh3 | 2009-02-13 04:46:04 -0500 (Fri, 13 Feb 2009) | 2 lines
 Changed paths:
    M /branches/prog/bwa/ChangeLog
 
 update ChangeLog
 
 ------------------------------------------------------------------------
-r799 | lh3 | 2009-02-05 17:01:17 +0000 (Thu, 05 Feb 2009) | 2 lines
+r799 | lh3 | 2009-02-05 12:01:17 -0500 (Thu, 05 Feb 2009) | 2 lines
 Changed paths:
    M /branches/prog/bwa/bwase.c
    M /branches/prog/bwa/main.c
@@ -1116,7 +1167,7 @@ Changed paths:
 change MD tag to meet the latest SAM specification
 
 ------------------------------------------------------------------------
-r796 | lh3 | 2009-02-05 13:35:13 +0000 (Thu, 05 Feb 2009) | 3 lines
+r796 | lh3 | 2009-02-05 08:35:13 -0500 (Thu, 05 Feb 2009) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bntseq.c
    M /branches/prog/bwa/bwase.c
@@ -1126,7 +1177,7 @@ Changed paths:
  * fixed a bug on counting 'N'
 
 ------------------------------------------------------------------------
-r795 | lh3 | 2009-02-05 12:41:27 +0000 (Thu, 05 Feb 2009) | 4 lines
+r795 | lh3 | 2009-02-05 07:41:27 -0500 (Thu, 05 Feb 2009) | 4 lines
 Changed paths:
    M /branches/prog/bwa/bwa.1
    M /branches/prog/bwa/bwape.c
@@ -1137,42 +1188,42 @@ Changed paths:
  * update benchmark result
 
 ------------------------------------------------------------------------
-r791 | lh3 | 2009-01-25 10:20:47 +0000 (Sun, 25 Jan 2009) | 2 lines
+r791 | lh3 | 2009-01-25 05:20:47 -0500 (Sun, 25 Jan 2009) | 2 lines
 Changed paths:
    M /branches/prog/bwa/bwa.1
 
 update some numbers
 
 ------------------------------------------------------------------------
-r790 | lh3 | 2009-01-24 20:13:03 +0000 (Sat, 24 Jan 2009) | 2 lines
+r790 | lh3 | 2009-01-24 15:13:03 -0500 (Sat, 24 Jan 2009) | 2 lines
 Changed paths:
    M /branches/prog/bwa/bwa.1
 
 update benchmark
 
 ------------------------------------------------------------------------
-r789 | lh3 | 2009-01-22 15:18:44 +0000 (Thu, 22 Jan 2009) | 2 lines
+r789 | lh3 | 2009-01-22 10:18:44 -0500 (Thu, 22 Jan 2009) | 2 lines
 Changed paths:
    M /branches/prog/bwa/bwtindex.c
 
 a warning message for index
 
 ------------------------------------------------------------------------
-r788 | lh3 | 2009-01-22 14:54:06 +0000 (Thu, 22 Jan 2009) | 2 lines
+r788 | lh3 | 2009-01-22 09:54:06 -0500 (Thu, 22 Jan 2009) | 2 lines
 Changed paths:
    M /branches/prog/bwa/main.c
 
 forget to change release number
 
 ------------------------------------------------------------------------
-r786 | lh3 | 2009-01-22 11:27:39 +0000 (Thu, 22 Jan 2009) | 2 lines
+r786 | lh3 | 2009-01-22 06:27:39 -0500 (Thu, 22 Jan 2009) | 2 lines
 Changed paths:
    M /branches/prog/bwa/NEWS
 
 Release bwa-0.4.3
 
 ------------------------------------------------------------------------
-r785 | lh3 | 2009-01-22 11:27:16 +0000 (Thu, 22 Jan 2009) | 2 lines
+r785 | lh3 | 2009-01-22 06:27:16 -0500 (Thu, 22 Jan 2009) | 2 lines
 Changed paths:
    M /branches/prog/bwa/ChangeLog
    M /branches/prog/bwa/NEWS
@@ -1180,7 +1231,7 @@ Changed paths:
 Release bwa-0.4.3
 
 ------------------------------------------------------------------------
-r784 | lh3 | 2009-01-22 11:19:59 +0000 (Thu, 22 Jan 2009) | 4 lines
+r784 | lh3 | 2009-01-22 06:19:59 -0500 (Thu, 22 Jan 2009) | 4 lines
 Changed paths:
    M /branches/prog/bwa/bwa.1
    M /branches/prog/bwa/bwase.c
@@ -1191,7 +1242,7 @@ Changed paths:
  * fixed a bug on generating MD tags for SW alignment
 
 ------------------------------------------------------------------------
-r782 | lh3 | 2009-01-19 17:08:38 +0000 (Mon, 19 Jan 2009) | 3 lines
+r782 | lh3 | 2009-01-19 12:08:38 -0500 (Mon, 19 Jan 2009) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwase.c
    M /branches/prog/bwa/main.c
@@ -1200,7 +1251,7 @@ Changed paths:
  * fixed a bug in samse -n...
 
 ------------------------------------------------------------------------
-r781 | lh3 | 2009-01-19 16:26:37 +0000 (Mon, 19 Jan 2009) | 3 lines
+r781 | lh3 | 2009-01-19 11:26:37 -0500 (Mon, 19 Jan 2009) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwtaln.c
    M /branches/prog/bwa/main.c
@@ -1209,7 +1260,7 @@ Changed paths:
  * given -N, the previous version would stop if the top hit is a repeat. Now changed.
 
 ------------------------------------------------------------------------
-r780 | lh3 | 2009-01-19 16:20:18 +0000 (Mon, 19 Jan 2009) | 4 lines
+r780 | lh3 | 2009-01-19 11:20:18 -0500 (Mon, 19 Jan 2009) | 4 lines
 Changed paths:
    M /branches/prog/bwa/bwape.c
    M /branches/prog/bwa/bwase.c
@@ -1223,7 +1274,7 @@ Changed paths:
  * allow to switch off the iterative strategy
 
 ------------------------------------------------------------------------
-r779 | lh3 | 2009-01-19 15:45:57 +0000 (Mon, 19 Jan 2009) | 3 lines
+r779 | lh3 | 2009-01-19 10:45:57 -0500 (Mon, 19 Jan 2009) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwa.1
    M /branches/prog/bwa/bwase.c
@@ -1233,7 +1284,7 @@ Changed paths:
  * allow to dump multiple hits from samse, in another format, though
 
 ------------------------------------------------------------------------
-r778 | lh3 | 2009-01-19 11:24:29 +0000 (Mon, 19 Jan 2009) | 5 lines
+r778 | lh3 | 2009-01-19 06:24:29 -0500 (Mon, 19 Jan 2009) | 5 lines
 Changed paths:
    M /branches/prog/bwa/Makefile
    M /branches/prog/bwa/bwape.c
@@ -1252,7 +1303,7 @@ Changed paths:
  * print mate coordinate if only one end is unmapped
 
 ------------------------------------------------------------------------
-r775 | lh3 | 2009-01-18 10:40:35 +0000 (Sun, 18 Jan 2009) | 3 lines
+r775 | lh3 | 2009-01-18 05:40:35 -0500 (Sun, 18 Jan 2009) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwase.c
    M /branches/prog/bwa/main.c
@@ -1261,7 +1312,7 @@ Changed paths:
  * fixed a bug for SAM format
 
 ------------------------------------------------------------------------
-r774 | lh3 | 2009-01-17 18:48:52 +0000 (Sat, 17 Jan 2009) | 4 lines
+r774 | lh3 | 2009-01-17 13:48:52 -0500 (Sat, 17 Jan 2009) | 4 lines
 Changed paths:
    M /branches/prog/bwa/bwtaln.c
    M /branches/prog/bwa/main.c
@@ -1271,7 +1322,7 @@ Changed paths:
  * print max_diff for valid fnr
 
 ------------------------------------------------------------------------
-r773 | lh3 | 2009-01-17 10:54:37 +0000 (Sat, 17 Jan 2009) | 3 lines
+r773 | lh3 | 2009-01-17 05:54:37 -0500 (Sat, 17 Jan 2009) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwape.c
    M /branches/prog/bwa/bwase.c
@@ -1283,7 +1334,7 @@ Changed paths:
  * automatically choose max_diff
 
 ------------------------------------------------------------------------
-r772 | lh3 | 2009-01-16 23:16:14 +0000 (Fri, 16 Jan 2009) | 3 lines
+r772 | lh3 | 2009-01-16 18:16:14 -0500 (Fri, 16 Jan 2009) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwaseqio.c
    M /branches/prog/bwa/bwt.c
@@ -1296,7 +1347,7 @@ Changed paths:
  * take N as a mismatch
 
 ------------------------------------------------------------------------
-r768 | lh3 | 2009-01-09 16:57:23 +0000 (Fri, 09 Jan 2009) | 2 lines
+r768 | lh3 | 2009-01-09 11:57:23 -0500 (Fri, 09 Jan 2009) | 2 lines
 Changed paths:
    M /branches/prog/bwa/ChangeLog
    M /branches/prog/bwa/NEWS
@@ -1306,7 +1357,7 @@ Changed paths:
 Release bwa-0.4.2
 
 ------------------------------------------------------------------------
-r759 | lh3 | 2009-01-07 14:55:43 +0000 (Wed, 07 Jan 2009) | 2 lines
+r759 | lh3 | 2009-01-07 09:55:43 -0500 (Wed, 07 Jan 2009) | 2 lines
 Changed paths:
    M /branches/prog/bwa/ChangeLog
    M /branches/prog/bwa/NEWS
@@ -1318,7 +1369,7 @@ Changed paths:
 Release bwa-0.4.1
 
 ------------------------------------------------------------------------
-r758 | lh3 | 2009-01-07 10:36:06 +0000 (Wed, 07 Jan 2009) | 3 lines
+r758 | lh3 | 2009-01-07 05:36:06 -0500 (Wed, 07 Jan 2009) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwape.c
    M /branches/prog/bwa/bwase.c
@@ -1329,7 +1380,7 @@ Changed paths:
  * make mate_sw fully working
 
 ------------------------------------------------------------------------
-r757 | lh3 | 2009-01-06 23:04:29 +0000 (Tue, 06 Jan 2009) | 5 lines
+r757 | lh3 | 2009-01-06 18:04:29 -0500 (Tue, 06 Jan 2009) | 5 lines
 Changed paths:
    M /branches/prog/bwa/bwape.c
    M /branches/prog/bwa/bwase.c
@@ -1343,7 +1394,7 @@ Changed paths:
    and I am getting tired... I will do tomorrow.
 
 ------------------------------------------------------------------------
-r755 | lh3 | 2009-01-06 15:23:29 +0000 (Tue, 06 Jan 2009) | 2 lines
+r755 | lh3 | 2009-01-06 10:23:29 -0500 (Tue, 06 Jan 2009) | 2 lines
 Changed paths:
    M /branches/prog/bwa/ChangeLog
    M /branches/prog/bwa/NEWS
@@ -1353,7 +1404,7 @@ Changed paths:
 Release bwa-0.4.0
 
 ------------------------------------------------------------------------
-r754 | lh3 | 2009-01-06 12:45:02 +0000 (Tue, 06 Jan 2009) | 3 lines
+r754 | lh3 | 2009-01-06 07:45:02 -0500 (Tue, 06 Jan 2009) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwtaln.c
    M /branches/prog/bwa/bwtgap.c
@@ -1364,7 +1415,7 @@ Changed paths:
  * better lock
 
 ------------------------------------------------------------------------
-r753 | lh3 | 2009-01-06 11:17:21 +0000 (Tue, 06 Jan 2009) | 5 lines
+r753 | lh3 | 2009-01-06 06:17:21 -0500 (Tue, 06 Jan 2009) | 5 lines
 Changed paths:
    M /branches/prog/bwa/Makefile
    M /branches/prog/bwa/bwaseqio.c
@@ -1379,7 +1430,7 @@ Changed paths:
  * multithreading for "aln" command
 
 ------------------------------------------------------------------------
-r752 | lh3 | 2009-01-05 22:34:13 +0000 (Mon, 05 Jan 2009) | 3 lines
+r752 | lh3 | 2009-01-05 17:34:13 -0500 (Mon, 05 Jan 2009) | 3 lines
 Changed paths:
    M /branches/prog/bwa/Makefile
    D /branches/prog/bwa/bwt2fmv.c
@@ -1393,7 +1444,7 @@ Changed paths:
  * a little bit code clean up
 
 ------------------------------------------------------------------------
-r751 | lh3 | 2009-01-05 22:19:04 +0000 (Mon, 05 Jan 2009) | 3 lines
+r751 | lh3 | 2009-01-05 17:19:04 -0500 (Mon, 05 Jan 2009) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwt.c
    M /branches/prog/bwa/main.c
@@ -1402,7 +1453,7 @@ Changed paths:
  * use 64-bit integer to speed up Occ calculate, although just a little bit
 
 ------------------------------------------------------------------------
-r750 | lh3 | 2009-01-05 21:44:26 +0000 (Mon, 05 Jan 2009) | 3 lines
+r750 | lh3 | 2009-01-05 16:44:26 -0500 (Mon, 05 Jan 2009) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwt.c
    M /branches/prog/bwa/main.c
@@ -1411,7 +1462,7 @@ Changed paths:
  * a little bit code cleanup
 
 ------------------------------------------------------------------------
-r749 | lh3 | 2009-01-05 21:37:28 +0000 (Mon, 05 Jan 2009) | 3 lines
+r749 | lh3 | 2009-01-05 16:37:28 -0500 (Mon, 05 Jan 2009) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwt.c
    M /branches/prog/bwa/main.c
@@ -1420,7 +1471,7 @@ Changed paths:
  * accelerate Occ calculation
 
 ------------------------------------------------------------------------
-r748 | lh3 | 2009-01-05 21:12:28 +0000 (Mon, 05 Jan 2009) | 4 lines
+r748 | lh3 | 2009-01-05 16:12:28 -0500 (Mon, 05 Jan 2009) | 4 lines
 Changed paths:
    M /branches/prog/bwa/bwape.c
    M /branches/prog/bwa/bwase.c
@@ -1439,7 +1490,7 @@ Changed paths:
  * this version is already faster than the previous and I can still improve it...
 
 ------------------------------------------------------------------------
-r747 | lh3 | 2009-01-05 15:16:18 +0000 (Mon, 05 Jan 2009) | 5 lines
+r747 | lh3 | 2009-01-05 10:16:18 -0500 (Mon, 05 Jan 2009) | 5 lines
 Changed paths:
    M /branches/prog/bwa/bwt.c
    M /branches/prog/bwa/bwt.h
@@ -1452,7 +1503,7 @@ Changed paths:
    slower in fact.
 
 ------------------------------------------------------------------------
-r746 | lh3 | 2009-01-05 14:50:53 +0000 (Mon, 05 Jan 2009) | 3 lines
+r746 | lh3 | 2009-01-05 09:50:53 -0500 (Mon, 05 Jan 2009) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwt.c
    M /branches/prog/bwa/main.c
@@ -1461,7 +1512,7 @@ Changed paths:
  * added back optimization codes (it is a pain...)
 
 ------------------------------------------------------------------------
-r745 | lh3 | 2009-01-05 13:23:00 +0000 (Mon, 05 Jan 2009) | 3 lines
+r745 | lh3 | 2009-01-05 08:23:00 -0500 (Mon, 05 Jan 2009) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwt.c
    M /branches/prog/bwa/bwtaln.c
@@ -1471,7 +1522,7 @@ Changed paths:
  * faster bit operations
 
 ------------------------------------------------------------------------
-r744 | lh3 | 2009-01-05 10:58:46 +0000 (Mon, 05 Jan 2009) | 4 lines
+r744 | lh3 | 2009-01-05 05:58:46 -0500 (Mon, 05 Jan 2009) | 4 lines
 Changed paths:
    M /branches/prog/bwa/bwt.c
    M /branches/prog/bwa/main.c
@@ -1481,7 +1532,7 @@ Changed paths:
  * use a new method to count the bits
 
 ------------------------------------------------------------------------
-r743 | lh3 | 2009-01-04 22:18:38 +0000 (Sun, 04 Jan 2009) | 5 lines
+r743 | lh3 | 2009-01-04 17:18:38 -0500 (Sun, 04 Jan 2009) | 5 lines
 Changed paths:
    M /branches/prog/bwa/bwa.1
    M /branches/prog/bwa/bwt.c
@@ -1496,14 +1547,14 @@ Changed paths:
  * updated benchmark
 
 ------------------------------------------------------------------------
-r742 | lh3 | 2009-01-04 12:56:12 +0000 (Sun, 04 Jan 2009) | 2 lines
+r742 | lh3 | 2009-01-04 07:56:12 -0500 (Sun, 04 Jan 2009) | 2 lines
 Changed paths:
    M /branches/prog/bwa/bwa.1
 
 add URL
 
 ------------------------------------------------------------------------
-r740 | lh3 | 2009-01-04 12:39:43 +0000 (Sun, 04 Jan 2009) | 2 lines
+r740 | lh3 | 2009-01-04 07:39:43 -0500 (Sun, 04 Jan 2009) | 2 lines
 Changed paths:
    M /branches/prog/bwa/ChangeLog
    M /branches/prog/bwa/NEWS
@@ -1513,7 +1564,7 @@ Changed paths:
 Release bwa-0.3.0
 
 ------------------------------------------------------------------------
-r739 | lh3 | 2009-01-04 11:55:06 +0000 (Sun, 04 Jan 2009) | 2 lines
+r739 | lh3 | 2009-01-04 06:55:06 -0500 (Sun, 04 Jan 2009) | 2 lines
 Changed paths:
    A /branches/prog/bwa/COPYING
    M /branches/prog/bwa/ChangeLog
@@ -1529,7 +1580,7 @@ Changed paths:
 added licensing information
 
 ------------------------------------------------------------------------
-r738 | lh3 | 2009-01-04 11:18:25 +0000 (Sun, 04 Jan 2009) | 4 lines
+r738 | lh3 | 2009-01-04 06:18:25 -0500 (Sun, 04 Jan 2009) | 4 lines
 Changed paths:
    M /branches/prog/bwa/bwa.1
    M /branches/prog/bwa/bwape.c
@@ -1540,7 +1591,7 @@ Changed paths:
  * update benchmark
 
 ------------------------------------------------------------------------
-r737 | lh3 | 2009-01-03 21:00:58 +0000 (Sat, 03 Jan 2009) | 2 lines
+r737 | lh3 | 2009-01-03 16:00:58 -0500 (Sat, 03 Jan 2009) | 2 lines
 Changed paths:
    M /branches/prog/bwa/ChangeLog
    M /branches/prog/bwa/bwa.1
@@ -1548,14 +1599,14 @@ Changed paths:
 update documentation
 
 ------------------------------------------------------------------------
-r736 | lh3 | 2009-01-02 15:26:38 +0000 (Fri, 02 Jan 2009) | 2 lines
+r736 | lh3 | 2009-01-02 10:26:38 -0500 (Fri, 02 Jan 2009) | 2 lines
 Changed paths:
    M /branches/prog/bwa/bwa.1
 
 update documentation
 
 ------------------------------------------------------------------------
-r735 | lh3 | 2009-01-02 12:10:20 +0000 (Fri, 02 Jan 2009) | 4 lines
+r735 | lh3 | 2009-01-02 07:10:20 -0500 (Fri, 02 Jan 2009) | 4 lines
 Changed paths:
    M /branches/prog/bwa/bwa.1
    M /branches/prog/bwa/bwape.c
@@ -1567,7 +1618,7 @@ Changed paths:
  * update documentation
 
 ------------------------------------------------------------------------
-r734 | lh3 | 2009-01-01 18:45:45 +0000 (Thu, 01 Jan 2009) | 8 lines
+r734 | lh3 | 2009-01-01 13:45:45 -0500 (Thu, 01 Jan 2009) | 8 lines
 Changed paths:
    M /branches/prog/bwa/bwa.1
    M /branches/prog/bwa/bwape.c
@@ -1586,7 +1637,7 @@ Changed paths:
  * update manual (unfinished)
 
 ------------------------------------------------------------------------
-r733 | lh3 | 2009-01-01 16:01:20 +0000 (Thu, 01 Jan 2009) | 3 lines
+r733 | lh3 | 2009-01-01 11:01:20 -0500 (Thu, 01 Jan 2009) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwape.c
    M /branches/prog/bwa/main.c
@@ -1595,7 +1646,7 @@ Changed paths:
  * fixed a bug in calculating paired mapping quality
 
 ------------------------------------------------------------------------
-r732 | lh3 | 2009-01-01 14:27:46 +0000 (Thu, 01 Jan 2009) | 3 lines
+r732 | lh3 | 2009-01-01 09:27:46 -0500 (Thu, 01 Jan 2009) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwape.c
    A /branches/prog/bwa/khash.h (from /branches/prog/sclib/khash/khash.h:675)
@@ -1605,7 +1656,7 @@ Changed paths:
  * accelerate sampe by storing visited large intervals
 
 ------------------------------------------------------------------------
-r731 | lh3 | 2009-01-01 11:51:21 +0000 (Thu, 01 Jan 2009) | 3 lines
+r731 | lh3 | 2009-01-01 06:51:21 -0500 (Thu, 01 Jan 2009) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwt.c
    M /branches/prog/bwa/main.c
@@ -1614,7 +1665,7 @@ Changed paths:
  * remove the optimation codes
 
 ------------------------------------------------------------------------
-r730 | lh3 | 2009-01-01 11:48:59 +0000 (Thu, 01 Jan 2009) | 4 lines
+r730 | lh3 | 2009-01-01 06:48:59 -0500 (Thu, 01 Jan 2009) | 4 lines
 Changed paths:
    M /branches/prog/bwa/bwt.c
    M /branches/prog/bwa/main.c
@@ -1624,7 +1675,7 @@ Changed paths:
    this by complicate the codes. I will change back later.
 
 ------------------------------------------------------------------------
-r729 | lh3 | 2008-12-31 21:43:56 +0000 (Wed, 31 Dec 2008) | 6 lines
+r729 | lh3 | 2008-12-31 16:43:56 -0500 (Wed, 31 Dec 2008) | 6 lines
 Changed paths:
    M /branches/prog/bwa/bntseq.c
    M /branches/prog/bwa/bwape.c
@@ -1638,7 +1689,7 @@ Changed paths:
  * fixed a few compiling warnings in bntseq.c
 
 ------------------------------------------------------------------------
-r728 | lh3 | 2008-12-27 12:14:59 +0000 (Sat, 27 Dec 2008) | 3 lines
+r728 | lh3 | 2008-12-27 07:14:59 -0500 (Sat, 27 Dec 2008) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwape.c
    M /branches/prog/bwa/bwase.c
@@ -1648,7 +1699,7 @@ Changed paths:
  * mating information can be printed to SAM
 
 ------------------------------------------------------------------------
-r727 | lh3 | 2008-12-26 23:10:59 +0000 (Fri, 26 Dec 2008) | 4 lines
+r727 | lh3 | 2008-12-26 18:10:59 -0500 (Fri, 26 Dec 2008) | 4 lines
 Changed paths:
    M /branches/prog/bwa/bwape.c
    M /branches/prog/bwa/bwase.c
@@ -1662,7 +1713,7 @@ Changed paths:
  * output all reads even if full of N
 
 ------------------------------------------------------------------------
-r726 | lh3 | 2008-12-26 18:31:27 +0000 (Fri, 26 Dec 2008) | 5 lines
+r726 | lh3 | 2008-12-26 13:31:27 -0500 (Fri, 26 Dec 2008) | 5 lines
 Changed paths:
    M /branches/prog/bwa/Makefile
    A /branches/prog/bwa/bwape.c
@@ -1680,7 +1731,7 @@ Changed paths:
  * added sai2sam_pe cmd: *UNFINISHED*
 
 ------------------------------------------------------------------------
-r725 | lh3 | 2008-12-26 12:04:11 +0000 (Fri, 26 Dec 2008) | 3 lines
+r725 | lh3 | 2008-12-26 07:04:11 -0500 (Fri, 26 Dec 2008) | 3 lines
 Changed paths:
    M /branches/prog/bwa/Makefile
    A /branches/prog/bwa/bwase.c
@@ -1698,7 +1749,7 @@ Changed paths:
  * considerable code cleanup; no actual changes
 
 ------------------------------------------------------------------------
-r724 | lh3 | 2008-12-25 16:32:11 +0000 (Thu, 25 Dec 2008) | 3 lines
+r724 | lh3 | 2008-12-25 11:32:11 -0500 (Thu, 25 Dec 2008) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwtaln.c
    M /branches/prog/bwa/bwtaln.h
@@ -1708,7 +1759,7 @@ Changed paths:
  * generate SAM output
 
 ------------------------------------------------------------------------
-r723 | lh3 | 2008-12-25 15:48:31 +0000 (Thu, 25 Dec 2008) | 4 lines
+r723 | lh3 | 2008-12-25 10:48:31 -0500 (Thu, 25 Dec 2008) | 4 lines
 Changed paths:
    M /branches/prog/bwa/bwt2fmv.c
    M /branches/prog/bwa/bwtaln.c
@@ -1720,7 +1771,7 @@ Changed paths:
  * separate searching for SA interval from generating alignments
 
 ------------------------------------------------------------------------
-r722 | lh3 | 2008-12-25 13:57:13 +0000 (Thu, 25 Dec 2008) | 3 lines
+r722 | lh3 | 2008-12-25 08:57:13 -0500 (Thu, 25 Dec 2008) | 3 lines
 Changed paths:
    M /branches/prog/bwa/Makefile
    M /branches/prog/bwa/bwt2fmv.c
@@ -1740,7 +1791,7 @@ Changed paths:
  * remove bwtsw2 related codes
 
 ------------------------------------------------------------------------
-r666 | lh3 | 2008-11-18 23:34:29 +0000 (Tue, 18 Nov 2008) | 4 lines
+r666 | lh3 | 2008-11-18 18:34:29 -0500 (Tue, 18 Nov 2008) | 4 lines
 Changed paths:
    M /branches/prog/bwa/bwt2fmv.c
    M /branches/prog/bwa/bwtaln.c
@@ -1752,7 +1803,7 @@ Changed paths:
    whether this really works
 
 ------------------------------------------------------------------------
-r665 | lh3 | 2008-11-18 13:34:03 +0000 (Tue, 18 Nov 2008) | 3 lines
+r665 | lh3 | 2008-11-18 08:34:03 -0500 (Tue, 18 Nov 2008) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwtaln.c
    M /branches/prog/bwa/main.c
@@ -1761,7 +1812,7 @@ Changed paths:
  * fixed a bug in sequence parser.
 
 ------------------------------------------------------------------------
-r612 | lh3 | 2008-10-28 10:50:53 +0000 (Tue, 28 Oct 2008) | 3 lines
+r612 | lh3 | 2008-10-28 06:50:53 -0400 (Tue, 28 Oct 2008) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bntseq.c
    M /branches/prog/bwa/bwtindex.c
@@ -1772,7 +1823,7 @@ Changed paths:
  * fixed a bug caused by the change of the FASTA/Q parser
 
 ------------------------------------------------------------------------
-r611 | lh3 | 2008-10-28 10:24:56 +0000 (Tue, 28 Oct 2008) | 2 lines
+r611 | lh3 | 2008-10-28 06:24:56 -0400 (Tue, 28 Oct 2008) | 2 lines
 Changed paths:
    M /branches/prog/bwa/Makefile
    M /branches/prog/bwa/bntseq.c
@@ -1789,7 +1840,7 @@ Changed paths:
 replace seq.* with kseq.h
 
 ------------------------------------------------------------------------
-r610 | lh3 | 2008-10-27 17:00:04 +0000 (Mon, 27 Oct 2008) | 3 lines
+r610 | lh3 | 2008-10-27 13:00:04 -0400 (Mon, 27 Oct 2008) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2.h
    M /branches/prog/bwa/bwtsw2_aux.c
@@ -1800,14 +1851,14 @@ Changed paths:
  * make bwtsw2 output sub-optimal hits. not completed
 
 ------------------------------------------------------------------------
-r609 | lh3 | 2008-10-24 21:52:00 +0100 (Fri, 24 Oct 2008) | 2 lines
+r609 | lh3 | 2008-10-24 16:52:00 -0400 (Fri, 24 Oct 2008) | 2 lines
 Changed paths:
    M /branches/prog/bwa/kvec.h
 
 little...
 
 ------------------------------------------------------------------------
-r532 | lh3 | 2008-09-19 10:28:45 +0100 (Fri, 19 Sep 2008) | 2 lines
+r532 | lh3 | 2008-09-19 05:28:45 -0400 (Fri, 19 Sep 2008) | 2 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2_core.c
    M /branches/prog/bwa/khash.h
@@ -1815,14 +1866,14 @@ Changed paths:
 improve interface of khash
 
 ------------------------------------------------------------------------
-r531 | lh3 | 2008-09-18 11:52:59 +0100 (Thu, 18 Sep 2008) | 2 lines
+r531 | lh3 | 2008-09-18 06:52:59 -0400 (Thu, 18 Sep 2008) | 2 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2_core.c
 
 improve minor things, which make bwtsw2 slower, but should miss less true hits
 
 ------------------------------------------------------------------------
-r530 | lh3 | 2008-09-17 23:19:26 +0100 (Wed, 17 Sep 2008) | 3 lines
+r530 | lh3 | 2008-09-17 18:19:26 -0400 (Wed, 17 Sep 2008) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2_core.c
 
@@ -1830,21 +1881,21 @@ Changed paths:
  * enforce band-width checking
 
 ------------------------------------------------------------------------
-r529 | lh3 | 2008-09-17 23:06:49 +0100 (Wed, 17 Sep 2008) | 2 lines
+r529 | lh3 | 2008-09-17 18:06:49 -0400 (Wed, 17 Sep 2008) | 2 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2_core.c
 
 delete a line of code that is never visited
 
 ------------------------------------------------------------------------
-r528 | lh3 | 2008-09-17 22:58:51 +0100 (Wed, 17 Sep 2008) | 2 lines
+r528 | lh3 | 2008-09-17 17:58:51 -0400 (Wed, 17 Sep 2008) | 2 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2_core.c
 
 a bit code clean up
 
 ------------------------------------------------------------------------
-r527 | lh3 | 2008-09-17 15:55:45 +0100 (Wed, 17 Sep 2008) | 3 lines
+r527 | lh3 | 2008-09-17 10:55:45 -0400 (Wed, 17 Sep 2008) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2_core.c
    M /branches/prog/bwa/bwtsw2_main.c
@@ -1854,14 +1905,14 @@ Changed paths:
  * max-depth can be set, although it does not help the speed at all
 
 ------------------------------------------------------------------------
-r526 | lh3 | 2008-09-16 22:59:36 +0100 (Tue, 16 Sep 2008) | 2 lines
+r526 | lh3 | 2008-09-16 17:59:36 -0400 (Tue, 16 Sep 2008) | 2 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2_core.c
 
 cut_tail after remove duplicate
 
 ------------------------------------------------------------------------
-r525 | lh3 | 2008-09-16 22:56:11 +0100 (Tue, 16 Sep 2008) | 3 lines
+r525 | lh3 | 2008-09-16 17:56:11 -0400 (Tue, 16 Sep 2008) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2.h
    M /branches/prog/bwa/bwtsw2_aux.c
@@ -1874,7 +1925,7 @@ Changed paths:
  * improved cut_tail()
 
 ------------------------------------------------------------------------
-r524 | lh3 | 2008-09-15 21:53:22 +0100 (Mon, 15 Sep 2008) | 3 lines
+r524 | lh3 | 2008-09-15 16:53:22 -0400 (Mon, 15 Sep 2008) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2_aux.c
    M /branches/prog/bwa/bwtsw2_core.c
@@ -1885,21 +1936,21 @@ Changed paths:
  * fixed a bug in cut_tail()
 
 ------------------------------------------------------------------------
-r518 | lh3 | 2008-09-15 09:35:59 +0100 (Mon, 15 Sep 2008) | 2 lines
+r518 | lh3 | 2008-09-15 04:35:59 -0400 (Mon, 15 Sep 2008) | 2 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2_core.c
 
 a bit code clean up
 
 ------------------------------------------------------------------------
-r517 | lh3 | 2008-09-14 23:18:11 +0100 (Sun, 14 Sep 2008) | 2 lines
+r517 | lh3 | 2008-09-14 18:18:11 -0400 (Sun, 14 Sep 2008) | 2 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2_core.c
 
 improve speed (<1%)
 
 ------------------------------------------------------------------------
-r516 | lh3 | 2008-09-14 23:08:55 +0100 (Sun, 14 Sep 2008) | 3 lines
+r516 | lh3 | 2008-09-14 18:08:55 -0400 (Sun, 14 Sep 2008) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2_core.c
 
@@ -1907,7 +1958,7 @@ Changed paths:
  * improve speed a bit (<2%)
 
 ------------------------------------------------------------------------
-r515 | lh3 | 2008-09-14 22:26:49 +0100 (Sun, 14 Sep 2008) | 2 lines
+r515 | lh3 | 2008-09-14 17:26:49 -0400 (Sun, 14 Sep 2008) | 2 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2_core.c
    M /branches/prog/bwa/bwtsw2_main.c
@@ -1915,14 +1966,14 @@ Changed paths:
 nothing, really
 
 ------------------------------------------------------------------------
-r514 | lh3 | 2008-09-14 22:10:13 +0100 (Sun, 14 Sep 2008) | 2 lines
+r514 | lh3 | 2008-09-14 17:10:13 -0400 (Sun, 14 Sep 2008) | 2 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2_core.c
 
 disable X-drop, which has to be reimplemented in the current algorithm
 
 ------------------------------------------------------------------------
-r513 | lh3 | 2008-09-14 21:49:42 +0100 (Sun, 14 Sep 2008) | 4 lines
+r513 | lh3 | 2008-09-14 16:49:42 -0400 (Sun, 14 Sep 2008) | 4 lines
 Changed paths:
    M /branches/prog/bwa/bwt_lite.c
    M /branches/prog/bwa/bwt_lite.h
@@ -1934,7 +1985,7 @@ Changed paths:
  * fixed a bug in reversing the sequence
 
 ------------------------------------------------------------------------
-r512 | lh3 | 2008-09-13 22:35:40 +0100 (Sat, 13 Sep 2008) | 2 lines
+r512 | lh3 | 2008-09-13 17:35:40 -0400 (Sat, 13 Sep 2008) | 2 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2.h
    M /branches/prog/bwa/bwtsw2_aux.c
@@ -1945,7 +1996,7 @@ Changed paths:
 n-best method
 
 ------------------------------------------------------------------------
-r507 | lh3 | 2008-09-13 14:06:54 +0100 (Sat, 13 Sep 2008) | 2 lines
+r507 | lh3 | 2008-09-13 09:06:54 -0400 (Sat, 13 Sep 2008) | 2 lines
 Changed paths:
    M /branches/prog/bwa/Makefile
    M /branches/prog/bwa/bwtsw2_core.c
@@ -1953,14 +2004,14 @@ Changed paths:
 give correct result again
 
 ------------------------------------------------------------------------
-r506 | lh3 | 2008-09-13 13:12:07 +0100 (Sat, 13 Sep 2008) | 2 lines
+r506 | lh3 | 2008-09-13 08:12:07 -0400 (Sat, 13 Sep 2008) | 2 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2_core.c
 
 I think I know the reason. It needs more work...
 
 ------------------------------------------------------------------------
-r505 | lh3 | 2008-09-13 11:20:43 +0100 (Sat, 13 Sep 2008) | 2 lines
+r505 | lh3 | 2008-09-13 06:20:43 -0400 (Sat, 13 Sep 2008) | 2 lines
 Changed paths:
    M /branches/prog/bwa/Makefile
    M /branches/prog/bwa/bwtsw2_core.c
@@ -1968,14 +2019,14 @@ Changed paths:
 fixed another bug, but still have
 
 ------------------------------------------------------------------------
-r504 | lh3 | 2008-09-12 23:13:37 +0100 (Fri, 12 Sep 2008) | 2 lines
+r504 | lh3 | 2008-09-12 18:13:37 -0400 (Fri, 12 Sep 2008) | 2 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2_core.c
 
 fixed another bug
 
 ------------------------------------------------------------------------
-r503 | lh3 | 2008-09-12 22:15:56 +0100 (Fri, 12 Sep 2008) | 3 lines
+r503 | lh3 | 2008-09-12 17:15:56 -0400 (Fri, 12 Sep 2008) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2_core.c
    M /branches/prog/bwa/khash.h
@@ -1984,7 +2035,7 @@ Changed paths:
  * prepare to remove bsw2_connectivity_check()
 
 ------------------------------------------------------------------------
-r502 | lh3 | 2008-09-12 20:52:41 +0100 (Fri, 12 Sep 2008) | 2 lines
+r502 | lh3 | 2008-09-12 15:52:41 -0400 (Fri, 12 Sep 2008) | 2 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2_core.c
    M /branches/prog/bwa/kvec.h
@@ -1992,21 +2043,21 @@ Changed paths:
 more revisions
 
 ------------------------------------------------------------------------
-r501 | lh3 | 2008-09-11 23:06:15 +0100 (Thu, 11 Sep 2008) | 2 lines
+r501 | lh3 | 2008-09-11 18:06:15 -0400 (Thu, 11 Sep 2008) | 2 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2_core.c
 
 further simply codes with kvec.h
 
 ------------------------------------------------------------------------
-r500 | lh3 | 2008-09-11 22:42:15 +0100 (Thu, 11 Sep 2008) | 2 lines
+r500 | lh3 | 2008-09-11 17:42:15 -0400 (Thu, 11 Sep 2008) | 2 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2_core.c
 
 part of revisions... have not finished
 
 ------------------------------------------------------------------------
-r499 | lh3 | 2008-09-11 22:24:15 +0100 (Thu, 11 Sep 2008) | 2 lines
+r499 | lh3 | 2008-09-11 17:24:15 -0400 (Thu, 11 Sep 2008) | 2 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2.h
    M /branches/prog/bwa/bwtsw2_core.c
@@ -2017,14 +2068,14 @@ Changed paths:
 prepare for abrupt change
 
 ------------------------------------------------------------------------
-r496 | lh3 | 2008-09-11 15:34:38 +0100 (Thu, 11 Sep 2008) | 2 lines
+r496 | lh3 | 2008-09-11 10:34:38 -0400 (Thu, 11 Sep 2008) | 2 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2_core.c
 
 fixed a bug; now "bwtsw2 -d" is useless
 
 ------------------------------------------------------------------------
-r495 | lh3 | 2008-09-11 14:22:03 +0100 (Thu, 11 Sep 2008) | 2 lines
+r495 | lh3 | 2008-09-11 09:22:03 -0400 (Thu, 11 Sep 2008) | 2 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2_core.c
    M /branches/prog/bwa/simple_dp.c
@@ -2034,14 +2085,14 @@ Changed paths:
 improve speed a little bit
 
 ------------------------------------------------------------------------
-r494 | lh3 | 2008-09-11 13:28:08 +0100 (Thu, 11 Sep 2008) | 2 lines
+r494 | lh3 | 2008-09-11 08:28:08 -0400 (Thu, 11 Sep 2008) | 2 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2_core.c
 
 remove debug codes
 
 ------------------------------------------------------------------------
-r493 | lh3 | 2008-09-11 12:49:53 +0100 (Thu, 11 Sep 2008) | 3 lines
+r493 | lh3 | 2008-09-11 07:49:53 -0400 (Thu, 11 Sep 2008) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2_core.c
 
@@ -2049,7 +2100,7 @@ Changed paths:
  * prepare to remove BSW_DEBUG
 
 ------------------------------------------------------------------------
-r492 | lh3 | 2008-09-11 11:15:56 +0100 (Thu, 11 Sep 2008) | 4 lines
+r492 | lh3 | 2008-09-11 06:15:56 -0400 (Thu, 11 Sep 2008) | 4 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2.h
    M /branches/prog/bwa/bwtsw2_aux.c
@@ -2062,7 +2113,7 @@ Changed paths:
  * fixed a bug that causes missing hits
 
 ------------------------------------------------------------------------
-r491 | lh3 | 2008-09-11 10:46:16 +0100 (Thu, 11 Sep 2008) | 3 lines
+r491 | lh3 | 2008-09-11 05:46:16 -0400 (Thu, 11 Sep 2008) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2_core.c
    M /branches/prog/bwa/main.c
@@ -2071,7 +2122,7 @@ Changed paths:
  * better progress report
 
 ------------------------------------------------------------------------
-r490 | lh3 | 2008-09-10 22:04:49 +0100 (Wed, 10 Sep 2008) | 4 lines
+r490 | lh3 | 2008-09-10 17:04:49 -0400 (Wed, 10 Sep 2008) | 4 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2.h
    M /branches/prog/bwa/bwtsw2_aux.c
@@ -2084,7 +2135,7 @@ Changed paths:
  * add maximum depth
 
 ------------------------------------------------------------------------
-r489 | lh3 | 2008-09-10 16:51:13 +0100 (Wed, 10 Sep 2008) | 4 lines
+r489 | lh3 | 2008-09-10 11:51:13 -0400 (Wed, 10 Sep 2008) | 4 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2_core.c
    M /branches/prog/bwa/main.c
@@ -2094,7 +2145,7 @@ Changed paths:
  * better progress information
 
 ------------------------------------------------------------------------
-r488 | lh3 | 2008-09-10 15:21:53 +0100 (Wed, 10 Sep 2008) | 3 lines
+r488 | lh3 | 2008-09-10 10:21:53 -0400 (Wed, 10 Sep 2008) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2_core.c
 
@@ -2102,7 +2153,7 @@ Changed paths:
  * avoid some rehashing
 
 ------------------------------------------------------------------------
-r487 | lh3 | 2008-09-10 14:23:38 +0100 (Wed, 10 Sep 2008) | 3 lines
+r487 | lh3 | 2008-09-10 09:23:38 -0400 (Wed, 10 Sep 2008) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2.h
    M /branches/prog/bwa/bwtsw2_aux.c
@@ -2112,7 +2163,7 @@ Changed paths:
  * prepare to implement mempool
 
 ------------------------------------------------------------------------
-r486 | lh3 | 2008-09-10 14:10:09 +0100 (Wed, 10 Sep 2008) | 4 lines
+r486 | lh3 | 2008-09-10 09:10:09 -0400 (Wed, 10 Sep 2008) | 4 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2.h
    M /branches/prog/bwa/bwtsw2_aux.c
@@ -2125,7 +2176,7 @@ Changed paths:
  * switch to simple stack
 
 ------------------------------------------------------------------------
-r485 | lh3 | 2008-09-10 11:31:20 +0100 (Wed, 10 Sep 2008) | 3 lines
+r485 | lh3 | 2008-09-10 06:31:20 -0400 (Wed, 10 Sep 2008) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2.h
    M /branches/prog/bwa/bwtsw2_aux.c
@@ -2136,21 +2187,21 @@ Changed paths:
  * prepare to remove two-level stack
 
 ------------------------------------------------------------------------
-r484 | lh3 | 2008-09-10 10:00:57 +0100 (Wed, 10 Sep 2008) | 2 lines
+r484 | lh3 | 2008-09-10 05:00:57 -0400 (Wed, 10 Sep 2008) | 2 lines
 Changed paths:
    A /branches/prog/bwa/khash.h
 
 khash library
 
 ------------------------------------------------------------------------
-r483 | lh3 | 2008-09-10 09:22:53 +0100 (Wed, 10 Sep 2008) | 2 lines
+r483 | lh3 | 2008-09-10 04:22:53 -0400 (Wed, 10 Sep 2008) | 2 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2_core.c
 
 add inline
 
 ------------------------------------------------------------------------
-r482 | lh3 | 2008-09-09 21:34:57 +0100 (Tue, 09 Sep 2008) | 2 lines
+r482 | lh3 | 2008-09-09 16:34:57 -0400 (Tue, 09 Sep 2008) | 2 lines
 Changed paths:
    M /branches/prog/bwa/Makefile
    M /branches/prog/bwa/bwtsw2_aux.c
@@ -2159,7 +2210,7 @@ Changed paths:
 improve speed
 
 ------------------------------------------------------------------------
-r481 | lh3 | 2008-09-09 18:13:00 +0100 (Tue, 09 Sep 2008) | 4 lines
+r481 | lh3 | 2008-09-09 13:13:00 -0400 (Tue, 09 Sep 2008) | 4 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2_core.c
 
@@ -2168,7 +2219,7 @@ keep a copy in case I may need this in future.
 
 
 ------------------------------------------------------------------------
-r480 | lh3 | 2008-09-09 17:53:32 +0100 (Tue, 09 Sep 2008) | 2 lines
+r480 | lh3 | 2008-09-09 12:53:32 -0400 (Tue, 09 Sep 2008) | 2 lines
 Changed paths:
    M /branches/prog/bwa/bwtsw2.h
    M /branches/prog/bwa/bwtsw2_core.c
@@ -2176,7 +2227,7 @@ Changed paths:
  * no principal modification
 
 ------------------------------------------------------------------------
-r479 | lh3 | 2008-09-09 16:01:45 +0100 (Tue, 09 Sep 2008) | 4 lines
+r479 | lh3 | 2008-09-09 11:01:45 -0400 (Tue, 09 Sep 2008) | 4 lines
 Changed paths:
    M /branches/prog/bwa/Makefile
    M /branches/prog/bwa/bwtsw2_core.c
@@ -2186,7 +2237,7 @@ Changed paths:
    slows the speed down in the end
 
 ------------------------------------------------------------------------
-r474 | lh3 | 2008-09-03 22:22:57 +0100 (Wed, 03 Sep 2008) | 4 lines
+r474 | lh3 | 2008-09-03 17:22:57 -0400 (Wed, 03 Sep 2008) | 4 lines
 Changed paths:
    M /branches/prog/bwa/Makefile
    M /branches/prog/bwa/bwtsw2.h
@@ -2200,7 +2251,7 @@ Changed paths:
  * add band
 
 ------------------------------------------------------------------------
-r469 | lh3 | 2008-09-01 14:18:45 +0100 (Mon, 01 Sep 2008) | 3 lines
+r469 | lh3 | 2008-09-01 09:18:45 -0400 (Mon, 01 Sep 2008) | 3 lines
 Changed paths:
    M /branches/prog/bwa/ChangeLog
    M /branches/prog/bwa/Makefile
@@ -2220,7 +2271,7 @@ Changed paths:
  * updated bwtsw2, which seems to work properly on toy examples
 
 ------------------------------------------------------------------------
-r447 | lh3 | 2008-08-27 15:05:09 +0100 (Wed, 27 Aug 2008) | 3 lines
+r447 | lh3 | 2008-08-27 10:05:09 -0400 (Wed, 27 Aug 2008) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwt2fmv.c
    M /branches/prog/bwa/bwtaln.c
@@ -2232,7 +2283,7 @@ Changed paths:
  * tune for longer gaps, but it does not really work with kilo-bp gaps...
 
 ------------------------------------------------------------------------
-r446 | lh3 | 2008-08-26 18:30:41 +0100 (Tue, 26 Aug 2008) | 3 lines
+r446 | lh3 | 2008-08-26 13:30:41 -0400 (Tue, 26 Aug 2008) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwt2fmv.c
    M /branches/prog/bwa/bwtaln.c
@@ -2244,7 +2295,7 @@ Changed paths:
  * changed the way to extend long deletions. Now use max_del_occ.
 
 ------------------------------------------------------------------------
-r445 | lh3 | 2008-08-26 18:05:58 +0100 (Tue, 26 Aug 2008) | 2 lines
+r445 | lh3 | 2008-08-26 13:05:58 -0400 (Tue, 26 Aug 2008) | 2 lines
 Changed paths:
    M /branches/prog/bwa/bwt_lite.c
    M /branches/prog/bwa/bwt_lite.h
@@ -2252,7 +2303,7 @@ Changed paths:
 updated from bwtsw2_lite
 
 ------------------------------------------------------------------------
-r436 | lh3 | 2008-08-23 17:28:44 +0100 (Sat, 23 Aug 2008) | 4 lines
+r436 | lh3 | 2008-08-23 12:28:44 -0400 (Sat, 23 Aug 2008) | 4 lines
 Changed paths:
    M /branches/prog/bwa/Makefile
    M /branches/prog/bwa/bwt.h
@@ -2268,7 +2319,7 @@ Changed paths:
  * add core codes for bwtsw2: NOT TESTED!!!
 
 ------------------------------------------------------------------------
-r427 | lh3 | 2008-08-15 10:38:12 +0100 (Fri, 15 Aug 2008) | 2 lines
+r427 | lh3 | 2008-08-15 05:38:12 -0400 (Fri, 15 Aug 2008) | 2 lines
 Changed paths:
    M /branches/prog/bwa/ChangeLog
    M /branches/prog/bwa/NEWS
@@ -2279,7 +2330,7 @@ Changed paths:
 Release bwa-0.2.0
 
 ------------------------------------------------------------------------
-r426 | lh3 | 2008-08-14 16:26:19 +0100 (Thu, 14 Aug 2008) | 4 lines
+r426 | lh3 | 2008-08-14 11:26:19 -0400 (Thu, 14 Aug 2008) | 4 lines
 Changed paths:
    M /branches/prog/bwa/bwt2fmv.c
    M /branches/prog/bwa/bwtaln.c
@@ -2291,7 +2342,7 @@ Changed paths:
  * add incomplete support to color sequences (not tested yet!)
 
 ------------------------------------------------------------------------
-r425 | lh3 | 2008-08-14 11:23:11 +0100 (Thu, 14 Aug 2008) | 3 lines
+r425 | lh3 | 2008-08-14 06:23:11 -0400 (Thu, 14 Aug 2008) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwtaln.c
    M /branches/prog/bwa/main.c
@@ -2300,7 +2351,7 @@ Changed paths:
  * change default seed length to 33bp
 
 ------------------------------------------------------------------------
-r424 | lh3 | 2008-08-14 10:55:33 +0100 (Thu, 14 Aug 2008) | 6 lines
+r424 | lh3 | 2008-08-14 05:55:33 -0400 (Thu, 14 Aug 2008) | 6 lines
 Changed paths:
    M /branches/prog/bwa/bwtaln.c
    M /branches/prog/bwa/bwtgap.c
@@ -2313,14 +2364,14 @@ Changed paths:
    strands with gaps.
 
 ------------------------------------------------------------------------
-r423 | lh3 | 2008-08-14 09:07:28 +0100 (Thu, 14 Aug 2008) | 2 lines
+r423 | lh3 | 2008-08-14 04:07:28 -0400 (Thu, 14 Aug 2008) | 2 lines
 Changed paths:
    D /branches/prog/bwa/Makefile.div
 
 useless
 
 ------------------------------------------------------------------------
-r422 | lh3 | 2008-08-14 00:21:14 +0100 (Thu, 14 Aug 2008) | 4 lines
+r422 | lh3 | 2008-08-13 19:21:14 -0400 (Wed, 13 Aug 2008) | 4 lines
 Changed paths:
    M /branches/prog/bwa/bwtaln.c
    M /branches/prog/bwa/main.c
@@ -2330,7 +2381,7 @@ Changed paths:
  * there is another one...
 
 ------------------------------------------------------------------------
-r421 | lh3 | 2008-08-13 23:23:33 +0100 (Wed, 13 Aug 2008) | 3 lines
+r421 | lh3 | 2008-08-13 18:23:33 -0400 (Wed, 13 Aug 2008) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwtaln.c
    M /branches/prog/bwa/bwtaln.h
@@ -2343,7 +2394,7 @@ Changed paths:
  * almost there, but not quite right
 
 ------------------------------------------------------------------------
-r419 | lh3 | 2008-08-13 22:27:02 +0100 (Wed, 13 Aug 2008) | 3 lines
+r419 | lh3 | 2008-08-13 17:27:02 -0400 (Wed, 13 Aug 2008) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwtaln.c
    M /branches/prog/bwa/bwtaln.h
@@ -2355,7 +2406,7 @@ Changed paths:
  * prepare to load two BWTs into memory. A BIG change!
 
 ------------------------------------------------------------------------
-r418 | lh3 | 2008-08-13 15:56:54 +0100 (Wed, 13 Aug 2008) | 3 lines
+r418 | lh3 | 2008-08-13 10:56:54 -0400 (Wed, 13 Aug 2008) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwt2fmv.c
    M /branches/prog/bwa/bwtaln.c
@@ -2368,7 +2419,7 @@ Changed paths:
  * unfinished yet
 
 ------------------------------------------------------------------------
-r413 | lh3 | 2008-08-08 16:48:35 +0100 (Fri, 08 Aug 2008) | 2 lines
+r413 | lh3 | 2008-08-08 11:48:35 -0400 (Fri, 08 Aug 2008) | 2 lines
 Changed paths:
    M /branches/prog/bwa/ChangeLog
    M /branches/prog/bwa/NEWS
@@ -2377,14 +2428,14 @@ Changed paths:
 Release bwa-0.1.6
 
 ------------------------------------------------------------------------
-r410 | lh3 | 2008-08-06 20:48:22 +0100 (Wed, 06 Aug 2008) | 2 lines
+r410 | lh3 | 2008-08-06 15:48:22 -0400 (Wed, 06 Aug 2008) | 2 lines
 Changed paths:
    M /branches/prog/bwa/simple_dp.c
 
 sw: output alignment score
 
 ------------------------------------------------------------------------
-r407 | lh3 | 2008-08-04 15:01:20 +0100 (Mon, 04 Aug 2008) | 4 lines
+r407 | lh3 | 2008-08-04 10:01:20 -0400 (Mon, 04 Aug 2008) | 4 lines
 Changed paths:
    M /branches/prog/bwa/Makefile
    M /branches/prog/bwa/main.c
@@ -2398,7 +2449,7 @@ Changed paths:
  * stdaln-0.9.8 (see header for more details)
 
 ------------------------------------------------------------------------
-r406 | lh3 | 2008-08-02 00:21:59 +0100 (Sat, 02 Aug 2008) | 3 lines
+r406 | lh3 | 2008-08-01 19:21:59 -0400 (Fri, 01 Aug 2008) | 3 lines
 Changed paths:
    M /branches/prog/bwa/Makefile
    M /branches/prog/bwa/bwtaln.c
@@ -2411,7 +2462,7 @@ Changed paths:
  * give accurate gap positions
 
 ------------------------------------------------------------------------
-r405 | lh3 | 2008-08-02 00:06:19 +0100 (Sat, 02 Aug 2008) | 2 lines
+r405 | lh3 | 2008-08-01 19:06:19 -0400 (Fri, 01 Aug 2008) | 2 lines
 Changed paths:
    M /branches/prog/bwa/Makefile
    M /branches/prog/bwa/bwtaln.c
@@ -2420,7 +2471,7 @@ Changed paths:
 unfinished, but I am tired...
 
 ------------------------------------------------------------------------
-r401 | lh3 | 2008-07-30 10:59:24 +0100 (Wed, 30 Jul 2008) | 4 lines
+r401 | lh3 | 2008-07-30 05:59:24 -0400 (Wed, 30 Jul 2008) | 4 lines
 Changed paths:
    M /branches/prog/bwa/bntseq.c
    M /branches/prog/bwa/main.c
@@ -2430,7 +2481,7 @@ Changed paths:
    although extremely rare.
 
 ------------------------------------------------------------------------
-r399 | lh3 | 2008-07-27 16:41:52 +0100 (Sun, 27 Jul 2008) | 2 lines
+r399 | lh3 | 2008-07-27 11:41:52 -0400 (Sun, 27 Jul 2008) | 2 lines
 Changed paths:
    M /branches/prog/bwa/ChangeLog
    M /branches/prog/bwa/NEWS
@@ -2439,14 +2490,14 @@ Changed paths:
 Release bwa-0.1.5
 
 ------------------------------------------------------------------------
-r398 | lh3 | 2008-07-25 17:14:47 +0100 (Fri, 25 Jul 2008) | 2 lines
+r398 | lh3 | 2008-07-25 12:14:47 -0400 (Fri, 25 Jul 2008) | 2 lines
 Changed paths:
    M /branches/prog/bwa/bwa.1
 
 update documentation
 
 ------------------------------------------------------------------------
-r397 | lh3 | 2008-07-25 14:58:56 +0100 (Fri, 25 Jul 2008) | 2 lines
+r397 | lh3 | 2008-07-25 09:58:56 -0400 (Fri, 25 Jul 2008) | 2 lines
 Changed paths:
    M /branches/prog/bwa/bwt2fmv.c
    M /branches/prog/bwa/bwtaln.c
@@ -2455,7 +2506,7 @@ Changed paths:
  * 
 
 ------------------------------------------------------------------------
-r396 | lh3 | 2008-07-25 11:42:01 +0100 (Fri, 25 Jul 2008) | 3 lines
+r396 | lh3 | 2008-07-25 06:42:01 -0400 (Fri, 25 Jul 2008) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwtaln.c
    M /branches/prog/bwa/main.c
@@ -2464,7 +2515,7 @@ Changed paths:
  * add timer for debugging
 
 ------------------------------------------------------------------------
-r395 | lh3 | 2008-07-24 10:46:21 +0100 (Thu, 24 Jul 2008) | 4 lines
+r395 | lh3 | 2008-07-24 05:46:21 -0400 (Thu, 24 Jul 2008) | 4 lines
 Changed paths:
    M /branches/prog/bwa/bwtgap.c
    M /branches/prog/bwa/main.c
@@ -2474,7 +2525,7 @@ Changed paths:
  * this version gives identical result to bwa-0.1.4, just 10% faster
 
 ------------------------------------------------------------------------
-r394 | lh3 | 2008-07-24 10:18:53 +0100 (Thu, 24 Jul 2008) | 4 lines
+r394 | lh3 | 2008-07-24 05:18:53 -0400 (Thu, 24 Jul 2008) | 4 lines
 Changed paths:
    M /branches/prog/bwa/bwtaln.c
    M /branches/prog/bwa/bwtgap.c
@@ -2486,14 +2537,14 @@ Changed paths:
  * The result is slightly different from bwa-0.1.4 now. I need to check...
 
 ------------------------------------------------------------------------
-r393 | lh3 | 2008-07-23 17:04:16 +0100 (Wed, 23 Jul 2008) | 2 lines
+r393 | lh3 | 2008-07-23 12:04:16 -0400 (Wed, 23 Jul 2008) | 2 lines
 Changed paths:
    M /branches/prog/bwa/bwt.c
 
 comments only
 
 ------------------------------------------------------------------------
-r392 | lh3 | 2008-07-23 15:34:03 +0100 (Wed, 23 Jul 2008) | 2 lines
+r392 | lh3 | 2008-07-23 10:34:03 -0400 (Wed, 23 Jul 2008) | 2 lines
 Changed paths:
    M /branches/prog/bwa/bwt.c
    M /branches/prog/bwa/main.c
@@ -2501,7 +2552,7 @@ Changed paths:
 further improve the speed in Occ functions
 
 ------------------------------------------------------------------------
-r386 | lh3 | 2008-07-22 15:03:54 +0100 (Tue, 22 Jul 2008) | 2 lines
+r386 | lh3 | 2008-07-22 10:03:54 -0400 (Tue, 22 Jul 2008) | 2 lines
 Changed paths:
    M /branches/prog/bwa/NEWS
    M /branches/prog/bwa/main.c
@@ -2509,7 +2560,7 @@ Changed paths:
 Release bwa-0.1.4
 
 ------------------------------------------------------------------------
-r385 | lh3 | 2008-07-22 14:44:50 +0100 (Tue, 22 Jul 2008) | 2 lines
+r385 | lh3 | 2008-07-22 09:44:50 -0400 (Tue, 22 Jul 2008) | 2 lines
 Changed paths:
    M /branches/prog/bwa/ChangeLog
    M /branches/prog/bwa/bwa.1
@@ -2517,7 +2568,7 @@ Changed paths:
 update documentation and ChangeLog
 
 ------------------------------------------------------------------------
-r384 | lh3 | 2008-07-22 13:50:03 +0100 (Tue, 22 Jul 2008) | 4 lines
+r384 | lh3 | 2008-07-22 08:50:03 -0400 (Tue, 22 Jul 2008) | 4 lines
 Changed paths:
    M /branches/prog/bwa/Makefile
    M /branches/prog/bwa/bwt2fmv.c
@@ -2531,7 +2582,7 @@ Changed paths:
  * now the alignment should be more clearly defined
 
 ------------------------------------------------------------------------
-r383 | lh3 | 2008-07-21 23:32:21 +0100 (Mon, 21 Jul 2008) | 4 lines
+r383 | lh3 | 2008-07-21 18:32:21 -0400 (Mon, 21 Jul 2008) | 4 lines
 Changed paths:
    M /branches/prog/bwa/bwt2fmv.c
    M /branches/prog/bwa/bwtaln.c
@@ -2543,7 +2594,7 @@ Changed paths:
  * i will fix the bug tomorrow. It is late...
 
 ------------------------------------------------------------------------
-r381 | lh3 | 2008-07-21 11:45:32 +0100 (Mon, 21 Jul 2008) | 2 lines
+r381 | lh3 | 2008-07-21 06:45:32 -0400 (Mon, 21 Jul 2008) | 2 lines
 Changed paths:
    M /branches/prog/bwa/ChangeLog
    M /branches/prog/bwa/NEWS
@@ -2553,7 +2604,7 @@ Changed paths:
 Release bwa-0.1.3
 
 ------------------------------------------------------------------------
-r380 | lh3 | 2008-07-21 11:07:43 +0100 (Mon, 21 Jul 2008) | 4 lines
+r380 | lh3 | 2008-07-21 06:07:43 -0400 (Mon, 21 Jul 2008) | 4 lines
 Changed paths:
    M /branches/prog/bwa/ChangeLog
    M /branches/prog/bwa/bwa.1
@@ -2566,7 +2617,7 @@ Changed paths:
  * aln: more command-line options
 
 ------------------------------------------------------------------------
-r373 | lh3 | 2008-07-17 14:09:46 +0100 (Thu, 17 Jul 2008) | 4 lines
+r373 | lh3 | 2008-07-17 09:09:46 -0400 (Thu, 17 Jul 2008) | 4 lines
 Changed paths:
    M /branches/prog/bwa/bwt.c
    M /branches/prog/bwa/bwt.h
@@ -2578,7 +2629,7 @@ Changed paths:
  * this version gives exactly the same result as bwa-0.1.2
 
 ------------------------------------------------------------------------
-r372 | lh3 | 2008-07-17 12:51:08 +0100 (Thu, 17 Jul 2008) | 3 lines
+r372 | lh3 | 2008-07-17 07:51:08 -0400 (Thu, 17 Jul 2008) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwt.c
    M /branches/prog/bwa/main.c
@@ -2587,7 +2638,7 @@ Changed paths:
  * speed up by about 5%
 
 ------------------------------------------------------------------------
-r370 | lh3 | 2008-07-17 10:12:00 +0100 (Thu, 17 Jul 2008) | 2 lines
+r370 | lh3 | 2008-07-17 05:12:00 -0400 (Thu, 17 Jul 2008) | 2 lines
 Changed paths:
    M /branches/prog/bwa/NEWS
    M /branches/prog/bwa/bwa.1
@@ -2596,7 +2647,7 @@ Changed paths:
 Release bwa-0.1.2
 
 ------------------------------------------------------------------------
-r368 | lh3 | 2008-07-16 13:51:25 +0100 (Wed, 16 Jul 2008) | 4 lines
+r368 | lh3 | 2008-07-16 08:51:25 -0400 (Wed, 16 Jul 2008) | 4 lines
 Changed paths:
    M /branches/prog/bwa/Makefile
    D /branches/prog/bwa/bwt1away.c
@@ -2613,14 +2664,14 @@ Changed paths:
  * remove 1away and top2
 
 ------------------------------------------------------------------------
-r367 | lh3 | 2008-07-16 13:24:34 +0100 (Wed, 16 Jul 2008) | 2 lines
+r367 | lh3 | 2008-07-16 08:24:34 -0400 (Wed, 16 Jul 2008) | 2 lines
 Changed paths:
    M /branches/prog/bwa/is.c
 
 Yuta Mori's implementation of IS algorithm.
 
 ------------------------------------------------------------------------
-r365 | lh3 | 2008-07-16 11:58:04 +0100 (Wed, 16 Jul 2008) | 6 lines
+r365 | lh3 | 2008-07-16 06:58:04 -0400 (Wed, 16 Jul 2008) | 6 lines
 Changed paths:
    M /branches/prog/bwa/bwtaln.c
    M /branches/prog/bwa/bwtgap.c
@@ -2634,7 +2685,7 @@ Changed paths:
  * prepare to add SAIS algorithm for bwt construction
 
 ------------------------------------------------------------------------
-r358 | lh3 | 2008-06-09 11:03:04 +0100 (Mon, 09 Jun 2008) | 4 lines
+r358 | lh3 | 2008-06-09 06:03:04 -0400 (Mon, 09 Jun 2008) | 4 lines
 Changed paths:
    M /branches/prog/bwa/bwt2fmv.c
    M /branches/prog/bwa/bwtgap.c
@@ -2645,7 +2696,7 @@ Changed paths:
  * change default '-g' from 5 to 3
 
 ------------------------------------------------------------------------
-r357 | lh3 | 2008-06-09 10:18:36 +0100 (Mon, 09 Jun 2008) | 3 lines
+r357 | lh3 | 2008-06-09 05:18:36 -0400 (Mon, 09 Jun 2008) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bntseq.c
    M /branches/prog/bwa/bwt2fmv.c
@@ -2656,7 +2707,7 @@ Changed paths:
  * fix a bug in nested stack
 
 ------------------------------------------------------------------------
-r356 | lh3 | 2008-06-08 23:43:13 +0100 (Sun, 08 Jun 2008) | 4 lines
+r356 | lh3 | 2008-06-08 18:43:13 -0400 (Sun, 08 Jun 2008) | 4 lines
 Changed paths:
    M /branches/prog/bwa/Makefile
    M /branches/prog/bwa/bwtaln.c
@@ -2670,7 +2721,7 @@ Changed paths:
  * there are still obvious bugs...
 
 ------------------------------------------------------------------------
-r355 | lh3 | 2008-06-08 22:13:44 +0100 (Sun, 08 Jun 2008) | 4 lines
+r355 | lh3 | 2008-06-08 17:13:44 -0400 (Sun, 08 Jun 2008) | 4 lines
 Changed paths:
    M /branches/prog/bwa/bwt2fmv.c
    M /branches/prog/bwa/bwtaln.c
@@ -2684,7 +2735,7 @@ Changed paths:
  * there are obvious bugs and I will fix them later
 
 ------------------------------------------------------------------------
-r354 | lh3 | 2008-06-08 20:39:05 +0100 (Sun, 08 Jun 2008) | 3 lines
+r354 | lh3 | 2008-06-08 15:39:05 -0400 (Sun, 08 Jun 2008) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwtaln.c
    M /branches/prog/bwa/bwtaln.h
@@ -2695,7 +2746,7 @@ Changed paths:
  * affine gap seems to work, at least partially
 
 ------------------------------------------------------------------------
-r353 | lh3 | 2008-06-08 14:27:18 +0100 (Sun, 08 Jun 2008) | 3 lines
+r353 | lh3 | 2008-06-08 09:27:18 -0400 (Sun, 08 Jun 2008) | 3 lines
 Changed paths:
    M /branches/prog/bwa/Makefile
    M /branches/prog/bwa/bwt2fmv.c
@@ -2709,7 +2760,7 @@ Changed paths:
  * initial gapped alignment. not work at the moment
 
 ------------------------------------------------------------------------
-r352 | lh3 | 2008-06-06 09:37:34 +0100 (Fri, 06 Jun 2008) | 3 lines
+r352 | lh3 | 2008-06-06 04:37:34 -0400 (Fri, 06 Jun 2008) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwttop2.c
    M /branches/prog/bwa/main.c
@@ -2718,7 +2769,7 @@ Changed paths:
  * ungap: remove a useless varible in top2_entry_t
 
 ------------------------------------------------------------------------
-r348 | lh3 | 2008-06-03 14:04:12 +0100 (Tue, 03 Jun 2008) | 2 lines
+r348 | lh3 | 2008-06-03 09:04:12 -0400 (Tue, 03 Jun 2008) | 2 lines
 Changed paths:
    M /branches/prog/bwa/ChangeLog
    A /branches/prog/bwa/NEWS
@@ -2728,14 +2779,14 @@ Changed paths:
 Release bwa-0.1.1
 
 ------------------------------------------------------------------------
-r347 | lh3 | 2008-06-03 10:45:08 +0100 (Tue, 03 Jun 2008) | 2 lines
+r347 | lh3 | 2008-06-03 05:45:08 -0400 (Tue, 03 Jun 2008) | 2 lines
 Changed paths:
    M /branches/prog/bwa/bwa.1
 
 update documentation
 
 ------------------------------------------------------------------------
-r346 | lh3 | 2008-06-02 23:59:50 +0100 (Mon, 02 Jun 2008) | 5 lines
+r346 | lh3 | 2008-06-02 18:59:50 -0400 (Mon, 02 Jun 2008) | 5 lines
 Changed paths:
    A /branches/prog/bwa/ChangeLog
    A /branches/prog/bwa/bwa.1
@@ -2748,7 +2799,7 @@ Changed paths:
  * add ChangeLog
 
 ------------------------------------------------------------------------
-r345 | lh3 | 2008-06-02 21:04:39 +0100 (Mon, 02 Jun 2008) | 3 lines
+r345 | lh3 | 2008-06-02 16:04:39 -0400 (Mon, 02 Jun 2008) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwtaln.c
    M /branches/prog/bwa/bwttop2.c
@@ -2758,7 +2809,7 @@ Changed paths:
  * output a random position for repetitive reads
 
 ------------------------------------------------------------------------
-r344 | lh3 | 2008-06-02 20:03:54 +0100 (Mon, 02 Jun 2008) | 4 lines
+r344 | lh3 | 2008-06-02 15:03:54 -0400 (Mon, 02 Jun 2008) | 4 lines
 Changed paths:
    M /branches/prog/bwa/bntseq.c
    M /branches/prog/bwa/bwtaln.c
@@ -2770,7 +2821,7 @@ Changed paths:
  * fix a potential bug in coverting to the real coordinate
 
 ------------------------------------------------------------------------
-r343 | lh3 | 2008-06-02 18:44:51 +0100 (Mon, 02 Jun 2008) | 5 lines
+r343 | lh3 | 2008-06-02 13:44:51 -0400 (Mon, 02 Jun 2008) | 5 lines
 Changed paths:
    M /branches/prog/bwa/Makefile.div
    M /branches/prog/bwa/bwt.c
@@ -2786,7 +2837,7 @@ Changed paths:
  * change top2b as the default method
 
 ------------------------------------------------------------------------
-r342 | lh3 | 2008-06-02 16:23:26 +0100 (Mon, 02 Jun 2008) | 3 lines
+r342 | lh3 | 2008-06-02 11:23:26 -0400 (Mon, 02 Jun 2008) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwt.c
    M /branches/prog/bwa/bwt1away.c
@@ -2797,7 +2848,7 @@ Changed paths:
  * use bwt_2occ() and bwt_2occ4() in other functions
 
 ------------------------------------------------------------------------
-r341 | lh3 | 2008-06-02 14:31:39 +0100 (Mon, 02 Jun 2008) | 3 lines
+r341 | lh3 | 2008-06-02 09:31:39 -0400 (Mon, 02 Jun 2008) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwttop2.c
    M /branches/prog/bwa/main.c
@@ -2806,7 +2857,7 @@ Changed paths:
  * fix a bug for missing hits
 
 ------------------------------------------------------------------------
-r340 | lh3 | 2008-06-02 14:10:18 +0100 (Mon, 02 Jun 2008) | 3 lines
+r340 | lh3 | 2008-06-02 09:10:18 -0400 (Mon, 02 Jun 2008) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwttop2.c
    M /branches/prog/bwa/main.c
@@ -2815,7 +2866,7 @@ Changed paths:
  * accelerate comparisons in heap, a bit
 
 ------------------------------------------------------------------------
-r339 | lh3 | 2008-06-02 13:41:31 +0100 (Mon, 02 Jun 2008) | 3 lines
+r339 | lh3 | 2008-06-02 08:41:31 -0400 (Mon, 02 Jun 2008) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwt.c
    M /branches/prog/bwa/bwt.h
@@ -2826,7 +2877,7 @@ Changed paths:
  * avoid marginal repeated calculation in occ
 
 ------------------------------------------------------------------------
-r338 | lh3 | 2008-06-02 11:46:51 +0100 (Mon, 02 Jun 2008) | 5 lines
+r338 | lh3 | 2008-06-02 06:46:51 -0400 (Mon, 02 Jun 2008) | 5 lines
 Changed paths:
    M /branches/prog/bwa/Makefile
    M /branches/prog/bwa/bwt.c
@@ -2839,7 +2890,7 @@ Changed paths:
  * order the heap by more criteria
 
 ------------------------------------------------------------------------
-r337 | lh3 | 2008-06-02 00:11:15 +0100 (Mon, 02 Jun 2008) | 4 lines
+r337 | lh3 | 2008-06-01 19:11:15 -0400 (Sun, 01 Jun 2008) | 4 lines
 Changed paths:
    M /branches/prog/bwa/bwttop2.c
    M /branches/prog/bwa/main.c
@@ -2849,7 +2900,7 @@ Changed paths:
    Unfortunately, it does not work well at all.
 
 ------------------------------------------------------------------------
-r336 | lh3 | 2008-06-01 22:45:23 +0100 (Sun, 01 Jun 2008) | 3 lines
+r336 | lh3 | 2008-06-01 17:45:23 -0400 (Sun, 01 Jun 2008) | 3 lines
 Changed paths:
    M /branches/prog/bwa/Makefile
    M /branches/prog/bwa/Makefile.div
@@ -2860,14 +2911,14 @@ Changed paths:
  * fix a bug in calculating the real coordinate
 
 ------------------------------------------------------------------------
-r335 | lh3 | 2008-06-01 21:03:09 +0100 (Sun, 01 Jun 2008) | 2 lines
+r335 | lh3 | 2008-06-01 16:03:09 -0400 (Sun, 01 Jun 2008) | 2 lines
 Changed paths:
    M /branches/prog/bwa/Makefile
 
 nothing, really
 
 ------------------------------------------------------------------------
-r334 | lh3 | 2008-06-01 20:59:13 +0100 (Sun, 01 Jun 2008) | 2 lines
+r334 | lh3 | 2008-06-01 15:59:13 -0400 (Sun, 01 Jun 2008) | 2 lines
 Changed paths:
    M /branches/prog/bwa/Makefile
    A /branches/prog/bwa/Makefile.div
@@ -2877,7 +2928,7 @@ Changed paths:
 use IS algorithm by default
 
 ------------------------------------------------------------------------
-r333 | lh3 | 2008-06-01 20:05:15 +0100 (Sun, 01 Jun 2008) | 3 lines
+r333 | lh3 | 2008-06-01 15:05:15 -0400 (Sun, 01 Jun 2008) | 3 lines
 Changed paths:
    M /branches/prog/bwa/Makefile
    M /branches/prog/bwa/bwtindex.c
@@ -2888,14 +2939,14 @@ Changed paths:
  * add IS algorithm for constructing BWT, albeit slower
 
 ------------------------------------------------------------------------
-r332 | lh3 | 2008-06-01 18:23:08 +0100 (Sun, 01 Jun 2008) | 2 lines
+r332 | lh3 | 2008-06-01 13:23:08 -0400 (Sun, 01 Jun 2008) | 2 lines
 Changed paths:
    A /branches/prog/bwa/is.c
 
 IS linear-time algorithm for constructing SA/BWT
 
 ------------------------------------------------------------------------
-r331 | lh3 | 2008-06-01 15:35:26 +0100 (Sun, 01 Jun 2008) | 3 lines
+r331 | lh3 | 2008-06-01 10:35:26 -0400 (Sun, 01 Jun 2008) | 3 lines
 Changed paths:
    M /branches/prog/bwa/Makefile
    M /branches/prog/bwa/bntseq.c
@@ -2907,7 +2958,7 @@ Changed paths:
  * index in one go
 
 ------------------------------------------------------------------------
-r330 | lh3 | 2008-06-01 14:17:05 +0100 (Sun, 01 Jun 2008) | 2 lines
+r330 | lh3 | 2008-06-01 09:17:05 -0400 (Sun, 01 Jun 2008) | 2 lines
 Changed paths:
    M /branches/prog/bwa/bntseq.c
    M /branches/prog/bwa/bntseq.h
@@ -2917,7 +2968,7 @@ Changed paths:
 real coordinates can be ouput
 
 ------------------------------------------------------------------------
-r329 | lh3 | 2008-06-01 00:21:02 +0100 (Sun, 01 Jun 2008) | 2 lines
+r329 | lh3 | 2008-05-31 19:21:02 -0400 (Sat, 31 May 2008) | 2 lines
 Changed paths:
    M /branches/prog/bwa/bwt2fmv.c
    M /branches/prog/bwa/bwtaln.h
@@ -2926,7 +2977,7 @@ Changed paths:
 add top2e which is similar to 1away
 
 ------------------------------------------------------------------------
-r328 | lh3 | 2008-05-31 23:46:12 +0100 (Sat, 31 May 2008) | 3 lines
+r328 | lh3 | 2008-05-31 18:46:12 -0400 (Sat, 31 May 2008) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwt2fmv.c
    M /branches/prog/bwa/bwtaln.c
@@ -2939,7 +2990,7 @@ Changed paths:
  * add two alternatives to top2 algorithm
 
 ------------------------------------------------------------------------
-r327 | lh3 | 2008-05-31 23:14:46 +0100 (Sat, 31 May 2008) | 2 lines
+r327 | lh3 | 2008-05-31 18:14:46 -0400 (Sat, 31 May 2008) | 2 lines
 Changed paths:
    M /branches/prog/bwa/bwt2fmv.c
    M /branches/prog/bwa/bwtaln.c
@@ -2950,7 +3001,7 @@ Changed paths:
 add cmd-line interface to alntop2
 
 ------------------------------------------------------------------------
-r326 | lh3 | 2008-05-31 22:59:31 +0100 (Sat, 31 May 2008) | 2 lines
+r326 | lh3 | 2008-05-31 17:59:31 -0400 (Sat, 31 May 2008) | 2 lines
 Changed paths:
    M /branches/prog/bwa/Makefile
    M /branches/prog/bwa/bwt1away.c
@@ -2961,28 +3012,28 @@ Changed paths:
 top2 algorithm seems to work. I need to change interface, though
 
 ------------------------------------------------------------------------
-r325 | lh3 | 2008-05-31 20:11:49 +0100 (Sat, 31 May 2008) | 2 lines
+r325 | lh3 | 2008-05-31 15:11:49 -0400 (Sat, 31 May 2008) | 2 lines
 Changed paths:
    M /branches/prog/bwa/bwt1away.c
 
 change the variable in the structure
 
 ------------------------------------------------------------------------
-r324 | lh3 | 2008-05-31 19:52:13 +0100 (Sat, 31 May 2008) | 2 lines
+r324 | lh3 | 2008-05-31 14:52:13 -0400 (Sat, 31 May 2008) | 2 lines
 Changed paths:
    M /branches/prog/bwa/bwt1away.c
 
 set a slightly better bound on the maximum allowed mismatches
 
 ------------------------------------------------------------------------
-r323 | lh3 | 2008-05-30 23:40:21 +0100 (Fri, 30 May 2008) | 2 lines
+r323 | lh3 | 2008-05-30 18:40:21 -0400 (Fri, 30 May 2008) | 2 lines
 Changed paths:
    M /branches/prog/bwa/bwtaln.c
 
  * output time statistics
 
 ------------------------------------------------------------------------
-r322 | lh3 | 2008-05-30 22:58:25 +0100 (Fri, 30 May 2008) | 4 lines
+r322 | lh3 | 2008-05-30 17:58:25 -0400 (Fri, 30 May 2008) | 4 lines
 Changed paths:
    M /branches/prog/bwa/Makefile
    M /branches/prog/bwa/bwt.c
@@ -2996,7 +3047,7 @@ Changed paths:
  * a bit code clean up: separate alignment part
 
 ------------------------------------------------------------------------
-r321 | lh3 | 2008-05-30 18:57:43 +0100 (Fri, 30 May 2008) | 3 lines
+r321 | lh3 | 2008-05-30 13:57:43 -0400 (Fri, 30 May 2008) | 3 lines
 Changed paths:
    M /branches/prog/bwa/Makefile
    M /branches/prog/bwa/bwt.c
@@ -3012,7 +3063,7 @@ Changed paths:
  * put bwt_gen in bwa
 
 ------------------------------------------------------------------------
-r320 | lh3 | 2008-05-30 16:40:11 +0100 (Fri, 30 May 2008) | 4 lines
+r320 | lh3 | 2008-05-30 11:40:11 -0400 (Fri, 30 May 2008) | 4 lines
 Changed paths:
    M /branches/prog/bwa/bwt.c
    M /branches/prog/bwa/bwt2fmv.c
@@ -3025,7 +3076,7 @@ Changed paths:
  * change default sa interval to 32
 
 ------------------------------------------------------------------------
-r319 | lh3 | 2008-05-30 15:31:37 +0100 (Fri, 30 May 2008) | 3 lines
+r319 | lh3 | 2008-05-30 10:31:37 -0400 (Fri, 30 May 2008) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwtaln.c
 
@@ -3033,7 +3084,7 @@ Changed paths:
  * change to another method to do 1-away alignment
 
 ------------------------------------------------------------------------
-r318 | lh3 | 2008-05-30 14:21:49 +0100 (Fri, 30 May 2008) | 2 lines
+r318 | lh3 | 2008-05-30 09:21:49 -0400 (Fri, 30 May 2008) | 2 lines
 Changed paths:
    M /branches/prog/bwa/bwt.c
    M /branches/prog/bwa/bwt.h
@@ -3046,7 +3097,7 @@ Changed paths:
 best unique match is partially finished
 
 ------------------------------------------------------------------------
-r317 | lh3 | 2008-05-30 11:33:28 +0100 (Fri, 30 May 2008) | 2 lines
+r317 | lh3 | 2008-05-30 06:33:28 -0400 (Fri, 30 May 2008) | 2 lines
 Changed paths:
    M /branches/prog/bwa/bwt.c
    M /branches/prog/bwa/bwt2fmv.c
@@ -3058,7 +3109,7 @@ Changed paths:
 remove "ungapped" command and related codes
 
 ------------------------------------------------------------------------
-r316 | lh3 | 2008-05-30 11:05:20 +0100 (Fri, 30 May 2008) | 2 lines
+r316 | lh3 | 2008-05-30 06:05:20 -0400 (Fri, 30 May 2008) | 2 lines
 Changed paths:
    M /branches/prog/bwa/Makefile
    M /branches/prog/bwa/bwt.c
@@ -3068,7 +3119,7 @@ Changed paths:
 change variable name thick to width
 
 ------------------------------------------------------------------------
-r315 | lh3 | 2008-05-30 00:06:13 +0100 (Fri, 30 May 2008) | 2 lines
+r315 | lh3 | 2008-05-29 19:06:13 -0400 (Thu, 29 May 2008) | 2 lines
 Changed paths:
    M /branches/prog/bwa/bntseq.c
    M /branches/prog/bwa/bwt.c
@@ -3084,7 +3135,7 @@ Changed paths:
 revised algorithm for ungapped alignment. the old one can still be used.
 
 ------------------------------------------------------------------------
-r314 | lh3 | 2008-05-29 21:36:11 +0100 (Thu, 29 May 2008) | 2 lines
+r314 | lh3 | 2008-05-29 16:36:11 -0400 (Thu, 29 May 2008) | 2 lines
 Changed paths:
    M /branches/prog/bwa/bwt2fmv.c
    M /branches/prog/bwa/bwt_gen/bwt_gen.c
@@ -3094,14 +3145,14 @@ Changed paths:
  * make commands more independent, but ungapped does not work at the moment
 
 ------------------------------------------------------------------------
-r313 | lh3 | 2008-05-29 20:56:14 +0100 (Thu, 29 May 2008) | 2 lines
+r313 | lh3 | 2008-05-29 15:56:14 -0400 (Thu, 29 May 2008) | 2 lines
 Changed paths:
    M /branches/prog/bwa/bwt_gen/bwt_gen.c
 
 little...
 
 ------------------------------------------------------------------------
-r312 | lh3 | 2008-05-29 20:54:01 +0100 (Thu, 29 May 2008) | 3 lines
+r312 | lh3 | 2008-05-29 15:54:01 -0400 (Thu, 29 May 2008) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwt_gen/bwt_gen.c
    M /branches/prog/bwa/bwt_gen/bwt_gen.h
@@ -3110,7 +3161,7 @@ Changed paths:
  * do not dump .fmv files
 
 ------------------------------------------------------------------------
-r311 | lh3 | 2008-05-29 20:44:36 +0100 (Thu, 29 May 2008) | 2 lines
+r311 | lh3 | 2008-05-29 15:44:36 -0400 (Thu, 29 May 2008) | 2 lines
 Changed paths:
    A /branches/prog/bwa/bwt_gen
    A /branches/prog/bwa/bwt_gen/Makefile
@@ -3122,7 +3173,7 @@ Changed paths:
 codes from BWT-SW, for building BWT from packed file
 
 ------------------------------------------------------------------------
-r310 | lh3 | 2008-05-28 22:03:35 +0100 (Wed, 28 May 2008) | 4 lines
+r310 | lh3 | 2008-05-28 17:03:35 -0400 (Wed, 28 May 2008) | 4 lines
 Changed paths:
    M /branches/prog/bwa/bwt.c
    M /branches/prog/bwa/bwt.h
@@ -3136,7 +3187,7 @@ Changed paths:
    .fmv, the BWT-SW correspondance of .occ
 
 ------------------------------------------------------------------------
-r309 | lh3 | 2008-05-28 16:39:37 +0100 (Wed, 28 May 2008) | 2 lines
+r309 | lh3 | 2008-05-28 11:39:37 -0400 (Wed, 28 May 2008) | 2 lines
 Changed paths:
    M /branches/prog/bwa/bwt.c
    M /branches/prog/bwa/bwt2fmv.c
@@ -3144,7 +3195,7 @@ Changed paths:
 fix a bug
 
 ------------------------------------------------------------------------
-r308 | lh3 | 2008-05-28 14:56:16 +0100 (Wed, 28 May 2008) | 4 lines
+r308 | lh3 | 2008-05-28 09:56:16 -0400 (Wed, 28 May 2008) | 4 lines
 Changed paths:
    M /branches/prog/bwa/bwt.c
    M /branches/prog/bwa/bwt2fmv.c
@@ -3154,7 +3205,7 @@ results are correct or not.
 
 
 ------------------------------------------------------------------------
-r307 | lh3 | 2008-05-28 11:31:34 +0100 (Wed, 28 May 2008) | 5 lines
+r307 | lh3 | 2008-05-28 06:31:34 -0400 (Wed, 28 May 2008) | 5 lines
 Changed paths:
    M /branches/prog/bwa/bwt.c
    M /branches/prog/bwa/bwt2fmv.c
@@ -3169,7 +3220,7 @@ Changed paths:
  * a lot of things to keep me busy today...
 
 ------------------------------------------------------------------------
-r306 | lh3 | 2008-05-27 23:41:27 +0100 (Tue, 27 May 2008) | 3 lines
+r306 | lh3 | 2008-05-27 18:41:27 -0400 (Tue, 27 May 2008) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bwt.c
    M /branches/prog/bwa/bwt.h
@@ -3179,7 +3230,7 @@ Changed paths:
  * fixed a bug in bwt_occ()
 
 ------------------------------------------------------------------------
-r305 | lh3 | 2008-05-27 21:59:44 +0100 (Tue, 27 May 2008) | 5 lines
+r305 | lh3 | 2008-05-27 16:59:44 -0400 (Tue, 27 May 2008) | 5 lines
 Changed paths:
    M /branches/prog/bwa/bwt.c
    M /branches/prog/bwa/bwt.h
@@ -3191,7 +3242,7 @@ Changed paths:
 
 
 ------------------------------------------------------------------------
-r304 | lh3 | 2008-05-27 14:12:17 +0100 (Tue, 27 May 2008) | 3 lines
+r304 | lh3 | 2008-05-27 09:12:17 -0400 (Tue, 27 May 2008) | 3 lines
 Changed paths:
    M /branches/prog/bwa/Makefile
    M /branches/prog/bwa/bwt.c
@@ -3208,7 +3259,7 @@ Changed paths:
  * exact alignment now works
 
 ------------------------------------------------------------------------
-r303 | lh3 | 2008-05-27 11:33:38 +0100 (Tue, 27 May 2008) | 2 lines
+r303 | lh3 | 2008-05-27 06:33:38 -0400 (Tue, 27 May 2008) | 2 lines
 Changed paths:
    M /branches/prog/bwa/bntseq.c
    M /branches/prog/bwa/bwt.c
@@ -3219,7 +3270,7 @@ Changed paths:
 add xassert and fix a bug
 
 ------------------------------------------------------------------------
-r302 | lh3 | 2008-05-27 11:23:20 +0100 (Tue, 27 May 2008) | 2 lines
+r302 | lh3 | 2008-05-27 06:23:20 -0400 (Tue, 27 May 2008) | 2 lines
 Changed paths:
    M /branches/prog/bwa/Makefile
    M /branches/prog/bwa/bntseq.c
@@ -3231,7 +3282,7 @@ Changed paths:
 improve error message and error handling
 
 ------------------------------------------------------------------------
-r301 | lh3 | 2008-05-27 10:37:51 +0100 (Tue, 27 May 2008) | 4 lines
+r301 | lh3 | 2008-05-27 05:37:51 -0400 (Tue, 27 May 2008) | 4 lines
 Changed paths:
    M /branches/prog/bwa/Makefile
    M /branches/prog/bwa/bwt.c
@@ -3246,7 +3297,7 @@ Changed paths:
  * now, .fmv is still different from BWTSW
 
 ------------------------------------------------------------------------
-r299 | lh3 | 2008-05-26 23:07:44 +0100 (Mon, 26 May 2008) | 2 lines
+r299 | lh3 | 2008-05-26 18:07:44 -0400 (Mon, 26 May 2008) | 2 lines
 Changed paths:
    M /branches/prog/bwa/Makefile
    M /branches/prog/bwa/bwt.c
@@ -3256,7 +3307,7 @@ Changed paths:
 generate/retrieve SA and Occ
 
 ------------------------------------------------------------------------
-r298 | lh3 | 2008-05-26 18:16:49 +0100 (Mon, 26 May 2008) | 3 lines
+r298 | lh3 | 2008-05-26 13:16:49 -0400 (Mon, 26 May 2008) | 3 lines
 Changed paths:
    M /branches/prog/bwa/bntseq.h
    M /branches/prog/bwa/bwt.c
@@ -3267,7 +3318,7 @@ Changed paths:
  * move bwt_cal_occ() to bwt.c
 
 ------------------------------------------------------------------------
-r297 | lh3 | 2008-05-25 22:43:58 +0100 (Sun, 25 May 2008) | 6 lines
+r297 | lh3 | 2008-05-25 17:43:58 -0400 (Sun, 25 May 2008) | 6 lines
 Changed paths:
    M /branches/prog/bwa/Makefile
    A /branches/prog/bwa/bwt.c
@@ -3284,7 +3335,7 @@ Changed paths:
 
 
 ------------------------------------------------------------------------
-r296 | lh3 | 2008-05-24 23:35:02 +0100 (Sat, 24 May 2008) | 5 lines
+r296 | lh3 | 2008-05-24 18:35:02 -0400 (Sat, 24 May 2008) | 5 lines
 Changed paths:
    M /branches/prog/bwa/Makefile
    M /branches/prog/bwa/bntseq.c
@@ -3299,7 +3350,7 @@ say. :)
 
 
 ------------------------------------------------------------------------
-r295 | lh3 | 2008-05-24 16:25:31 +0100 (Sat, 24 May 2008) | 3 lines
+r295 | lh3 | 2008-05-24 11:25:31 -0400 (Sat, 24 May 2008) | 3 lines
 Changed paths:
    A /branches/prog/bwa/Makefile
    M /branches/prog/bwa/bntseq.c
@@ -3310,7 +3361,7 @@ Changed paths:
  * improve interface to fa2bns, a bit
 
 ------------------------------------------------------------------------
-r293 | lh3 | 2008-05-24 15:57:03 +0100 (Sat, 24 May 2008) | 3 lines
+r293 | lh3 | 2008-05-24 10:57:03 -0400 (Sat, 24 May 2008) | 3 lines
 Changed paths:
    A /branches/prog/bwa
    A /branches/prog/bwa/bntseq.c

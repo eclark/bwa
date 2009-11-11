@@ -3,7 +3,7 @@
 #include "main.h"
 
 #ifndef PACKAGE_VERSION
-#define PACKAGE_VERSION "0.5.4-1 (r1270)"
+#define PACKAGE_VERSION "0.5.5 (r1273)"
 #endif
 
 static int usage()

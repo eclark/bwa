@@ -211,7 +211,7 @@ static int pairing(bwa_seq_t *p[2], pe_data_t *d, const pe_opt_t *opt, int s_mm,
 			p[1]->seQ = 0; p[1]->mapQ = p[0]->mapQ;
 			if (p[1]->mapQ > mapQ_p) p[1]->mapQ = mapQ_p;
 		} else if (p[1]->pos == o_pos[1]>>32) { // [0] moved
-			p[1]->seQ = 0; p[0]->mapQ = p[1]->mapQ;
+			p[0]->seQ = 0; p[0]->mapQ = p[1]->mapQ;
 			if (p[0]->mapQ > mapQ_p) p[0]->mapQ = mapQ_p;
 		} else { // both ends moved
 			p[0]->seQ = p[1]->seQ = 0;

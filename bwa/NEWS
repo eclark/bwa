@@ -1,3 +1,52 @@
+Beta Release 0.5.5 (10 November, 2009)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This is a bug fix release:
+
+ * Fixed a serious bug/typo in aln which does not occur given short
+   reads, but will lead to segfault for >500bp reads. Of course, the aln
+   command is not recommended for reads longer than 200bp, but this is a
+   bug anyway.
+
+ * Fixed a minor bug/typo which leads to incorrect single-end mapping
+   quality when one end is moved to meet the mate-pair requirement.
+
+ * Fixed a bug in samse for mapping in the color space. This bug is
+   caused by quality filtration added since 0.5.1.
+
+(0.5.5: 10 November 2009, r1273)
+
+
+
+Beta Release 0.5.4 (9 October, 2009)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Since this version, the default seed length used in the "aln" command is
+changed to 32.
+
+Notable changes in bwa-short:
+
+ * Added a new tag "XC:i" which gives the length of clipped reads.
+
+ * In sampe, skip alignments in case of a bug in the Smith-Waterman
+   alignment module.
+
+ * In sampe, fixed a bug in pairing when the read sequence is identical
+   to its reverse complement.
+
+ * In sampe, optionally preload the entire FM-index into memory to
+   reduce disk operations.
+
+Notable changes in dBWT-SW/BWA-SW:
+
+ * Changed name dBWT-SW to BWA-SW.
+
+ * Optionally use "hard clipping" in the SAM output.
+
+(0.5.4: 9 October 2009, r1245)
+
+
+
 Beta Release 0.5.3 (15 September, 2009)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
