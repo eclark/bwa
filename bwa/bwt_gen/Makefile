@@ -16,6 +16,7 @@ lib:libbwtgen.a
 
 libbwtgen.a:$(OBJS)
 		$(AR) -cru $@ $(OBJS)
+		ranlib $@
 
 cleanlocal:
 		rm -f gmon.out *.o a.out $(PROG) *~ *.a
