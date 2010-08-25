@@ -1,6 +1,8 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <sys/mman.h>
+#include <errno.h>
 #include "bwt.h"
 #include "utils.h"
 
@@ -74,4 +76,52 @@ void bwt_destroy(bwt_t *bwt)
 	if (bwt == 0) return;
 	free(bwt->sa); free(bwt->bwt);
 	free(bwt);
+}
+
+bwt_t *bwt_mmap_restore_bwt(const char *fn)
+{
+    bwt_t *bwt;
+	FILE *fp;
+    uint32_t *map;
+
+    bwt = (bwt_t*)calloc(1, sizeof(bwt_t));
+    fp = xopen(fn, "rb");
+	bwt->fp = fp;
+    fseek(fp, 0, SEEK_END);
+    bwt->bwt_size = (ftell(fp) - sizeof(bwtint_t) * 5) >> 2;
+//  bwt->bwt = (uint32_t*)calloc(bwt->bwt_size, 4);
+    fseek(fp, 0, SEEK_SET);
+    fread(&bwt->primary, sizeof(bwtint_t), 1, fp);
+    fread(bwt->L2+1, sizeof(bwtint_t), 4, fp);
+//  fread(bwt->bwt, 4, bwt->bwt_size, fp);
+
+    map = mmap(0, bwt->bwt_size * 4, PROT_READ, MAP_FILE | MAP_PRIVATE, fileno(fp), 0);
+    if (map == MAP_FAILED) {
+        fclose(fp);
+        perror("mmap");
+        abort();
+    }
+
+    map += 5;
+
+    bwt->bwt = map;
+
+    bwt->seq_len = bwt->L2[4];
+//    fclose(fp);
+    bwt_gen_cnt_table(bwt);
+
+    return bwt;
+}
+
+void bwt_mmap_destroy(bwt_t *bwt)
+{
+    if (bwt == 0) return;
+    free(bwt->sa); 
+//	free(bwt->bwt);
+
+	munmap(bwt->bwt - 5, bwt->bwt_size * 4);
+
+	fclose(bwt->fp);
+
+    free(bwt);
 }
