@@ -1,0 +1,11 @@
+
+CFLAGS=-g -Wall -std=c99
+
+bzmq_test: bzmq.o bzmq_test.o
+	gcc -lzmq -o $@ $^
+
+bzmq.o: bzmq.h
+bzmq_test.o: bzmq.h
+
+%.o: %.c
+	gcc -c $(CFLAGS) $< -o $@

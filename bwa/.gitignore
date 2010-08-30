@@ -1,3 +1,4 @@
 *.o
 bwa
 libbwtgen.a
+bzmq_test
